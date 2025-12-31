@@ -8,3 +8,5 @@ python train_textgrad.py --dataset_name GSM8K --train_size 25 --val_size 25 --ep
 python train_textgrad.py --dataset_name last_letters --train_size 25 --val_size 25 --epochs 20
 python train_textgrad.py --dataset_name MultiArith --train_size 25 --val_size 25 --epochs 20
 python train_textgrad.py --dataset_name StrategyQA --train_size 25 --val_size 25 --epochs 20
+
+python ./extract_features.py
