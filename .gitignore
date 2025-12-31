@@ -1,0 +1,7 @@
+/__pycache__
+*.pyc
+/astar/TextGrad_1st_run
+/llm_cache
+/results/DSpy_miprov2
+.env
+/__pycache__

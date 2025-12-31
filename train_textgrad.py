@@ -9,6 +9,7 @@ python textgrad_train.py --dataset_name MultiArith --train_size 40 --val_size 15
 import argparse
 import concurrent
 import json
+import os
 import random
 
 from dotenv import load_dotenv
@@ -20,6 +21,24 @@ from tqdm import tqdm
 from load_dataset import split_train_val_test
 
 load_dotenv(override=True)
+
+
+def append_to_csv(csv_file, rows):
+    """Append rows to CSV file incrementally"""
+    if not rows:
+        return
+    
+    df_new = pd.DataFrame(rows)
+    
+    # Check if file exists
+    if os.path.exists(csv_file):
+        # Append mode - read existing and append
+        df_existing = pd.read_csv(csv_file)
+        df_combined = pd.concat([df_existing, df_new], ignore_index=True)
+        df_combined.to_csv(csv_file, index=False)
+    else:
+        # First write - create new file
+        df_new.to_csv(csv_file, index=False)
 
 
 def set_seed(seed):
@@ -82,19 +101,23 @@ def eval_dataset(test_set, eval_fn, model, max_samples=None, return_details=Fals
 
 def run_validation_revert(system_prompt, previous_val_performance, previous_prompt, previous_epoch, model, eval_fn, val_set, current_epoch):
     """Validate and potentially revert prompt if performance drops"""
-    val_performance = np.mean(eval_dataset(val_set, eval_fn, model))
+    # Get detailed validation results for the current prompt
+    val_acc, val_details = eval_dataset(val_set, eval_fn, model, return_details=True)
+    val_performance = np.mean(val_acc)
 
     print(f"Current validation performance: {val_performance:.4f}")
     print(f"Previous validation performance: {previous_val_performance:.4f}")
 
+    current_prompt = system_prompt.get_value()
+    
     if val_performance < previous_val_performance:
         print(f"Performance dropped! Reverting prompt.")
-        print(f"Rejected prompt: {system_prompt.value}")
+        print(f"Rejected prompt: {current_prompt}")
         system_prompt.set_value(previous_prompt)
-        return previous_val_performance, previous_prompt, previous_epoch
+        return previous_val_performance, previous_prompt, previous_epoch, val_details, current_prompt
     else:
         print("Performance improved or maintained. Keeping new prompt.")
-        return val_performance, system_prompt.get_value(), current_epoch
+        return val_performance, current_prompt, current_epoch, val_details, current_prompt
 
 
 def create_eval_function(llm_api):
@@ -196,12 +219,23 @@ def main():
     # Create data loader
     train_loader = create_data_loader(train_set, batch_size=args.batch_size, shuffle=True)
 
+    # Initialize CSV file path early for incremental logging
+    csv_dir = "results/TextGrad"
+    os.makedirs(csv_dir, exist_ok=True)
+    csv_file = f"{csv_dir}/TextGrad_results_{args.dataset_name}_train{args.train_size}_val{args.val_size}_epochs{args.epochs}_batch{args.batch_size}_steps{args.steps_per_epoch}_seed{args.seed}.csv"
+    
+    # Initialize CSV file with headers if it doesn't exist
+    if not os.path.exists(csv_file):
+        df_header = pd.DataFrame(columns=['epoch', 'step', 'split', 'index', 'question', 'ground_truth', 'correct', 'prompt', 'accepted'])
+        df_header.to_csv(csv_file, index=False)
+
     # Initialize results tracking
     results = {
         "train_acc_per_epoch": [],
         "val_acc_per_epoch": [],
         "prompts_per_epoch": [],
-        "detailed_results": []  # Will store per-question correctness (train and val only during training)
+        "detailed_results": [],  # Will store per-question correctness (train and val only during training)
+        "all_attempts": []  # Will store all validation attempts (each step) with their prompts and results
     }
 
     # Evaluate initial performance (Epoch 0)
@@ -226,6 +260,36 @@ def main():
         "train": train_details,
         "val": val_details
     })
+
+    # Write epoch 0 results to CSV immediately
+    epoch_0_prompt = results['prompts_per_epoch'][0]
+    csv_rows_epoch0 = []
+    for item in train_details:
+        csv_rows_epoch0.append({
+            'epoch': 0,
+            'step': 0,
+            'split': 'train',
+            'index': item['index'],
+            'question': item['question'],
+            'ground_truth': item['ground_truth'],
+            'correct': item['correct'],
+            'prompt': epoch_0_prompt,
+            'accepted': True
+        })
+    for item in val_details:
+        csv_rows_epoch0.append({
+            'epoch': 0,
+            'step': 0,
+            'split': 'val',
+            'index': item['index'],
+            'question': item['question'],
+            'ground_truth': item['ground_truth'],
+            'correct': item['correct'],
+            'prompt': epoch_0_prompt,
+            'accepted': True
+        })
+    append_to_csv(csv_file, csv_rows_epoch0)
+    print(f"Epoch 0 results written to CSV: {len(csv_rows_epoch0)} rows")
 
     print(f"\nEpoch 0 Performance:")
     print(f"  Train Accuracy: {np.mean(initial_train_acc):.4f}")
@@ -275,9 +339,38 @@ def main():
 
             # Validate and potentially revert after each step
             print(f"\n--- Validation after step {steps + 1} ---")
-            best_val_performance, best_prompt, best_epoch = run_validation_revert(
+            best_val_performance, best_prompt, best_epoch, val_details_attempt, attempted_prompt = run_validation_revert(
                 system_prompt, best_val_performance, best_prompt, best_epoch, model, eval_fn, val_set, epoch + 1
             )
+            
+            # Store validation results for this attempt (even if it was rejected)
+            # attempted_prompt is the draft enhanced prompt that was validated
+            accepted = (attempted_prompt == best_prompt)  # True if this prompt was kept
+            results["all_attempts"].append({
+                "epoch": epoch + 1,
+                "step": steps + 1,
+                "prompt": attempted_prompt,
+                "val_performance": float(np.mean([item['correct'] for item in val_details_attempt])),
+                "val_details": val_details_attempt,
+                "accepted": accepted
+            })
+            
+            # Write validation attempt results to CSV immediately
+            csv_rows_attempt = []
+            for item in val_details_attempt:
+                csv_rows_attempt.append({
+                    'epoch': epoch + 1,
+                    'step': steps + 1,
+                    'split': 'val',
+                    'index': item['index'],
+                    'question': item['question'],
+                    'ground_truth': item['ground_truth'],
+                    'correct': item['correct'],
+                    'prompt': attempted_prompt,
+                    'accepted': accepted
+                })
+            append_to_csv(csv_file, csv_rows_attempt)
+            print(f"Validation attempt results written to CSV: {len(csv_rows_attempt)} rows (accepted: {accepted})")
 
             if steps + 1 >= args.steps_per_epoch:
                 break
@@ -364,57 +457,29 @@ def main():
 
     print(f"\nJSON results saved to: {json_file}")
 
-    # Save detailed per-question results to CSV with unique filename
-    csv_file = f"detailed_results_{args.dataset_name}_train{args.train_size}_val{args.val_size}_epochs{args.epochs}_batch{args.batch_size}_steps{args.steps_per_epoch}_seed{args.seed}.csv"
-    csv_rows = []
-
-    # Add train and validation results from all epochs
-    for epoch_data in results['detailed_results']:
-        epoch = epoch_data['epoch']
-        prompt = results['prompts_per_epoch'][epoch]
-
-        # Add train set results
-        for item in epoch_data['train']:
-            csv_rows.append({
-                'epoch': epoch,
-                'split': 'train',
-                'index': item['index'],
-                'question': item['question'],
-                'ground_truth': item['ground_truth'],
-                'correct': item['correct'],
-                'prompt': prompt
-            })
-
-        # Add validation set results
-        for item in epoch_data['val']:
-            csv_rows.append({
-                'epoch': epoch,
-                'split': 'val',
-                'index': item['index'],
-                'question': item['question'],
-                'ground_truth': item['ground_truth'],
-                'correct': item['correct'],
-                'prompt': prompt
-            })
-
-    # Add final test set results (using best validated prompt)
+    # Write final test set results to CSV (all other results already written incrementally)
+    csv_rows_test = []
     for item in test_details:
-        csv_rows.append({
+        csv_rows_test.append({
             'epoch': best_epoch,
+            'step': 'final',
             'split': 'test',
             'index': item['index'],
             'question': item['question'],
             'ground_truth': item['ground_truth'],
             'correct': item['correct'],
-            'prompt': best_prompt
+            'prompt': best_prompt,
+            'accepted': True
         })
+    append_to_csv(csv_file, csv_rows_test)
+    
+    # Count total rows in CSV
+    df_final = pd.read_csv(csv_file)
+    total_rows = len(df_final)
 
-    # Write to CSV
-    df = pd.DataFrame(csv_rows)
-    df.to_csv(csv_file, index=False)
-
+    print(f"Final test results written to CSV: {len(csv_rows_test)} rows")
     print(f"Detailed CSV results saved to: {csv_file}")
-    print(f"\nTotal rows in CSV: {len(csv_rows)}")
+    print(f"\nTotal rows in CSV: {total_rows}")
 
 
 if __name__ == "__main__":

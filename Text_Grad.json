@@ -1,0 +1,657 @@
+{
+  "detailed_results_last_letters_train25_val25_epochs20_batch3_steps3_seed12": {
+    "file": "detailed_results_last_letters_train25_val25_epochs20_batch3_steps3_seed12.csv",
+    "num_rows": 1500,
+    "num_features": 12,
+    "ate_results": {
+      "Clarity": {
+        "ate": 0.023384878071744615
+      },
+      "Engagement": {
+        "ate": 0.023384878071744615
+      },
+      "Politeness": {
+        "ate": 0.025282223763537136
+      },
+      "Intrinsic_load": {
+        "ate": 0.09466667293871213
+      },
+      "Extraneous_load": {
+        "ate": 0.01866667607325849
+      },
+      "Encourage_germane_load": {
+        "ate": 0.025875720426645366
+      },
+      "Objectives": {
+        "ate": 0.03466669131541092
+      },
+      "Metacognition": {
+        "ate": -0.012000052821580072
+      },
+      "Demos": {
+        "ate": 0.09466667293871213
+      },
+      "Structural_logic": {
+        "ate": 0.0387180188192275
+      },
+      "Contextual_logic": {
+        "ate": 0.0387180188192275
+      },
+      "Hallucination_awareness": {
+        "ate": 0.014000515486762566
+      }
+    }
+  },
+  "detailed_results_CommonsenseQA_train25_val25_epochs20_batch3_steps3_seed12": {
+    "file": "detailed_results_CommonsenseQA_train25_val25_epochs20_batch3_steps3_seed12.csv",
+    "num_rows": 2221,
+    "num_features": 12,
+    "ate_results": {
+      "Clarity": {
+        "ate": 0.06068460063342372
+      },
+      "Engagement": {
+        "ate": -0.020431982942326985
+      },
+      "Politeness": {
+        "ate": -0.02041480212991263
+      },
+      "Intrinsic_load": {
+        "ate": 0.02718607984081652
+      },
+      "Extraneous_load": {
+        "ate": -0.01390731293926319
+      },
+      "Encourage_germane_load": {
+        "ate": -0.035831013563059164
+      },
+      "Objectives": {
+        "ate": 0.01818297725361982
+      },
+      "Metacognition": {
+        "ate": -0.0004927665676788375
+      },
+      "Demos": {
+        "ate": -0.0038385786893625957
+      },
+      "Structural_logic": {
+        "ate": -0.0006850819262951878
+      },
+      "Contextual_logic": {
+        "ate": 0.013725030174729012
+      },
+      "Hallucination_awareness": {
+        "ate": -0.00023496770499316155
+      }
+    }
+  },
+  "detailed_results_CommonsenseQA_train10_val10_epochs20_seed12": {
+    "file": "detailed_results_CommonsenseQA_train10_val10_epochs20_seed12.csv",
+    "num_rows": 1621,
+    "num_features": 12,
+    "ate_results": {
+      "Clarity": {
+        "ate": 0.03285008640516987
+      },
+      "Engagement": {
+        "ate": -0.018154024474867744
+      },
+      "Politeness": {
+        "ate": 0.01915640816754953
+      },
+      "Intrinsic_load": {
+        "ate": 0.01915640816754953
+      },
+      "Extraneous_load": {
+        "ate": 0.01915640816754953
+      },
+      "Encourage_germane_load": {
+        "ate": 0.01915640816754953
+      },
+      "Objectives": {
+        "ate": 0.01915640816754953
+      },
+      "Metacognition": {
+        "ate": 0.01915640816754953
+      },
+      "Demos": {
+        "ate": 0.03285008640516987
+      },
+      "Structural_logic": {
+        "ate": 0.03285008640516987
+      },
+      "Contextual_logic": {
+        "ate": 0.03285008640516987
+      },
+      "Hallucination_awareness": {
+        "ate": 0.01915640816754953
+      }
+    }
+  },
+  "detailed_results_date_understanding_train25_val25_epochs20_batch3_steps3_seed12": {
+    "file": "detailed_results_date_understanding_train25_val25_epochs20_batch3_steps3_seed12.csv",
+    "num_rows": 1250,
+    "num_features": 12,
+    "ate_results": {
+      "Clarity": {
+        "ate": -0.9477654683674663
+      },
+      "Engagement": {
+        "ate": 0.1158049904855953
+      },
+      "Politeness": {
+        "ate": 0.05335850038595681
+      },
+      "Intrinsic_load": {
+        "ate": -0.06831817404966213
+      },
+      "Extraneous_load": {
+        "ate": 0.02975382687244321
+      },
+      "Encourage_germane_load": {
+        "ate": -0.021750117717248163
+      },
+      "Objectives": {
+        "ate": 0.03186046347548682
+      },
+      "Metacognition": {
+        "ate": -0.03433078708698177
+      },
+      "Demos": {
+        "ate": 0.0312697503163874
+      },
+      "Structural_logic": {
+        "ate": -0.03186620761233886
+      },
+      "Contextual_logic": {
+        "ate": -0.9477940620243449
+      },
+      "Hallucination_awareness": {
+        "ate": 0.003120908754503057
+      }
+    }
+  },
+  "detailed_results_last_letters_train10_val10_epochs20_batch3_steps3_seed12": {
+    "file": "detailed_results_last_letters_train10_val10_epochs20_batch3_steps3_seed12.csv",
+    "num_rows": 900,
+    "num_features": 12,
+    "ate_results": {
+      "Clarity": {
+        "ate": -0.025096677713806255
+      },
+      "Engagement": {
+        "ate": -0.022059842725058572
+      },
+      "Politeness": {
+        "ate": -0.023769944946161494
+      },
+      "Intrinsic_load": {
+        "ate": -0.03880016754283937
+      },
+      "Extraneous_load": {
+        "ate": -0.023046923558898865
+      },
+      "Encourage_germane_load": {
+        "ate": -0.03880016754283937
+      },
+      "Objectives": {
+        "ate": -0.0360515387665858
+      },
+      "Metacognition": {
+        "ate": -0.023769944946161494
+      },
+      "Demos": {
+        "ate": -0.03880016754283937
+      },
+      "Structural_logic": {
+        "ate": -0.025096677713806255
+      },
+      "Contextual_logic": {
+        "ate": -0.025096677713806255
+      },
+      "Hallucination_awareness": {
+        "ate": -0.020823368581298022
+      }
+    }
+  },
+  "detailed_results_disambiguation_qa_train50_val50_epochs20_batch3_steps3_seed12": {
+    "file": "detailed_results_disambiguation_qa_train50_val50_epochs20_batch3_steps3_seed12.csv",
+    "error": "Treatment vector must have at least two levels.",
+    "status": "failed"
+  },
+  "detailed_results_causal_judgement_train10_val10_epochs10_batch3_steps3_seed12": {
+    "file": "detailed_results_causal_judgement_train10_val10_epochs10_batch3_steps3_seed12.csv",
+    "num_rows": 387,
+    "num_features": 12,
+    "ate_results": {
+      "Clarity": {
+        "ate": 0.021151800439033183
+      },
+      "Engagement": {
+        "ate": 0.13750902052631436
+      },
+      "Politeness": {
+        "ate": -0.025580277342948435
+      },
+      "Intrinsic_load": {
+        "ate": -0.006588367320681583
+      },
+      "Extraneous_load": {
+        "ate": -0.022996850773145627
+      },
+      "Encourage_germane_load": {
+        "ate": 0.007382722450564323
+      },
+      "Objectives": {
+        "ate": 0.13750902052631436
+      },
+      "Metacognition": {
+        "ate": -0.005454171663428247
+      },
+      "Demos": {
+        "ate": 0.007465215562548246
+      },
+      "Structural_logic": {
+        "ate": 0.03941989460792617
+      },
+      "Contextual_logic": {
+        "ate": 0.03941989460792617
+      },
+      "Hallucination_awareness": {
+        "ate": -0.029812983297629277
+      }
+    }
+  },
+  "detailed_results_date_understanding_train10_val10_epochs20_batch3_steps3_seed12": {
+    "file": "detailed_results_date_understanding_train10_val10_epochs20_batch3_steps3_seed12.csv",
+    "num_rows": 650,
+    "num_features": 12,
+    "ate_results": {
+      "Clarity": {
+        "ate": -0.9122510472978015
+      },
+      "Engagement": {
+        "ate": -0.06371876116111796
+      },
+      "Politeness": {
+        "ate": -0.03884585888618366
+      },
+      "Intrinsic_load": {
+        "ate": -0.06406220546596904
+      },
+      "Extraneous_load": {
+        "ate": -0.0808667318567383
+      },
+      "Encourage_germane_load": {
+        "ate": -0.03183784277524635
+      },
+      "Objectives": {
+        "ate": 0.06953994822417624
+      },
+      "Metacognition": {
+        "ate": -0.03530861691095235
+      },
+      "Demos": {
+        "ate": -0.035683219452533124
+      },
+      "Structural_logic": {
+        "ate": 0.06515847001330528
+      },
+      "Contextual_logic": {
+        "ate": 0.1728698291849641
+      },
+      "Hallucination_awareness": {
+        "ate": -0.05821985104836941
+      }
+    }
+  },
+  "detailed_results_GSM8K_train10_val10_epochs20_batch3_steps3_seed12": {
+    "file": "detailed_results_GSM8K_train10_val10_epochs20_batch3_steps3_seed12.csv",
+    "num_rows": 1719,
+    "num_features": 12,
+    "ate_results": {
+      "Clarity": {
+        "ate": -0.003725591661011275
+      },
+      "Engagement": {
+        "ate": -0.025884307361120792
+      },
+      "Politeness": {
+        "ate": -0.006554366672989047
+      },
+      "Intrinsic_load": {
+        "ate": 0.9660854954522627
+      },
+      "Extraneous_load": {
+        "ate": 0.9661378075940278
+      },
+      "Encourage_germane_load": {
+        "ate": 0.9661570360412886
+      },
+      "Objectives": {
+        "ate": -0.9644825255434981
+      },
+      "Metacognition": {
+        "ate": -0.001286523930328624
+      },
+      "Demos": {
+        "ate": 0.9659565398170672
+      },
+      "Structural_logic": {
+        "ate": 0.9667994980816496
+      },
+      "Contextual_logic": {
+        "ate": -0.9667242216136096
+      },
+      "Hallucination_awareness": {
+        "ate": 0.9667787000138482
+      }
+    }
+  },
+  "detailed_results_disambiguation_qa_train25_val25_epochs20_batch3_steps3_seed12": {
+    "file": "detailed_results_disambiguation_qa_train25_val25_epochs20_batch3_steps3_seed12.csv",
+    "num_rows": 1250,
+    "num_features": 12,
+    "ate_results": {
+      "Clarity": {
+        "ate": -0.04585303501353977
+      },
+      "Engagement": {
+        "ate": -0.07120011603602618
+      },
+      "Politeness": {
+        "ate": -0.04585303501353977
+      },
+      "Intrinsic_load": {
+        "ate": -0.07120011603602618
+      },
+      "Extraneous_load": {
+        "ate": -0.02640071010545362
+      },
+      "Encourage_germane_load": {
+        "ate": -0.07120011603602618
+      },
+      "Objectives": {
+        "ate": -0.07120011603602618
+      },
+      "Metacognition": {
+        "ate": -0.07120011603602618
+      },
+      "Demos": {
+        "ate": -0.04585303501353977
+      },
+      "Structural_logic": {
+        "ate": -0.07120011603602618
+      },
+      "Contextual_logic": {
+        "ate": -0.06640007575720085
+      },
+      "Hallucination_awareness": {
+        "ate": -0.07120011603602618
+      }
+    }
+  },
+  "detailed_results_boolean_expressions_train10_val10_epochs10_batch3_steps3_seed12": {
+    "file": "detailed_results_boolean_expressions_train10_val10_epochs10_batch3_steps3_seed12.csv",
+    "num_rows": 450,
+    "num_features": 12,
+    "ate_results": {
+      "Clarity": {
+        "ate": 0.033904355807718695
+      },
+      "Engagement": {
+        "ate": 0.9733322184394356
+      },
+      "Politeness": {
+        "ate": 0.02381093603747909
+      },
+      "Intrinsic_load": {
+        "ate": 0.020062723022825888
+      },
+      "Extraneous_load": {
+        "ate": 0.03886642140401688
+      },
+      "Encourage_germane_load": {
+        "ate": -0.010930138787422838
+      },
+      "Objectives": {
+        "ate": 0.01992362813768442
+      },
+      "Metacognition": {
+        "ate": 0.02235092771045473
+      },
+      "Demos": {
+        "ate": 0.005869297036682251
+      },
+      "Structural_logic": {
+        "ate": -0.9741643840257342
+      },
+      "Contextual_logic": {
+        "ate": -0.9741643840257342
+      },
+      "Hallucination_awareness": {
+        "ate": 0.021968858978280825
+      }
+    }
+  },
+  "detailed_results_MultiArith_train25_val25_epochs20_batch3_steps3_seed12": {
+    "file": "detailed_results_MultiArith_train25_val25_epochs20_batch3_steps3_seed12.csv",
+    "num_rows": 1600,
+    "num_features": 12,
+    "ate_results": {
+      "Clarity": {
+        "ate": -0.9949475652551223
+      },
+      "Engagement": {
+        "ate": -0.9949039958227515
+      },
+      "Politeness": {
+        "ate": -0.9948686035744762
+      },
+      "Intrinsic_load": {
+        "ate": -0.994623607120248
+      },
+      "Extraneous_load": {
+        "ate": -0.9949780645518687
+      },
+      "Encourage_germane_load": {
+        "ate": -0.9943534786671038
+      },
+      "Objectives": {
+        "ate": 0.9940506225684754
+      },
+      "Metacognition": {
+        "ate": 0.9948984283617766
+      },
+      "Demos": {
+        "ate": 0.9910812310392292
+      },
+      "Structural_logic": {
+        "ate": -0.9949235975280513
+      },
+      "Contextual_logic": {
+        "ate": -0.9949307303650033
+      },
+      "Hallucination_awareness": {
+        "ate": 0.9946282172707842
+      }
+    }
+  },
+  "detailed_results_coin_flip_train10_val10_epochs10_batch3_steps3_seed12": {
+    "file": "detailed_results_coin_flip_train10_val10_epochs10_batch3_steps3_seed12.csv",
+    "num_rows": 700,
+    "num_features": 12,
+    "ate_results": {
+      "Clarity": {
+        "ate": 0.005774491527203262
+      },
+      "Engagement": {
+        "ate": -0.008740208502087385
+      },
+      "Politeness": {
+        "ate": -0.004373830834039902
+      },
+      "Intrinsic_load": {
+        "ate": 0.010749004240951316
+      },
+      "Extraneous_load": {
+        "ate": -0.02021107754474099
+      },
+      "Encourage_germane_load": {
+        "ate": 0.05251876722553687
+      },
+      "Objectives": {
+        "ate": 0.028780561814061807
+      },
+      "Metacognition": {
+        "ate": 0.010749004240951316
+      },
+      "Demos": {
+        "ate": 0.0138956742989098
+      },
+      "Structural_logic": {
+        "ate": 0.010749004240951316
+      },
+      "Contextual_logic": {
+        "ate": 0.010749004240951316
+      },
+      "Hallucination_awareness": {
+        "ate": 0.015527151128103961
+      }
+    }
+  },
+  "detailed_results_date_understanding_train50_val50_epochs20_batch3_steps3_seed12": {
+    "file": "detailed_results_date_understanding_train50_val50_epochs20_batch3_steps3_seed12.csv",
+    "num_rows": 2250,
+    "num_features": 12,
+    "ate_results": {
+      "Clarity": {
+        "ate": 0.11733335931229762
+      },
+      "Engagement": {
+        "ate": 0.0037787199396022227
+      },
+      "Politeness": {
+        "ate": -0.008829728918002922
+      },
+      "Intrinsic_load": {
+        "ate": 0.03333344318623023
+      },
+      "Extraneous_load": {
+        "ate": 0.025554966373756264
+      },
+      "Encourage_germane_load": {
+        "ate": -0.007051095398783377
+      },
+      "Objectives": {
+        "ate": -0.0027772903117930067
+      },
+      "Metacognition": {
+        "ate": 0.03047244079212782
+      },
+      "Demos": {
+        "ate": -0.007926659685331655
+      },
+      "Structural_logic": {
+        "ate": 0.032028968499596557
+      },
+      "Contextual_logic": {
+        "ate": 0.11733335931229762
+      },
+      "Hallucination_awareness": {
+        "ate": 0.0344077803117918
+      }
+    }
+  },
+  "detailed_results_CommonsenseQA_train50_val50_epochs20_batch3_steps3_seed12": {
+    "file": "detailed_results_CommonsenseQA_train50_val50_epochs20_batch3_steps3_seed12.csv",
+    "num_rows": 3221,
+    "num_features": 12,
+    "ate_results": {
+      "Clarity": {
+        "ate": -0.020601451384280968
+      },
+      "Engagement": {
+        "ate": -0.018184534041472765
+      },
+      "Politeness": {
+        "ate": -0.02066039079146484
+      },
+      "Intrinsic_load": {
+        "ate": 0.0415491922294548
+      },
+      "Extraneous_load": {
+        "ate": -0.020601451384280968
+      },
+      "Encourage_germane_load": {
+        "ate": -0.006877710928571787
+      },
+      "Objectives": {
+        "ate": 0.0415491922294548
+      },
+      "Metacognition": {
+        "ate": -0.020601451384280968
+      },
+      "Demos": {
+        "ate": -0.013131558103323705
+      },
+      "Structural_logic": {
+        "ate": -0.018184534041472765
+      },
+      "Contextual_logic": {
+        "ate": -0.018184534041472765
+      },
+      "Hallucination_awareness": {
+        "ate": 0.0415491922294548
+      }
+    }
+  },
+  "detailed_results_disambiguation_qa_train10_val10_epochs20_batch3_steps3_seed12": {
+    "file": "detailed_results_disambiguation_qa_train10_val10_epochs20_batch3_steps3_seed12.csv",
+    "error": "Treatment vector must have at least two levels.",
+    "status": "failed"
+  },
+  "detailed_results_MultiArith_train10_val10_epochs20_batch3_steps3_seed12": {
+    "file": "detailed_results_MultiArith_train10_val10_epochs20_batch3_steps3_seed12.csv",
+    "num_rows": 1000,
+    "num_features": 12,
+    "ate_results": {
+      "Clarity": {
+        "ate": -0.9918983274309451
+      },
+      "Engagement": {
+        "ate": -0.991651582736002
+      },
+      "Politeness": {
+        "ate": 0.9909915720985759
+      },
+      "Intrinsic_load": {
+        "ate": 0.9916838743713963
+      },
+      "Extraneous_load": {
+        "ate": -0.9917482656946381
+      },
+      "Encourage_germane_load": {
+        "ate": 0.9909320784224561
+      },
+      "Objectives": {
+        "ate": -0.9918317937429103
+      },
+      "Metacognition": {
+        "ate": -0.9909667869014015
+      },
+      "Demos": {
+        "ate": -0.9919602083574809
+      },
+      "Structural_logic": {
+        "ate": -0.9914249399761704
+      },
+      "Contextual_logic": {
+        "ate": -0.9907402277129593
+      },
+      "Hallucination_awareness": {
+        "ate": -0.9907862526536316
+      }
+    }
+  }
+}
