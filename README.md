@@ -12,6 +12,10 @@ Prompt Tuning 在实验上通常可以提高 LLM 的表现。 但是为什么 pe
 
 ## Codebase Structure
 
+简单描述一个完整的 loop
+
+1. 运行 prompt tuning 的实验：
+   
 To run DSpy experiments. 
 
 ```
@@ -24,4 +28,26 @@ To run TextGrad experiments.
 ```
 chmod +x train_textgrad.sh
 ./train_textgrad.sh
+```
+结果被保存在 ./results
+
+2. 提取特征 （需要修改extract_features.py 中结果folder的路径）
+
+```
+python extract_features.py
+```
+在第一步生成的 csv文件中，features会被 添加到后面的列中。
+
+3. 做 ATE
+
+```
+python ate.py
+```
+结果直接被保存在根目录的 一个.json 文件里。
+
+4. 结果分析，画图
+使用刚才生成的 ATE .json 文件
+   
+```
+python heatmap.py
 ```
