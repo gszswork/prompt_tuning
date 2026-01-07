@@ -1,0 +1,808 @@
+{
+  "dataset": "boolean_expressions",
+  "train_size": 25,
+  "val_size": 25,
+  "max_bootstrapped_demos": 4,
+  "max_labeled_demos": 4,
+  "num_threads": 10,
+  "optimizer": "MIPROv2",
+  "auto_setting": "medium",
+  "trial_scores": [
+    {
+      "trial_number": 1,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 2,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 3,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 4,
+      "score": 60.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 5,
+      "score": 65.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 6,
+      "score": 80.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 7,
+      "score": 50.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 8,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 9,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 10,
+      "score": 80.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 11,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 12,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 13,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 14,
+      "score": 95.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 15,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 16,
+      "score": 95.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 17,
+      "score": 95.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 18,
+      "score": 80.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 19,
+      "score": 75.0,
+      "eval_type": "full"
+    }
+  ],
+  "final_test_score": 0.98,
+  "best_trial": {
+    "trial_number": 19,
+    "score": 75.0,
+    "eval_type": "full"
+  },
+  "trial_prompts": [
+    {
+      "trial_number": 1,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "In a critical decision-making scenario where accurate logical assessments are vital, you need to evaluate the boolean expression provided in the `question` field. Break down the logical operations step-by-step in the `reasoning` field, ensuring that each transformation is clear. Finally, deliver the evaluated result in the `answer` field. This task is essential for ensuring that we can trust the outcomes of complex logical evaluations.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not not False and not not not False is",
+                "reasoning": "Not False is True, so not not False is False. Also, not not not False = not(not(not False)) = not(not True) = not False = True. False and True is False.",
+                "answer": "False"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "True and not not ( not False ) is",
+                "reasoning": "Not False is True; not not (True) is True; True and True is True.",
+                "answer": "True"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not not ( True ) and not False is",
+                "reasoning": "Not not (True) simplifies to True, and not False simplifies to True. True and True is True.",
+                "answer": "True"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "not ( True ) and ( True ) is"
+              },
+              "outputs": {
+                "answer": "False"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided logical expression in the `question` field, breaking it down into its components. Clearly articulate the reasoning behind each logical operation step by step, and finally present the evaluated answer as `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not ( True ) and ( True ) is",
+                "reasoning": "Not (True) is False, and False and True is False.",
+                "answer": "False"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "True and not not ( not False ) is",
+                "reasoning": "Not (False) is True, so not not (not False) is True, and True and True is True.",
+                "answer": "True"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not not not ( True and False ) is",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "True"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not not False and not not not False is",
+                "reasoning": "Not not False evaluates to False, and not not not False evaluates to True; False and True is False.",
+                "answer": "False"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not not False and not not not False is",
+                "reasoning": "Not False is True, so not not False is False. Also, not not not False = not(not(not False)) = not(not True) = not False = True. False and True is False.",
+                "answer": "False"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "True and not not ( not False ) is",
+                "reasoning": "Not False is True; not not (True) is True; True and True is True.",
+                "answer": "True"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not not ( True ) and not False is",
+                "reasoning": "Not not (True) simplifies to True, and not False simplifies to True. True and True is True.",
+                "answer": "True"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "not ( True ) and ( True ) is"
+              },
+              "outputs": {
+                "answer": "False"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 5,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the logical expression provided in the `question` field. Break down the evaluation process step by step in the `reasoning` field, clearly explaining how each part of the expression contributes to the final truth value. Conclude by providing the evaluated result in the `answer` field.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not not False and not not not False is",
+                "reasoning": "Not not False evaluates to False. Not not not False evaluates to True. False and True is False.",
+                "answer": "False"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "True and not not ( not False ) is"
+              },
+              "outputs": {
+                "answer": "True"
+              }
+            },
+            {
+              "inputs": {
+                "question": "not not ( True ) and not False is"
+              },
+              "outputs": {
+                "answer": "True"
+              }
+            },
+            {
+              "inputs": {
+                "question": "not ( True ) and ( True ) is"
+              },
+              "outputs": {
+                "answer": "False"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 6,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the Boolean expression in the field `question`, please provide a detailed step-by-step reasoning of how to evaluate the expression, and then state the final `answer` indicating whether the expression evaluates to True or False.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not not False and not not not False is",
+                "reasoning": "Not not False is False. Not not not False is True. False and True is False.",
+                "answer": "False"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not ( True ) and ( True ) is",
+                "reasoning": "Not (True) is False, and False and True is False.",
+                "answer": "False"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not not ( True ) and not False is",
+                "reasoning": "Not not (True) is True, and not False is True; True and True is True.",
+                "answer": "True"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "True and not not ( not False ) is",
+                "reasoning": "Not False is True; not not (True) is True; True and True is True.",
+                "answer": "True"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 7,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided logical expression in the `question` field, breaking it down into its components. Clearly articulate the reasoning behind each logical operation step by step, and finally present the evaluated answer as `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not not False and not not not False is",
+                "reasoning": "Not False is True, so not not False is False. Also, not not not False = not(not(not False)) = not(not True) = not False = True. False and True is False.",
+                "answer": "False"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "True and not not ( not False ) is",
+                "reasoning": "Not False is True; not not (True) is True; True and True is True.",
+                "answer": "True"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not not ( True ) and not False is",
+                "reasoning": "Not not (True) simplifies to True, and not False simplifies to True. True and True is True.",
+                "answer": "True"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "not ( True ) and ( True ) is"
+              },
+              "outputs": {
+                "answer": "False"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 8,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the boolean expression `question`, evaluate it step by step to produce a logical `reasoning` that explains how to arrive at the `answer`. Ensure the `answer` reflects the final evaluation of the expression as either 'True' or 'False'.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "question": "not not False and not not not False is"
+              },
+              "outputs": {
+                "answer": "False"
+              }
+            },
+            {
+              "inputs": {
+                "question": "not not ( True ) and not False is"
+              },
+              "outputs": {
+                "answer": "True"
+              }
+            },
+            {
+              "inputs": {
+                "question": "not ( True ) and ( True ) is"
+              },
+              "outputs": {
+                "answer": "False"
+              }
+            },
+            {
+              "inputs": {
+                "question": "True and not not ( not False ) is"
+              },
+              "outputs": {
+                "answer": "True"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 9,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the Boolean expression in the field `question`, please provide a detailed step-by-step reasoning of how to evaluate the expression, and then state the final `answer` indicating whether the expression evaluates to True or False.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not not False and not not not False is",
+                "reasoning": "Not not False evaluates to False. Not not not False evaluates to True. False and True is False.",
+                "answer": "False"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "True and not not ( not False ) is"
+              },
+              "outputs": {
+                "answer": "True"
+              }
+            },
+            {
+              "inputs": {
+                "question": "not not not ( True and False ) is"
+              },
+              "outputs": {
+                "answer": "True"
+              }
+            },
+            {
+              "inputs": {
+                "question": "not not ( True ) and not False is"
+              },
+              "outputs": {
+                "answer": "True"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 10,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the Boolean expression in the field `question`, please provide a detailed step-by-step reasoning of how to evaluate the expression, and then state the final `answer` indicating whether the expression evaluates to True or False.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not not not ( True and False ) is",
+                "reasoning": "Not (True and False) is not False, which is True; applying not not not gives not(not(not(False))) = True.",
+                "answer": "True"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "not ( True ) and ( True ) is"
+              },
+              "outputs": {
+                "answer": "False"
+              }
+            },
+            {
+              "inputs": {
+                "question": "not not False and not not not False is"
+              },
+              "outputs": {
+                "answer": "False"
+              }
+            },
+            {
+              "inputs": {
+                "question": "True and not not ( not False ) is"
+              },
+              "outputs": {
+                "answer": "True"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 11,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 12,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 13,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not not not ( True and False ) is",
+                "reasoning": "Not not not (True and False) = not not not False. not False = True, not not False = False, not not not False = True.",
+                "answer": "True"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "not ( True ) and ( True ) is"
+              },
+              "outputs": {
+                "answer": "False"
+              }
+            },
+            {
+              "inputs": {
+                "question": "not not ( True ) and not False is"
+              },
+              "outputs": {
+                "answer": "True"
+              }
+            },
+            {
+              "inputs": {
+                "question": "not not False and not not not False is"
+              },
+              "outputs": {
+                "answer": "False"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 14,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "In a critical decision-making scenario where accurate logical assessments are vital, you need to evaluate the boolean expression provided in the `question` field. Break down the logical operations step-by-step in the `reasoning` field, ensuring that each transformation is clear. Finally, deliver the evaluated result in the `answer` field. This task is essential for ensuring that we can trust the outcomes of complex logical evaluations.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 15,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "In a critical decision-making scenario where accurate logical assessments are vital, you need to evaluate the boolean expression provided in the `question` field. Break down the logical operations step-by-step in the `reasoning` field, ensuring that each transformation is clear. Finally, deliver the evaluated result in the `answer` field. This task is essential for ensuring that we can trust the outcomes of complex logical evaluations.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "True and not not ( not False ) is",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "True"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not not ( True ) and not False is",
+                "reasoning": "Not not (True) simplifies to True, and not False is True; True and True is True.",
+                "answer": "True"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not not False and not not not False is",
+                "reasoning": "Not not False evaluates to False, and not not not False evaluates to True; False and True is False.",
+                "answer": "False"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not ( True ) and ( True ) is",
+                "reasoning": "Not supplied.",
+                "answer": "False"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 16,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "In a critical decision-making scenario where accurate logical assessments are vital, you need to evaluate the boolean expression provided in the `question` field. Break down the logical operations step-by-step in the `reasoning` field, ensuring that each transformation is clear. Finally, deliver the evaluated result in the `answer` field. This task is essential for ensuring that we can trust the outcomes of complex logical evaluations.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 17,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "In a critical decision-making scenario where accurate logical assessments are vital, you need to evaluate the boolean expression provided in the `question` field. Break down the logical operations step-by-step in the `reasoning` field, ensuring that each transformation is clear. Finally, deliver the evaluated result in the `answer` field. This task is essential for ensuring that we can trust the outcomes of complex logical evaluations.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 18,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the logical expression provided in the `question` field. Break down the evaluation process step by step in the `reasoning` field, clearly explaining how each part of the expression contributes to the final truth value. Conclude by providing the evaluated result in the `answer` field.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not not ( True ) and not False is",
+                "reasoning": "Not(not(True)) is True, and not(False) is True; True and True is True.",
+                "answer": "True"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "True and not not ( not False ) is"
+              },
+              "outputs": {
+                "answer": "True"
+              }
+            },
+            {
+              "inputs": {
+                "question": "not ( True ) and ( True ) is"
+              },
+              "outputs": {
+                "answer": "False"
+              }
+            },
+            {
+              "inputs": {
+                "question": "not not False and not not not False is"
+              },
+              "outputs": {
+                "answer": "False"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 19,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "In a critical decision-making scenario where accurate logical assessments are vital, you need to evaluate the boolean expression provided in the `question` field. Break down the logical operations step-by-step in the `reasoning` field, ensuring that each transformation is clear. Finally, deliver the evaluated result in the `answer` field. This task is essential for ensuring that we can trust the outcomes of complex logical evaluations.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "not not False and not not not False is",
+                "reasoning": "Not not False evaluates to False. Not not not False evaluates to True. False and True is False.",
+                "answer": "False"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "True and not not ( not False ) is"
+              },
+              "outputs": {
+                "answer": "True"
+              }
+            },
+            {
+              "inputs": {
+                "question": "not not not ( True and False ) is"
+              },
+              "outputs": {
+                "answer": "True"
+              }
+            },
+            {
+              "inputs": {
+                "question": "not not ( True ) and not False is"
+              },
+              "outputs": {
+                "answer": "True"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "final_prompts": [
+    {
+      "predictor_index": 0,
+      "predictor_name": "Predict",
+      "instruction": "In a critical decision-making scenario where accurate logical assessments are vital, you need to evaluate the boolean expression provided in the `question` field. Break down the logical operations step-by-step in the `reasoning` field, ensuring that each transformation is clear. Finally, deliver the evaluated result in the `answer` field. This task is essential for ensuring that we can trust the outcomes of complex logical evaluations.",
+      "num_demos": 0,
+      "demos": []
+    }
+  ]
+}

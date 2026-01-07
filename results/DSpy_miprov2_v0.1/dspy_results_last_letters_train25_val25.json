@@ -1,0 +1,863 @@
+{
+  "dataset": "last_letters",
+  "train_size": 25,
+  "val_size": 25,
+  "max_bootstrapped_demos": 4,
+  "max_labeled_demos": 4,
+  "num_threads": 5,
+  "optimizer": "MIPROv2",
+  "auto_setting": "medium",
+  "trial_scores": [
+    {
+      "trial_number": 1,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 2,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 3,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 4,
+      "score": 70.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 5,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 6,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 7,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 8,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 9,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 10,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 11,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 12,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 13,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 14,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 15,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 16,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 17,
+      "score": 50.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 18,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 19,
+      "score": 90.0,
+      "eval_type": "full"
+    }
+  ],
+  "final_test_score": 0.9311111111111111,
+  "best_trial": {
+    "trial_number": 19,
+    "score": 90.0,
+    "eval_type": "full"
+  },
+  "trial_prompts": [
+    {
+      "trial_number": 1,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Imagine you are a detective solving a high-stakes mystery. Your mission is to retrieve the last letters of each name from a set of critical clues that will lead you to the solution. Here's your task: Given the question below, extract the last letters from each word in the names provided, concatenate them into a clue string, and clearly explain your reasoning step by step. \n\nQuestion: Take the last letters of each word in \"Elizabeth Taylor Harry Winston\" and concatenate them.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Take the last letters of each words in \"Domingo Briana Michael Joan\" and concatenate them.",
+                "reasoning": "Take the last character of each word: Doming**o**, Brian**a**, Michae**l**, Joa**n**; concatenate them.",
+                "answer": "oaln"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Melody Ramiro Humberto Jacob\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yoob"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Yan Eunice Joseph Hugh\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "nehh"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a sentence in the `question`, extract the last letter of each word, concatenate them into a single string, and provide a detailed step-by-step reasoning of the process. Ensure that the final output is clear and includes both the `reasoning` and the `answer` in their respective fields.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Take the last letters of each words in \"Domingo Briana Michael Joan\" and concatenate them.",
+                "reasoning": "Take the last letter of each word: Domingo (o), Briana (a), Michael (l), Joan (n). Concatenate them.",
+                "answer": "oaln"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Melody Ramiro Humberto Jacob\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yoob"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Yan Eunice Joseph Hugh\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "nehh"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Take the last letters of each words in \"Domingo Briana Michael Joan\" and concatenate them.",
+                "reasoning": "Take the last character of each word: Doming**o**, Brian**a**, Michae**l**, Joa**n**; concatenate them.",
+                "answer": "oaln"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Melody Ramiro Humberto Jacob\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yoob"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Yan Eunice Joseph Hugh\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "nehh"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 5,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Extract the last letters from each word in the specified phrase given in the `question`, combine them into a single string, and provide a detailed step-by-step reasoning process that leads to this concatenation.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Take the last letters of each words in \"Melody Ramiro Humberto Jacob\" and concatenate them.",
+                "reasoning": "Take the last letter of each word: Melod**y**, Ramir**o**, Humbert**o**, Jaco**b**. Concatenate them.",
+                "answer": "yoob"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Domingo Briana Michael Joan\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "oaln"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 6,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Extract the last letters of each word in the provided `question` and concatenate them into a single string as the `answer`. Additionally, provide a logical reasoning process detailing the steps taken to achieve this result.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Yan Eunice Joseph Hugh\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "nehh"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Domingo Briana Michael Joan\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "oaln"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 7,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a sentence in the `question`, extract the last letter of each word, concatenate them into a single string, and provide a detailed step-by-step reasoning of the process. Ensure that the final output is clear and includes both the `reasoning` and the `answer` in their respective fields.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Take the last letters of each words in \"Domingo Briana Michael Joan\" and concatenate them.",
+                "reasoning": "Take the last character of each word: Doming**o**, Brian**a**, Michae**l**, Joa**n**; concatenate them.",
+                "answer": "oaln"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Melody Ramiro Humberto Jacob\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yoob"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Yan Eunice Joseph Hugh\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "nehh"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 8,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the question, extract the last letters of each word in the provided phrase and concatenate them into a single string. Describe your reasoning step by step before presenting the final answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Melody Ramiro Humberto Jacob\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yoob"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Domingo Briana Michael Joan\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "oaln"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 9,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Extract the last letters of each word in the provided `question` and concatenate them into a single string as the `answer`. Additionally, provide a logical reasoning process detailing the steps taken to achieve this result.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Take the last letters of each words in \"Yan Eunice Joseph Hugh\" and concatenate them.",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "nehh"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Melody Ramiro Humberto Jacob\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yoob"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Domingo Briana Michael Joan\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "oaln"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 10,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Extract the last letters of each word in the provided `question` and concatenate them into a single string as the `answer`. Additionally, provide a logical reasoning process detailing the steps taken to achieve this result.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Take the last letters of each words in \"Melody Ramiro Humberto Jacob\" and concatenate them.",
+                "reasoning": "Take the last letter of each word: Melody \u2192 y, Ramiro \u2192 o, Humberto \u2192 o, Jacob \u2192 b; concatenate them.",
+                "answer": "yoob"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Yan Eunice Joseph Hugh\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "nehh"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 11,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 12,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Imagine you are a detective solving a high-stakes mystery. Your mission is to retrieve the last letters of each name from a set of critical clues that will lead you to the solution. Here's your task: Given the question below, extract the last letters from each word in the names provided, concatenate them into a clue string, and clearly explain your reasoning step by step. \n\nQuestion: Take the last letters of each word in \"Elizabeth Taylor Harry Winston\" and concatenate them.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Take the last letters of each words in \"Domingo Briana Michael Joan\" and concatenate them.",
+                "reasoning": "Take the last character of each word: Doming**o**, Brian**a**, Michae**l**, Joa**n**; concatenate them.",
+                "answer": "oaln"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Melody Ramiro Humberto Jacob\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yoob"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Yan Eunice Joseph Hugh\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "nehh"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 13,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Imagine you are a detective solving a high-stakes mystery. Your mission is to retrieve the last letters of each name from a set of critical clues that will lead you to the solution. Here's your task: Given the question below, extract the last letters from each word in the names provided, concatenate them into a clue string, and clearly explain your reasoning step by step. \n\nQuestion: Take the last letters of each word in \"Elizabeth Taylor Harry Winston\" and concatenate them.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Take the last letters of each words in \"Yan Eunice Joseph Hugh\" and concatenate them.",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "nehh"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Domingo Briana Michael Joan\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "oaln"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Melody Ramiro Humberto Jacob\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yoob"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 14,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Imagine you are a detective solving a high-stakes mystery. Your mission is to retrieve the last letters of each name from a set of critical clues that will lead you to the solution. Here's your task: Given the question below, extract the last letters from each word in the names provided, concatenate them into a clue string, and clearly explain your reasoning step by step. \n\nQuestion: Take the last letters of each word in \"Elizabeth Taylor Harry Winston\" and concatenate them.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 15,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Take the last letters of each words in \"Domingo Briana Michael Joan\" and concatenate them.",
+                "reasoning": "Not supplied.",
+                "answer": "oaln"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Take the last letters of each words in \"Melody Ramiro Humberto Jacob\" and concatenate them.",
+                "reasoning": "Take the last letter of each word: Melody \u2192 y, Ramiro \u2192 o, Humberto \u2192 o, Jacob \u2192 b. Concatenate them.",
+                "answer": "yoob"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them.",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "yajo"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Take the last letters of each words in \"Yan Eunice Joseph Hugh\" and concatenate them.",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "nehh"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 16,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the question, extract the last letters of each word in the provided phrase and concatenate them into a single string. Describe your reasoning step by step before presenting the final answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Take the last letters of each words in \"Domingo Briana Michael Joan\" and concatenate them.",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "oaln"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Melody Ramiro Humberto Jacob\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yoob"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 17,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Take the last letters of each words in \"Melody Ramiro Humberto Jacob\" and concatenate them.",
+                "reasoning": "Take the last letter of each word: Melod**y**, Ramir**o**, Humbert**o**, Jaco**b**; concatenate them.",
+                "answer": "yoob"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Domingo Briana Michael Joan\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "oaln"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 18,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the question, extract the last letters of each word in the provided phrase and concatenate them into a single string. Describe your reasoning step by step before presenting the final answer.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 19,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Imagine you are a detective solving a high-stakes mystery. Your mission is to retrieve the last letters of each name from a set of critical clues that will lead you to the solution. Here's your task: Given the question below, extract the last letters from each word in the names provided, concatenate them into a clue string, and clearly explain your reasoning step by step. \n\nQuestion: Take the last letters of each word in \"Elizabeth Taylor Harry Winston\" and concatenate them.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Take the last letters of each words in \"Yan Eunice Joseph Hugh\" and concatenate them.",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "nehh"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Melody Ramiro Humberto Jacob\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yoob"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Domingo Briana Michael Joan\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "oaln"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "final_prompts": [
+    {
+      "predictor_index": 0,
+      "predictor_name": "Predict",
+      "instruction": "Given the fields `question`, produce the fields `answer`.",
+      "num_demos": 0,
+      "demos": []
+    }
+  ]
+}

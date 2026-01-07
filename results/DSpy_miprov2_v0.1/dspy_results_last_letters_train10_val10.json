@@ -1,0 +1,607 @@
+{
+  "dataset": "last_letters",
+  "train_size": 10,
+  "val_size": 10,
+  "max_bootstrapped_demos": 4,
+  "max_labeled_demos": 4,
+  "num_threads": 5,
+  "optimizer": "MIPROv2",
+  "auto_setting": "medium",
+  "trial_scores": [
+    {
+      "trial_number": 1,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 2,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 3,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 4,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 5,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 6,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 7,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 8,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 9,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 10,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 11,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 12,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 13,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 14,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 15,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 16,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 17,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 18,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 19,
+      "score": 87.5,
+      "eval_type": "full"
+    }
+  ],
+  "final_test_score": 0.925,
+  "best_trial": {
+    "trial_number": 19,
+    "score": 87.5,
+    "eval_type": "full"
+  },
+  "trial_prompts": [
+    {
+      "trial_number": 1,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the `question` about words or phrases, carefully analyze the request and independently derive the last letter of each word. Then, provide a logical explanation for how you arrived at the final answer, summarizing your thought process step by step.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "When provided with a `question`, generate a structured `reasoning` that outlines the thought process and a corresponding `answer` that directly addresses the question.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 5,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the `Predict(question)` module, please provide a detailed response to the following tasks: first, formulate a structured `question` based on your text processing needs, and then utilize the module to generate both the logical `reasoning` behind your answer and the final `answer` itself. The output should clearly delineate the thought process leading to the answer, ensuring transparency and clarity in your reasoning.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 6,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the `Predict` module, when presented with a `question`, analyze the question thoroughly. Provide a well-reasoned explanation of the steps involved in deducing the answer, and then clearly state the final `answer`. Your output should include both the `reasoning` process and the `answer` itself to ensure clarity and comprehensiveness in your response.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 7,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "When provided with a `question`, generate a structured `reasoning` that outlines the thought process and a corresponding `answer` that directly addresses the question.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 8,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a `question`, carefully analyze the components of the question and methodically deduce both a logical `reasoning` process and a concise `answer`. Ensure that your reasoning clearly outlines the steps taken to arrive at the answer, fostering a transparent understanding of the solution.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 9,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the `Predict` module, when presented with a `question`, analyze the question thoroughly. Provide a well-reasoned explanation of the steps involved in deducing the answer, and then clearly state the final `answer`. Your output should include both the `reasoning` process and the `answer` itself to ensure clarity and comprehensiveness in your response.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 10,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the `Predict` module, when presented with a `question`, analyze the question thoroughly. Provide a well-reasoned explanation of the steps involved in deducing the answer, and then clearly state the final `answer`. Your output should include both the `reasoning` process and the `answer` itself to ensure clarity and comprehensiveness in your response.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 11,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 12,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the `question` about words or phrases, carefully analyze the request and independently derive the last letter of each word. Then, provide a logical explanation for how you arrived at the final answer, summarizing your thought process step by step.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 13,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the `question` about words or phrases, carefully analyze the request and independently derive the last letter of each word. Then, provide a logical explanation for how you arrived at the final answer, summarizing your thought process step by step.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 14,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the `question` about words or phrases, carefully analyze the request and independently derive the last letter of each word. Then, provide a logical explanation for how you arrived at the final answer, summarizing your thought process step by step.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 15,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 16,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a `question`, carefully analyze the components of the question and methodically deduce both a logical `reasoning` process and a concise `answer`. Ensure that your reasoning clearly outlines the steps taken to arrive at the answer, fostering a transparent understanding of the solution.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 17,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 18,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a `question`, carefully analyze the components of the question and methodically deduce both a logical `reasoning` process and a concise `answer`. Ensure that your reasoning clearly outlines the steps taken to arrive at the answer, fostering a transparent understanding of the solution.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 19,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the `question` about words or phrases, carefully analyze the request and independently derive the last letter of each word. Then, provide a logical explanation for how you arrived at the final answer, summarizing your thought process step by step.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Jorge Natalia Bryant Kiran\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "eatn"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Take the last letters of each words in \"Whitney Erika Tj Benito\" and concatenate them."
+              },
+              "outputs": {
+                "answer": "yajo"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "final_prompts": [
+    {
+      "predictor_index": 0,
+      "predictor_name": "Predict",
+      "instruction": "Given the fields `question`, produce the fields `answer`.",
+      "num_demos": 0,
+      "demos": []
+    }
+  ]
+}

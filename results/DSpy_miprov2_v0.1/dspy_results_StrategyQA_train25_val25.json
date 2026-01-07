@@ -1,0 +1,989 @@
+{
+  "dataset": "StrategyQA",
+  "train_size": 25,
+  "val_size": 25,
+  "max_bootstrapped_demos": 4,
+  "max_labeled_demos": 4,
+  "num_threads": 5,
+  "optimizer": "MIPROv2",
+  "auto_setting": "medium",
+  "trial_scores": [
+    {
+      "trial_number": 1,
+      "score": 0.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 2,
+      "score": 20.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 3,
+      "score": 0.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 4,
+      "score": 15.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 5,
+      "score": 0.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 6,
+      "score": 10.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 7,
+      "score": 20.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 8,
+      "score": 0.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 9,
+      "score": 0.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 10,
+      "score": 15.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 11,
+      "score": 0.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 12,
+      "score": 20.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 13,
+      "score": 20.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 14,
+      "score": 0.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 15,
+      "score": 0.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 16,
+      "score": 0.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 17,
+      "score": 5.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 18,
+      "score": 15.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 19,
+      "score": 0.0,
+      "eval_type": "full"
+    }
+  ],
+  "final_test_score": 0.12321428571428572,
+  "best_trial": {
+    "trial_number": 19,
+    "score": 0.0,
+    "eval_type": "full"
+  },
+  "trial_prompts": [
+    {
+      "trial_number": 1,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "In a high-stakes scientific debate, you are tasked with addressing a critical question related to chemistry: \"Does the square of hydrogen's atomic number exceed the number of Spice Girls?\" Your goal is to provide a structured reasoning process justifying your answer. Please follow these steps: First, identify hydrogen's atomic number and compute its square. Next, compare this value to the number of Spice Girls. Finally, conclude with a definitive answer. Ensure that your reasoning is clear and concise.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1, and \\(1^2 = 1\\). The Spice Girls are 5 members. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Do hamsters provide food for any animals?"
+              },
+              "outputs": {
+                "answer": "Yes. Hamsters are prey animals. Prey animals provide food for predators. "
+              }
+            },
+            {
+              "inputs": {
+                "question": "Could a silverfish reach the top of the Empire State Building?"
+              },
+              "outputs": {
+                "answer": "No. Silverfish cannot fly. Animals that cannot fly can only access objects at or near ground level without mechanical assistance. The top of the Empire State Building is \t1,454 ft high."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Can Reiki be stored in a bottle?"
+              },
+              "outputs": {
+                "answer": "No. Reiki practitioners use a technique called palm healing or hands-on healing through which a \"universal energy\" is said to be transferred through the palms of the practitioner to the patient in order to encourage emotional or physical healing. Medications are typically stored in pill bottles."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the input `question`, systematically generate a structured response that includes `reasoning` explaining the thought process to arrive at the `answer`. Illustrate your reasoning step-by-step to clarify how the conclusion was derived, ensuring that the answer is directly related to the query posed.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Can Reiki be stored in a bottle?"
+              },
+              "outputs": {
+                "answer": "No. Reiki practitioners use a technique called palm healing or hands-on healing through which a \"universal energy\" is said to be transferred through the palms of the practitioner to the patient in order to encourage emotional or physical healing. Medications are typically stored in pill bottles."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Could a silverfish reach the top of the Empire State Building?"
+              },
+              "outputs": {
+                "answer": "No. Silverfish cannot fly. Animals that cannot fly can only access objects at or near ground level without mechanical assistance. The top of the Empire State Building is \t1,454 ft high."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Do hamsters provide food for any animals?"
+              },
+              "outputs": {
+                "answer": "Yes. Hamsters are prey animals. Prey animals provide food for predators. "
+              }
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1, and \\(1^2 = 1\\). The Spice Girls are 5 members. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Do hamsters provide food for any animals?"
+              },
+              "outputs": {
+                "answer": "Yes. Hamsters are prey animals. Prey animals provide food for predators. "
+              }
+            },
+            {
+              "inputs": {
+                "question": "Could a silverfish reach the top of the Empire State Building?"
+              },
+              "outputs": {
+                "answer": "No. Silverfish cannot fly. Animals that cannot fly can only access objects at or near ground level without mechanical assistance. The top of the Empire State Building is \t1,454 ft high."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Can Reiki be stored in a bottle?"
+              },
+              "outputs": {
+                "answer": "No. Reiki practitioners use a technique called palm healing or hands-on healing through which a \"universal energy\" is said to be transferred through the palms of the practitioner to the patient in order to encourage emotional or physical healing. Medications are typically stored in pill bottles."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 5,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "When presented with a `question`, analyze its components thoroughly and provide a detailed `reasoning` process that leads to the final `answer`. Ensure that your response demonstrates logical reasoning and makes comparisons where necessary to clarify the correctness of the answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?"
+              },
+              "outputs": {
+                "answer": "No. Hydrogen is the first element and has an atomic number of one. To square a number, you multiply it by itself. The Spice Girls has five members."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Do hamsters provide food for any animals?"
+              },
+              "outputs": {
+                "answer": "Yes. Hamsters are prey animals. Prey animals provide food for predators. "
+              }
+            },
+            {
+              "inputs": {
+                "question": "Can Reiki be stored in a bottle?"
+              },
+              "outputs": {
+                "answer": "No. Reiki practitioners use a technique called palm healing or hands-on healing through which a \"universal energy\" is said to be transferred through the palms of the practitioner to the patient in order to encourage emotional or physical healing. Medications are typically stored in pill bottles."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 6,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the input field `question`, analyze the logical condition related to hydrogen's atomic number and the number of Spice Girls. Provide detailed reasoning step-by-step to explain your thought process before arriving at the final answer in the `answer` field.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1, and \\(1^2 = 1\\). The Spice Girls are 5 members. Since 1 is not greater than 5, it does not exceed it.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Do hamsters provide food for any animals?"
+              },
+              "outputs": {
+                "answer": "Yes. Hamsters are prey animals. Prey animals provide food for predators. "
+              }
+            },
+            {
+              "inputs": {
+                "question": "Could a silverfish reach the top of the Empire State Building?"
+              },
+              "outputs": {
+                "answer": "No. Silverfish cannot fly. Animals that cannot fly can only access objects at or near ground level without mechanical assistance. The top of the Empire State Building is \t1,454 ft high."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 7,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the input `question`, systematically generate a structured response that includes `reasoning` explaining the thought process to arrive at the `answer`. Illustrate your reasoning step-by-step to clarify how the conclusion was derived, ensuring that the answer is directly related to the query posed.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1, and \\(1^2 = 1\\). The Spice Girls are 5 members. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Do hamsters provide food for any animals?"
+              },
+              "outputs": {
+                "answer": "Yes. Hamsters are prey animals. Prey animals provide food for predators. "
+              }
+            },
+            {
+              "inputs": {
+                "question": "Could a silverfish reach the top of the Empire State Building?"
+              },
+              "outputs": {
+                "answer": "No. Silverfish cannot fly. Animals that cannot fly can only access objects at or near ground level without mechanical assistance. The top of the Empire State Building is \t1,454 ft high."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Can Reiki be stored in a bottle?"
+              },
+              "outputs": {
+                "answer": "No. Reiki practitioners use a technique called palm healing or hands-on healing through which a \"universal energy\" is said to be transferred through the palms of the practitioner to the patient in order to encourage emotional or physical healing. Medications are typically stored in pill bottles."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 8,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the question regarding a comparison involving Hydrogen\u2019s atomic number, provide a step-by-step reasoning process that leads to a final answer on whether the squared value exceeds the specified quantity.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Could a silverfish reach the top of the Empire State Building?"
+              },
+              "outputs": {
+                "answer": "No. Silverfish cannot fly. Animals that cannot fly can only access objects at or near ground level without mechanical assistance. The top of the Empire State Building is \t1,454 ft high."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Can Reiki be stored in a bottle?"
+              },
+              "outputs": {
+                "answer": "No. Reiki practitioners use a technique called palm healing or hands-on healing through which a \"universal energy\" is said to be transferred through the palms of the practitioner to the patient in order to encourage emotional or physical healing. Medications are typically stored in pill bottles."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?"
+              },
+              "outputs": {
+                "answer": "No. Hydrogen is the first element and has an atomic number of one. To square a number, you multiply it by itself. The Spice Girls has five members."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 9,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the input field `question`, analyze the logical condition related to hydrogen's atomic number and the number of Spice Girls. Provide detailed reasoning step-by-step to explain your thought process before arriving at the final answer in the `answer` field.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Can Reiki be stored in a bottle?"
+              },
+              "outputs": {
+                "answer": "No. Reiki practitioners use a technique called palm healing or hands-on healing through which a \"universal energy\" is said to be transferred through the palms of the practitioner to the patient in order to encourage emotional or physical healing. Medications are typically stored in pill bottles."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?"
+              },
+              "outputs": {
+                "answer": "No. Hydrogen is the first element and has an atomic number of one. To square a number, you multiply it by itself. The Spice Girls has five members."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Do hamsters provide food for any animals?"
+              },
+              "outputs": {
+                "answer": "Yes. Hamsters are prey animals. Prey animals provide food for predators. "
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 10,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the input field `question`, analyze the logical condition related to hydrogen's atomic number and the number of Spice Girls. Provide detailed reasoning step-by-step to explain your thought process before arriving at the final answer in the `answer` field.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1, and \\(1^2 = 1\\). The Spice Girls are 5 members. Since 1 is not greater than 5, it does not exceed it.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Do hamsters provide food for any animals?"
+              },
+              "outputs": {
+                "answer": "Yes. Hamsters are prey animals. Prey animals provide food for predators. "
+              }
+            },
+            {
+              "inputs": {
+                "question": "Can Reiki be stored in a bottle?"
+              },
+              "outputs": {
+                "answer": "No. Reiki practitioners use a technique called palm healing or hands-on healing through which a \"universal energy\" is said to be transferred through the palms of the practitioner to the patient in order to encourage emotional or physical healing. Medications are typically stored in pill bottles."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 11,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "In a high-stakes scientific debate, you are tasked with addressing a critical question related to chemistry: \"Does the square of hydrogen's atomic number exceed the number of Spice Girls?\" Your goal is to provide a structured reasoning process justifying your answer. Please follow these steps: First, identify hydrogen's atomic number and compute its square. Next, compare this value to the number of Spice Girls. Finally, conclude with a definitive answer. Ensure that your reasoning is clear and concise.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Do hamsters provide food for any animals?"
+              },
+              "outputs": {
+                "answer": "Yes. Hamsters are prey animals. Prey animals provide food for predators. "
+              }
+            },
+            {
+              "inputs": {
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?"
+              },
+              "outputs": {
+                "answer": "No. Hydrogen is the first element and has an atomic number of one. To square a number, you multiply it by itself. The Spice Girls has five members."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Could a silverfish reach the top of the Empire State Building?"
+              },
+              "outputs": {
+                "answer": "No. Silverfish cannot fly. Animals that cannot fly can only access objects at or near ground level without mechanical assistance. The top of the Empire State Building is \t1,454 ft high."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Can Reiki be stored in a bottle?"
+              },
+              "outputs": {
+                "answer": "No. Reiki practitioners use a technique called palm healing or hands-on healing through which a \"universal energy\" is said to be transferred through the palms of the practitioner to the patient in order to encourage emotional or physical healing. Medications are typically stored in pill bottles."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 12,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the input `question`, systematically generate a structured response that includes `reasoning` explaining the thought process to arrive at the `answer`. Illustrate your reasoning step-by-step to clarify how the conclusion was derived, ensuring that the answer is directly related to the query posed.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1, and \\(1^2 = 1\\). The Spice Girls are 5 members. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Do hamsters provide food for any animals?"
+              },
+              "outputs": {
+                "answer": "Yes. Hamsters are prey animals. Prey animals provide food for predators. "
+              }
+            },
+            {
+              "inputs": {
+                "question": "Could a silverfish reach the top of the Empire State Building?"
+              },
+              "outputs": {
+                "answer": "No. Silverfish cannot fly. Animals that cannot fly can only access objects at or near ground level without mechanical assistance. The top of the Empire State Building is \t1,454 ft high."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Can Reiki be stored in a bottle?"
+              },
+              "outputs": {
+                "answer": "No. Reiki practitioners use a technique called palm healing or hands-on healing through which a \"universal energy\" is said to be transferred through the palms of the practitioner to the patient in order to encourage emotional or physical healing. Medications are typically stored in pill bottles."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 13,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "In a high-stakes scientific debate, you are tasked with addressing a critical question related to chemistry: \"Does the square of hydrogen's atomic number exceed the number of Spice Girls?\" Your goal is to provide a structured reasoning process justifying your answer. Please follow these steps: First, identify hydrogen's atomic number and compute its square. Next, compare this value to the number of Spice Girls. Finally, conclude with a definitive answer. Ensure that your reasoning is clear and concise.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1, and \\(1^2 = 1\\). The Spice Girls are 5 members. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Do hamsters provide food for any animals?"
+              },
+              "outputs": {
+                "answer": "Yes. Hamsters are prey animals. Prey animals provide food for predators. "
+              }
+            },
+            {
+              "inputs": {
+                "question": "Could a silverfish reach the top of the Empire State Building?"
+              },
+              "outputs": {
+                "answer": "No. Silverfish cannot fly. Animals that cannot fly can only access objects at or near ground level without mechanical assistance. The top of the Empire State Building is \t1,454 ft high."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Can Reiki be stored in a bottle?"
+              },
+              "outputs": {
+                "answer": "No. Reiki practitioners use a technique called palm healing or hands-on healing through which a \"universal energy\" is said to be transferred through the palms of the practitioner to the patient in order to encourage emotional or physical healing. Medications are typically stored in pill bottles."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 14,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "In a high-stakes scientific debate, you are tasked with addressing a critical question related to chemistry: \"Does the square of hydrogen's atomic number exceed the number of Spice Girls?\" Your goal is to provide a structured reasoning process justifying your answer. Please follow these steps: First, identify hydrogen's atomic number and compute its square. Next, compare this value to the number of Spice Girls. Finally, conclude with a definitive answer. Ensure that your reasoning is clear and concise.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Could a silverfish reach the top of the Empire State Building?"
+              },
+              "outputs": {
+                "answer": "No. Silverfish cannot fly. Animals that cannot fly can only access objects at or near ground level without mechanical assistance. The top of the Empire State Building is \t1,454 ft high."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Do hamsters provide food for any animals?"
+              },
+              "outputs": {
+                "answer": "Yes. Hamsters are prey animals. Prey animals provide food for predators. "
+              }
+            },
+            {
+              "inputs": {
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?"
+              },
+              "outputs": {
+                "answer": "No. Hydrogen is the first element and has an atomic number of one. To square a number, you multiply it by itself. The Spice Girls has five members."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 15,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the input `question`, systematically generate a structured response that includes `reasoning` explaining the thought process to arrive at the `answer`. Illustrate your reasoning step-by-step to clarify how the conclusion was derived, ensuring that the answer is directly related to the query posed.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?"
+              },
+              "outputs": {
+                "answer": "No. Hydrogen is the first element and has an atomic number of one. To square a number, you multiply it by itself. The Spice Girls has five members."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Could a silverfish reach the top of the Empire State Building?"
+              },
+              "outputs": {
+                "answer": "No. Silverfish cannot fly. Animals that cannot fly can only access objects at or near ground level without mechanical assistance. The top of the Empire State Building is \t1,454 ft high."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Can Reiki be stored in a bottle?"
+              },
+              "outputs": {
+                "answer": "No. Reiki practitioners use a technique called palm healing or hands-on healing through which a \"universal energy\" is said to be transferred through the palms of the practitioner to the patient in order to encourage emotional or physical healing. Medications are typically stored in pill bottles."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 16,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the input `question`, systematically generate a structured response that includes `reasoning` explaining the thought process to arrive at the `answer`. Illustrate your reasoning step-by-step to clarify how the conclusion was derived, ensuring that the answer is directly related to the query posed.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?"
+              },
+              "outputs": {
+                "answer": "No. Hydrogen is the first element and has an atomic number of one. To square a number, you multiply it by itself. The Spice Girls has five members."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Do hamsters provide food for any animals?"
+              },
+              "outputs": {
+                "answer": "Yes. Hamsters are prey animals. Prey animals provide food for predators. "
+              }
+            },
+            {
+              "inputs": {
+                "question": "Can Reiki be stored in a bottle?"
+              },
+              "outputs": {
+                "answer": "No. Reiki practitioners use a technique called palm healing or hands-on healing through which a \"universal energy\" is said to be transferred through the palms of the practitioner to the patient in order to encourage emotional or physical healing. Medications are typically stored in pill bottles."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 17,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "When presented with a `question`, analyze its components thoroughly and provide a detailed `reasoning` process that leads to the final `answer`. Ensure that your response demonstrates logical reasoning and makes comparisons where necessary to clarify the correctness of the answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1, and \\(1^2 = 1\\). The Spice Girls are 5 members. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Do hamsters provide food for any animals?"
+              },
+              "outputs": {
+                "answer": "Yes. Hamsters are prey animals. Prey animals provide food for predators. "
+              }
+            },
+            {
+              "inputs": {
+                "question": "Could a silverfish reach the top of the Empire State Building?"
+              },
+              "outputs": {
+                "answer": "No. Silverfish cannot fly. Animals that cannot fly can only access objects at or near ground level without mechanical assistance. The top of the Empire State Building is \t1,454 ft high."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Can Reiki be stored in a bottle?"
+              },
+              "outputs": {
+                "answer": "No. Reiki practitioners use a technique called palm healing or hands-on healing through which a \"universal energy\" is said to be transferred through the palms of the practitioner to the patient in order to encourage emotional or physical healing. Medications are typically stored in pill bottles."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 18,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the question regarding a comparison involving Hydrogen\u2019s atomic number, provide a step-by-step reasoning process that leads to a final answer on whether the squared value exceeds the specified quantity.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1, and \\(1^2 = 1\\). The Spice Girls are 5 members. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Do hamsters provide food for any animals?"
+              },
+              "outputs": {
+                "answer": "Yes. Hamsters are prey animals. Prey animals provide food for predators. "
+              }
+            },
+            {
+              "inputs": {
+                "question": "Could a silverfish reach the top of the Empire State Building?"
+              },
+              "outputs": {
+                "answer": "No. Silverfish cannot fly. Animals that cannot fly can only access objects at or near ground level without mechanical assistance. The top of the Empire State Building is \t1,454 ft high."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Can Reiki be stored in a bottle?"
+              },
+              "outputs": {
+                "answer": "No. Reiki practitioners use a technique called palm healing or hands-on healing through which a \"universal energy\" is said to be transferred through the palms of the practitioner to the patient in order to encourage emotional or physical healing. Medications are typically stored in pill bottles."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 19,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "In a high-stakes scientific debate, you are tasked with addressing a critical question related to chemistry: \"Does the square of hydrogen's atomic number exceed the number of Spice Girls?\" Your goal is to provide a structured reasoning process justifying your answer. Please follow these steps: First, identify hydrogen's atomic number and compute its square. Next, compare this value to the number of Spice Girls. Finally, conclude with a definitive answer. Ensure that your reasoning is clear and concise.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Could a silverfish reach the top of the Empire State Building?"
+              },
+              "outputs": {
+                "answer": "No. Silverfish cannot fly. Animals that cannot fly can only access objects at or near ground level without mechanical assistance. The top of the Empire State Building is \t1,454 ft high."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Can Reiki be stored in a bottle?"
+              },
+              "outputs": {
+                "answer": "No. Reiki practitioners use a technique called palm healing or hands-on healing through which a \"universal energy\" is said to be transferred through the palms of the practitioner to the patient in order to encourage emotional or physical healing. Medications are typically stored in pill bottles."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?"
+              },
+              "outputs": {
+                "answer": "No. Hydrogen is the first element and has an atomic number of one. To square a number, you multiply it by itself. The Spice Girls has five members."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "final_prompts": [
+    {
+      "predictor_index": 0,
+      "predictor_name": "Predict",
+      "instruction": "In a high-stakes scientific debate, you are tasked with addressing a critical question related to chemistry: \"Does the square of hydrogen's atomic number exceed the number of Spice Girls?\" Your goal is to provide a structured reasoning process justifying your answer. Please follow these steps: First, identify hydrogen's atomic number and compute its square. Next, compare this value to the number of Spice Girls. Finally, conclude with a definitive answer. Ensure that your reasoning is clear and concise.",
+      "num_demos": 4,
+      "demos": [
+        {
+          "inputs": {
+            "augmented": true,
+            "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+            "reasoning": "Hydrogen\u2019s atomic number is 1, and \\(1^2 = 1\\). The Spice Girls are 5 members. Since 1 does not exceed 5, the statement is false.",
+            "answer": "No."
+          },
+          "outputs": {}
+        },
+        {
+          "inputs": {
+            "question": "Do hamsters provide food for any animals?"
+          },
+          "outputs": {
+            "answer": "Yes. Hamsters are prey animals. Prey animals provide food for predators. "
+          }
+        },
+        {
+          "inputs": {
+            "question": "Could a silverfish reach the top of the Empire State Building?"
+          },
+          "outputs": {
+            "answer": "No. Silverfish cannot fly. Animals that cannot fly can only access objects at or near ground level without mechanical assistance. The top of the Empire State Building is \t1,454 ft high."
+          }
+        },
+        {
+          "inputs": {
+            "question": "Can Reiki be stored in a bottle?"
+          },
+          "outputs": {
+            "answer": "No. Reiki practitioners use a technique called palm healing or hands-on healing through which a \"universal energy\" is said to be transferred through the palms of the practitioner to the patient in order to encourage emotional or physical healing. Medications are typically stored in pill bottles."
+          }
+        }
+      ]
+    }
+  ]
+}

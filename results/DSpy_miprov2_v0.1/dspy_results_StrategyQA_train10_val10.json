@@ -1,0 +1,675 @@
+{
+  "dataset": "StrategyQA",
+  "train_size": 10,
+  "val_size": 10,
+  "max_bootstrapped_demos": 4,
+  "max_labeled_demos": 4,
+  "num_threads": 5,
+  "optimizer": "MIPROv2",
+  "auto_setting": "medium",
+  "trial_scores": [
+    {
+      "trial_number": 1,
+      "score": 0.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 2,
+      "score": 0.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 3,
+      "score": 25.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 4,
+      "score": 12.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 5,
+      "score": 0.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 6,
+      "score": 0.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 7,
+      "score": 25.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 8,
+      "score": 0.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 9,
+      "score": 0.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 10,
+      "score": 0.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 11,
+      "score": 25.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 12,
+      "score": 25.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 13,
+      "score": 0.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 14,
+      "score": 25.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 15,
+      "score": 0.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 16,
+      "score": 25.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 17,
+      "score": 25.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 18,
+      "score": 25.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 19,
+      "score": 25.0,
+      "eval_type": "full"
+    }
+  ],
+  "final_test_score": 0.13656387665198239,
+  "best_trial": {
+    "trial_number": 19,
+    "score": 25.0,
+    "eval_type": "full"
+  },
+  "trial_prompts": [
+    {
+      "trial_number": 1,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question`, please generate a detailed `reasoning` that explains the logical steps leading to the final `answer`. Be sure to clearly identify any key values involved and articulate the comparison or calculation being made. Additionally, at the end, conclude with a succinct `answer` that directly responds to the question.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1; squared is 1. The Spice Girls are 5. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the `question`, provide a logical reasoning step-by-step breakdown and derive the corresponding `answer` based on the scientific principles involved.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1; squared is 1. The Spice Girls are 5. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1; squared is 1. The Spice Girls are 5. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 5,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided `question`, and thoroughly detail the thought process leading to the conclusion in the `reasoning` field. Then, formulate a concise yet precise `answer` to the question at hand. Ensure that the reasoning is clear and logically structured, demonstrating the steps taken to arrive at the answer.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1; squared is 1. The Spice Girls are 5. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 6,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Based on the provided `question`, detail your thought process step-by-step to evaluate the assertion made, and then conclude with a straightforward `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1; squared is 1. The Spice Girls are 5. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 7,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the `question`, provide a logical reasoning step-by-step breakdown and derive the corresponding `answer` based on the scientific principles involved.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1; squared is 1. The Spice Girls are 5. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 8,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the input field `question`, provide a detailed `reasoning` process that explains the logic and calculations used to arrive at the final `answer`. Ensure clarity and step-by-step analysis to illustrate how the conclusion was drawn.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            },
+            {
+              "inputs": {
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?"
+              },
+              "outputs": {
+                "answer": "No. Hydrogen is the first element and has an atomic number of one. To square a number, you multiply it by itself. The Spice Girls has five members."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 9,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Based on the provided `question`, detail your thought process step-by-step to evaluate the assertion made, and then conclude with a straightforward `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1; squared is 1. The Spice Girls are 5. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 10,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Based on the provided `question`, detail your thought process step-by-step to evaluate the assertion made, and then conclude with a straightforward `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1; squared is 1. The Spice Girls are 5. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 11,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the `question`, provide a logical reasoning step-by-step breakdown and derive the corresponding `answer` based on the scientific principles involved.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1; squared is 1. The Spice Girls are 5. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 12,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the `question`, provide a logical reasoning step-by-step breakdown and derive the corresponding `answer` based on the scientific principles involved.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1; squared is 1. The Spice Girls are 5. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 13,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the `question`, provide a logical reasoning step-by-step breakdown and derive the corresponding `answer` based on the scientific principles involved.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 14,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the `question`, provide a logical reasoning step-by-step breakdown and derive the corresponding `answer` based on the scientific principles involved.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1; squared is 1. The Spice Girls are 5. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 15,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided `question`, and thoroughly detail the thought process leading to the conclusion in the `reasoning` field. Then, formulate a concise yet precise `answer` to the question at hand. Ensure that the reasoning is clear and logically structured, demonstrating the steps taken to arrive at the answer.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1; squared is 1. The Spice Girls are 5. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 16,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the `question`, provide a logical reasoning step-by-step breakdown and derive the corresponding `answer` based on the scientific principles involved.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1; squared is 1. The Spice Girls are 5. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 17,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the input field `question`, provide a detailed `reasoning` process that explains the logic and calculations used to arrive at the final `answer`. Ensure clarity and step-by-step analysis to illustrate how the conclusion was drawn.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1; squared is 1. The Spice Girls are 5. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 18,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the `question`, provide a logical reasoning step-by-step breakdown and derive the corresponding `answer` based on the scientific principles involved.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1; squared is 1. The Spice Girls are 5. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 19,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the input field `question`, provide a detailed `reasoning` process that explains the logic and calculations used to arrive at the final `answer`. Ensure clarity and step-by-step analysis to illustrate how the conclusion was drawn.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+                "reasoning": "Hydrogen\u2019s atomic number is 1; squared is 1. The Spice Girls are 5. Since 1 does not exceed 5, the statement is false.",
+                "answer": "No."
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Would a pear sink in water?"
+              },
+              "outputs": {
+                "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "final_prompts": [
+    {
+      "predictor_index": 0,
+      "predictor_name": "Predict",
+      "instruction": "Given the `question`, provide a logical reasoning step-by-step breakdown and derive the corresponding `answer` based on the scientific principles involved.",
+      "num_demos": 2,
+      "demos": [
+        {
+          "inputs": {
+            "augmented": true,
+            "question": "Hydrogen's atomic number squared exceeds number of Spice Girls?",
+            "reasoning": "Hydrogen\u2019s atomic number is 1; squared is 1. The Spice Girls are 5. Since 1 does not exceed 5, the statement is false.",
+            "answer": "No."
+          },
+          "outputs": {}
+        },
+        {
+          "inputs": {
+            "question": "Would a pear sink in water?"
+          },
+          "outputs": {
+            "answer": "No. The density of a raw pear is about 0.59 g/cm^3. The density of water is about 1 g/cm^3. Objects only sink if they are denser than the surrounding fluid."
+          }
+        }
+      ]
+    }
+  ]
+}

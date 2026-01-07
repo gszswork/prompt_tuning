@@ -1,0 +1,707 @@
+{
+  "dataset": "CommonsenseQA",
+  "train_size": 10,
+  "val_size": 10,
+  "max_bootstrapped_demos": 4,
+  "max_labeled_demos": 4,
+  "num_threads": 10,
+  "optimizer": "MIPROv2",
+  "auto_setting": "medium",
+  "trial_scores": [
+    {
+      "trial_number": 1,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 2,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 3,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 4,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 5,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 6,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 7,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 8,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 9,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 10,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 11,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 12,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 13,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 14,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 15,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 16,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 17,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 18,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 19,
+      "score": 87.5,
+      "eval_type": "full"
+    }
+  ],
+  "final_test_score": 0.829308909242298,
+  "best_trial": {
+    "trial_number": 19,
+    "score": 87.5,
+    "eval_type": "full"
+  },
+  "trial_prompts": [
+    {
+      "trial_number": 1,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the field `question`, analyze it carefully and provide both `reasoning` as to why your answer is correct and list the final `answer` from the given options.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "People generally go to work to accomplish their tasks and responsibilities, i.e., to complete their job; the other options are not primary aims of work.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "D"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the `question` provided, systematically analyze the options and articulate your thought process to derive a reasoned answer. Ensure that the fields `reasoning` and `answer` reflect your logical deductions based on the context of the question.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "People generally go to work to accomplish their tasks and responsibilities, i.e., to complete their job; the other options are not primary aims of work.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "D"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "People generally go to work to accomplish their tasks and responsibilities, i.e., to complete their job; the other options are not primary aims of work.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "D"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 5,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "To respond effectively, analyze the provided `question` by evaluating the multiple choice answers. Generate a detailed `reasoning` process that articulates each step of your thought process in arriving at the correct answer. This will involve critically examining which option best fulfills the context of the question based on logical reasoning and practical knowledge. Once you have reasoned through the options, conclude with a clear `answer` that reflects the result of your evaluation.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "People generally go to work to accomplish their tasks and responsibilities, i.e., to complete their job; the other options are not primary aims of work.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing"
+              },
+              "outputs": {
+                "answer": "D"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 6,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the question provided, please analyze the multiple-choice options and produce a well-reasoned answer. Begin your response by outlining your thought process step by step to justify your final choice.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "People generally go to work to accomplish their tasks and responsibilities, i.e., to complete their job; the other options are not primary aims of work.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "D"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 7,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the `question` provided, systematically analyze the options and articulate your thought process to derive a reasoned answer. Ensure that the fields `reasoning` and `answer` reflect your logical deductions based on the context of the question.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "People generally go to work to accomplish their tasks and responsibilities, i.e., to complete their job; the other options are not primary aims of work.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "D"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 8,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Your task is to analyze the provided `question` related to human or animal behaviors. Carefully consider the multiple-choice options, and construct a structured reasoning process to justify your choice. After developing your reasoning, select the most appropriate answer from the options provided. Your output should include both the detailed reasoning and the final answer.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing"
+              },
+              "outputs": {
+                "answer": "D"
+              }
+            },
+            {
+              "inputs": {
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other"
+              },
+              "outputs": {
+                "answer": "A"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 9,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the question provided, please analyze the multiple-choice options and produce a well-reasoned answer. Begin your response by outlining your thought process step by step to justify your final choice.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "People generally go to work to accomplish their tasks and responsibilities, i.e., to complete their job; the other options are not primary aims of work.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing"
+              },
+              "outputs": {
+                "answer": "D"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 10,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the question provided, please analyze the multiple-choice options and produce a well-reasoned answer. Begin your response by outlining your thought process step by step to justify your final choice.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "People generally go to work to accomplish their tasks and responsibilities, i.e., to complete their job; the other options are not primary aims of work.",
+                "answer": "A"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 11,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the field `question`, analyze it carefully and provide both `reasoning` as to why your answer is correct and list the final `answer` from the given options.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "People generally go to work to accomplish their tasks and responsibilities, i.e., to complete their job; the other options are not primary aims of work.",
+                "answer": "A"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 12,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "People generally go to work to accomplish their tasks and responsibilities, i.e., to complete their job; the other options are not primary aims of work.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "D"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 13,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the field `question`, analyze it carefully and provide both `reasoning` as to why your answer is correct and list the final `answer` from the given options.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "People generally go to work to accomplish their tasks and responsibilities, i.e., to complete their job; the other options are not primary aims of work.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "D"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 14,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the field `question`, analyze it carefully and provide both `reasoning` as to why your answer is correct and list the final `answer` from the given options.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "People generally go to work to accomplish their tasks and responsibilities, i.e., to complete their job; the other options are not primary aims of work.",
+                "answer": "A"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 15,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "To respond effectively, analyze the provided `question` by evaluating the multiple choice answers. Generate a detailed `reasoning` process that articulates each step of your thought process in arriving at the correct answer. This will involve critically examining which option best fulfills the context of the question based on logical reasoning and practical knowledge. Once you have reasoned through the options, conclude with a clear `answer` that reflects the result of your evaluation.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "People generally go to work to accomplish their tasks and responsibilities, i.e., to complete their job; the other options are not primary aims of work.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "D"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 16,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Your task is to analyze the provided `question` related to human or animal behaviors. Carefully consider the multiple-choice options, and construct a structured reasoning process to justify your choice. After developing your reasoning, select the most appropriate answer from the options provided. Your output should include both the detailed reasoning and the final answer.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other"
+              },
+              "outputs": {
+                "answer": "A"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 17,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "People generally go to work to accomplish their tasks and responsibilities, i.e., to complete their job; the other options are not primary aims of work.",
+                "answer": "A"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 18,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Your task is to analyze the provided `question` related to human or animal behaviors. Carefully consider the multiple-choice options, and construct a structured reasoning process to justify your choice. After developing your reasoning, select the most appropriate answer from the options provided. Your output should include both the detailed reasoning and the final answer.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "People generally go to work to accomplish their tasks and responsibilities, i.e., to complete their job; the other options are not primary aims of work.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "D"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 19,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other"
+              },
+              "outputs": {
+                "answer": "A"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "final_prompts": [
+    {
+      "predictor_index": 0,
+      "predictor_name": "Predict",
+      "instruction": "Given the field `question`, analyze it carefully and provide both `reasoning` as to why your answer is correct and list the final `answer` from the given options.",
+      "num_demos": 2,
+      "demos": [
+        {
+          "inputs": {
+            "augmented": true,
+            "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+            "reasoning": "People generally go to work to accomplish their tasks and responsibilities, i.e., to complete their job; the other options are not primary aims of work.",
+            "answer": "A"
+          },
+          "outputs": {}
+        },
+        {
+          "inputs": {
+            "augmented": true,
+            "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+            "reasoning": "Not supplied for this particular example.",
+            "answer": "D"
+          },
+          "outputs": {}
+        }
+      ]
+    }
+  ]
+}

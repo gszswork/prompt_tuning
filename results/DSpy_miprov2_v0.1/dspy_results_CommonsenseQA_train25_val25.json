@@ -1,0 +1,885 @@
+{
+  "dataset": "CommonsenseQA",
+  "train_size": 25,
+  "val_size": 25,
+  "max_bootstrapped_demos": 4,
+  "max_labeled_demos": 4,
+  "num_threads": 10,
+  "optimizer": "MIPROv2",
+  "auto_setting": "medium",
+  "trial_scores": [
+    {
+      "trial_number": 1,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 2,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 3,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 4,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 5,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 6,
+      "score": 80.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 7,
+      "score": 80.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 8,
+      "score": 80.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 9,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 10,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 11,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 12,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 13,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 14,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 15,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 16,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 17,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 18,
+      "score": 80.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 19,
+      "score": 85.0,
+      "eval_type": "full"
+    }
+  ],
+  "final_test_score": 0.8052946199829206,
+  "best_trial": {
+    "trial_number": 19,
+    "score": 85.0,
+    "eval_type": "full"
+  },
+  "trial_prompts": [
+    {
+      "trial_number": 1,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Consider a situation where someone is preparing for a crucial job interview and encounters a challenging question. Given the following `question`, provide a thorough `reasoning` as to why your selected `answer` is the best choice. The task is essential, as the outcome may directly influence your ability to secure the job. Input the `question` and generate the corresponding outputs: `reasoning` and `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Not supplied.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "If you want harmony, what is something you should try to do with the world? A: take time, B: make noise, C: make war, D: make peace, E: make haste",
+                "reasoning": "Not supplied.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Reading newspaper one of many ways to practice your what? A: literacy, B: knowing how to read, C: money, D: buying, E: money bank",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other"
+              },
+              "outputs": {
+                "answer": "A"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question`, analyze the available options logically to generate a well-reasoned conclusion that leads to the correct `answer`. Remember to articulate your thought process clearly in the `reasoning` field, ensuring it aligns with human behavior and rational decision-making.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "At work, people generally aim to accomplish their tasks and finish what they\u2019re paid to do, i.e., complete their job.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Animals typically become alert when an enemy approaches, often listening for sounds or signals from others. Among the options, \u201clisten to each other\u201d best fits this behavior.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Reading newspaper one of many ways to practice your what? A: literacy, B: knowing how to read, C: money, D: buying, E: money bank",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "If you want harmony, what is something you should try to do with the world? A: take time, B: make noise, C: make war, D: make peace, E: make haste",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "D"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Not supplied.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "If you want harmony, what is something you should try to do with the world? A: take time, B: make noise, C: make war, D: make peace, E: make haste",
+                "reasoning": "Not supplied.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Reading newspaper one of many ways to practice your what? A: literacy, B: knowing how to read, C: money, D: buying, E: money bank",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other"
+              },
+              "outputs": {
+                "answer": "A"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 5,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the given `question` and utilize logical reasoning to determine the most appropriate `answer` from the provided options. Please provide a clear breakdown of your reasoning process step-by-step before stating the final answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "If you want harmony, what is something you should try to do with the world? A: take time, B: make noise, C: make war, D: make peace, E: make haste",
+                "reasoning": "Harmony implies peace rather than conflict or haste; making peace with the world aligns with achieving harmony.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing"
+              },
+              "outputs": {
+                "answer": "D"
+              }
+            },
+            {
+              "inputs": {
+                "question": "What do people typically do while playing guitar? A: cry, B: hear sounds, C: singing, D: arthritis, E: making music"
+              },
+              "outputs": {
+                "answer": "C"
+              }
+            },
+            {
+              "inputs": {
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other"
+              },
+              "outputs": {
+                "answer": "A"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 6,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the question, please provide your reasoning step by step before yielding the final answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "If you want harmony, what is something you should try to do with the world? A: take time, B: make noise, C: make war, D: make peace, E: make haste",
+                "reasoning": "Harmony implies lack of conflict, so you should try to make peace with the world rather than create noise, war, haste, or simply take time.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Animals typically become alert and listen for danger when an enemy is approaching; the other options don\u2019t fit as a common response to threat.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Reading newspaper one of many ways to practice your what? A: literacy, B: knowing how to read, C: money, D: buying, E: money bank",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "A"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 7,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question`, analyze the available options logically to generate a well-reasoned conclusion that leads to the correct `answer`. Remember to articulate your thought process clearly in the `reasoning` field, ensuring it aligns with human behavior and rational decision-making.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Not supplied.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "If you want harmony, what is something you should try to do with the world? A: take time, B: make noise, C: make war, D: make peace, E: make haste",
+                "reasoning": "Not supplied.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Reading newspaper one of many ways to practice your what? A: literacy, B: knowing how to read, C: money, D: buying, E: money bank",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other"
+              },
+              "outputs": {
+                "answer": "A"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 8,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the question provided, analyze the multiple-choice options and produce a detailed reasoning that supports your selected answer. Be sure to articulate your thought process step by step before arriving at your final answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "question": "What do people typically do while playing guitar? A: cry, B: hear sounds, C: singing, D: arthritis, E: making music"
+              },
+              "outputs": {
+                "answer": "C"
+              }
+            },
+            {
+              "inputs": {
+                "question": "If you want harmony, what is something you should try to do with the world? A: take time, B: make noise, C: make war, D: make peace, E: make haste"
+              },
+              "outputs": {
+                "answer": "D"
+              }
+            },
+            {
+              "inputs": {
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other"
+              },
+              "outputs": {
+                "answer": "A"
+              }
+            },
+            {
+              "inputs": {
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing"
+              },
+              "outputs": {
+                "answer": "D"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 9,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the question, please provide your reasoning step by step before yielding the final answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Reading newspaper one of many ways to practice your what? A: literacy, B: knowing how to read, C: money, D: buying, E: money bank",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing"
+              },
+              "outputs": {
+                "answer": "D"
+              }
+            },
+            {
+              "inputs": {
+                "question": "What do people typically do while playing guitar? A: cry, B: hear sounds, C: singing, D: arthritis, E: making music"
+              },
+              "outputs": {
+                "answer": "C"
+              }
+            },
+            {
+              "inputs": {
+                "question": "If you want harmony, what is something you should try to do with the world? A: take time, B: make noise, C: make war, D: make peace, E: make haste"
+              },
+              "outputs": {
+                "answer": "D"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 10,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the question, please provide your reasoning step by step before yielding the final answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Reading newspaper one of many ways to practice your what? A: literacy, B: knowing how to read, C: money, D: buying, E: money bank",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other"
+              },
+              "outputs": {
+                "answer": "A"
+              }
+            },
+            {
+              "inputs": {
+                "question": "What do people typically do while playing guitar? A: cry, B: hear sounds, C: singing, D: arthritis, E: making music"
+              },
+              "outputs": {
+                "answer": "C"
+              }
+            },
+            {
+              "inputs": {
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing"
+              },
+              "outputs": {
+                "answer": "D"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 11,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 12,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question`, analyze the available options logically to generate a well-reasoned conclusion that leads to the correct `answer`. Remember to articulate your thought process clearly in the `reasoning` field, ensuring it aligns with human behavior and rational decision-making.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "At work, people generally aim to accomplish their tasks and finish what they\u2019re paid to do, i.e., complete their job.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Animals typically become alert when an enemy approaches, often listening for sounds or signals from others. Among the options, \u201clisten to each other\u201d best fits this behavior.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Reading newspaper one of many ways to practice your what? A: literacy, B: knowing how to read, C: money, D: buying, E: money bank",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "If you want harmony, what is something you should try to do with the world? A: take time, B: make noise, C: make war, D: make peace, E: make haste",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "D"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 13,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question`, analyze the available options logically to generate a well-reasoned conclusion that leads to the correct `answer`. Remember to articulate your thought process clearly in the `reasoning` field, ensuring it aligns with human behavior and rational decision-making.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 14,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the question provided, analyze the multiple-choice options and produce a detailed reasoning that supports your selected answer. Be sure to articulate your thought process step by step before arriving at your final answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "At work, people generally aim to accomplish their tasks and finish what they\u2019re paid to do, i.e., complete their job.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Animals typically become alert when an enemy approaches, often listening for sounds or signals from others. Among the options, \u201clisten to each other\u201d best fits this behavior.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Reading newspaper one of many ways to practice your what? A: literacy, B: knowing how to read, C: money, D: buying, E: money bank",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "If you want harmony, what is something you should try to do with the world? A: take time, B: make noise, C: make war, D: make peace, E: make haste",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "D"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 15,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Not supplied.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "If you want harmony, what is something you should try to do with the world? A: take time, B: make noise, C: make war, D: make peace, E: make haste",
+                "reasoning": "Harmony implies peace rather than conflict, so you should try to make peace with the world.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "Not supplied.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Reading newspaper one of many ways to practice your what? A: literacy, B: knowing how to read, C: money, D: buying, E: money bank",
+                "reasoning": "Reading a newspaper is an activity used to practice literacy (reading and understanding written text).",
+                "answer": "A"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 16,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the given `question` and utilize logical reasoning to determine the most appropriate `answer` from the provided options. Please provide a clear breakdown of your reasoning process step-by-step before stating the final answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Reading newspaper one of many ways to practice your what? A: literacy, B: knowing how to read, C: money, D: buying, E: money bank",
+                "reasoning": "Reading a newspaper is a common way to practice reading skills; among the options, \u201cliteracy\u201d best captures that.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other"
+              },
+              "outputs": {
+                "answer": "A"
+              }
+            },
+            {
+              "inputs": {
+                "question": "If you want harmony, what is something you should try to do with the world? A: take time, B: make noise, C: make war, D: make peace, E: make haste"
+              },
+              "outputs": {
+                "answer": "D"
+              }
+            },
+            {
+              "inputs": {
+                "question": "What do people typically do while playing guitar? A: cry, B: hear sounds, C: singing, D: arthritis, E: making music"
+              },
+              "outputs": {
+                "answer": "C"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 17,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "If you want harmony, what is something you should try to do with the world? A: take time, B: make noise, C: make war, D: make peace, E: make haste",
+                "reasoning": "Harmony implies peaceful relations; to achieve it with the world you should try to make peace rather than noise, war, haste, or merely taking time.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other"
+              },
+              "outputs": {
+                "answer": "A"
+              }
+            },
+            {
+              "inputs": {
+                "question": "What do people typically do while playing guitar? A: cry, B: hear sounds, C: singing, D: arthritis, E: making music"
+              },
+              "outputs": {
+                "answer": "C"
+              }
+            },
+            {
+              "inputs": {
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing"
+              },
+              "outputs": {
+                "answer": "D"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 18,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the question provided, analyze the multiple-choice options and produce a detailed reasoning that supports your selected answer. Be sure to articulate your thought process step by step before arriving at your final answer.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 19,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do people aim to do at work? A: complete job, B: learn from each other, C: kill animals, D: wear hats, E: talk to each other",
+                "reasoning": "At work, people generally aim to accomplish their tasks and finish what they\u2019re paid to do, i.e., complete their job.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "What do animals do when an enemy is approaching? A: feel pleasure, B: procreate, C: pass water, D: listen to each other, E: sing",
+                "reasoning": "Animals typically become alert when an enemy approaches, often listening for sounds or signals from others. Among the options, \u201clisten to each other\u201d best fits this behavior.",
+                "answer": "D"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Reading newspaper one of many ways to practice your what? A: literacy, B: knowing how to read, C: money, D: buying, E: money bank",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "A"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "If you want harmony, what is something you should try to do with the world? A: take time, B: make noise, C: make war, D: make peace, E: make haste",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "D"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "final_prompts": [
+    {
+      "predictor_index": 0,
+      "predictor_name": "Predict",
+      "instruction": "Given the fields `question`, produce the fields `answer`.",
+      "num_demos": 0,
+      "demos": []
+    }
+  ]
+}

@@ -1,0 +1,1012 @@
+{
+  "dataset": "causal_judgement",
+  "train_size": 25,
+  "val_size": 25,
+  "max_bootstrapped_demos": 4,
+  "max_labeled_demos": 4,
+  "num_threads": 5,
+  "optimizer": "MIPROv2",
+  "auto_setting": "medium",
+  "trial_scores": [
+    {
+      "trial_number": 1,
+      "score": 65.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 2,
+      "score": 55.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 3,
+      "score": 60.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 4,
+      "score": 40.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 5,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 6,
+      "score": 65.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 7,
+      "score": 65.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 8,
+      "score": 50.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 9,
+      "score": 55.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 10,
+      "score": 65.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 11,
+      "score": 70.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 12,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 13,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 14,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 15,
+      "score": 85.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 16,
+      "score": 55.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 17,
+      "score": 70.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 18,
+      "score": 65.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 19,
+      "score": 60.0,
+      "eval_type": "full"
+    }
+  ],
+  "final_test_score": 0.6934306569343066,
+  "best_trial": {
+    "trial_number": 19,
+    "score": 60.0,
+    "eval_type": "full"
+  },
+  "trial_prompts": [
+    {
+      "trial_number": 1,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the following high-stakes scenario that involves multiple parties and specific conditions regarding causation. For the given question, use logical reasoning to determine if a specified action caused a certain outcome. Provide a detailed reasoning process and conclude with a clear answer of \"Yes\" or \"No\". \n\nHere is your scenario: \n\n\"In a small town, there are strict rules about watering gardens due to a water shortage. Residents are allowed to water their gardens only on Wednesdays and Saturdays. One day, Joe decides to water his garden on a Wednesday afternoon, while his neighbor, Lisa, also waters her garden at the same time. They both have been warned that if both gardens are watered simultaneously, it could cause the water supply reservoir to overflow, leading to a severe shortage for the entire town. That day, it was reported that the water supply reservoir overflowed. Did Joe's decision to water his garden cause the water supply reservoir to overflow?\"\n\nOptions: \n- Yes\n- No\n\nQuestion: Did Joe's action cause the overflow? \n\nReasoning: Let's think step by step in order to ... \nAnswer:",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If two people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol also turns on her lamp. Since two people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If three people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol turns on her lamp, and Bob also turns on his lamp. Since three people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. In order to make sure that one person is always available to answer incoming phone calls, the company issued the following official policy: Alice is the only one permitted to log in to the central computer in the mornings, whereas Zoe is the only one permitted to log in to the central computer in the afternoons. One day, violating the official policy, Zoe logs in to the central computer at 9 am. The same day, Alice also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied for this particular task.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nClaire's parents bought her an old computer. Claire uses it for schoolwork, but her brother Daniel sometimes logs on to play games. Claire has told Daniel, \"Please don't log on to my computer. If we are both logged on at the same time, it will crash\". One day, Claire and Daniel logged on to the computer at the same time. The computer crashed. Later that day, Claire's mother is talking with the computer repairman. The repairman says, \"I see that Daniel was logged on, but this computer will only crash if two people are logged on at the same time. So, I still don't see quite why the computer crashed.\" Did Daniel cause the computer crash?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided question regarding causation, and systematically detail the reasoning behind your conclusion. Finally, determine whether the specified event caused another event to occur, selecting either \"Yes\" or \"No\" based on your logical evaluation.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nClaire's parents bought her an old computer. Claire uses it for schoolwork, but her brother Daniel sometimes logs on to play games. Claire has told Daniel, \"Please don't log on to my computer. If we are both logged on at the same time, it will crash\". One day, Claire and Daniel logged on to the computer at the same time. The computer crashed. Later that day, Claire's mother is talking with the computer repairman. The repairman says, \"I see that Daniel was logged on, but this computer will only crash if two people are logged on at the same time. So, I still don't see quite why the computer crashed.\" Did Daniel cause the computer crash?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If two people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol also turns on her lamp. Since two people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied for this particular task.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. In order to make sure that one person is always available to answer incoming phone calls, the company issued the following official policy: Alice is the only one permitted to log in to the central computer in the mornings, whereas Zoe is the only one permitted to log in to the central computer in the afternoons. One day, violating the official policy, Zoe logs in to the central computer at 9 am. The same day, Alice also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied for this task.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If three people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol turns on her lamp, and Bob also turns on his lamp. Since three people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If two people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol also turns on her lamp. Since two people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If three people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol turns on her lamp, and Bob also turns on his lamp. Since three people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. In order to make sure that one person is always available to answer incoming phone calls, the company issued the following official policy: Alice is the only one permitted to log in to the central computer in the mornings, whereas Zoe is the only one permitted to log in to the central computer in the afternoons. One day, violating the official policy, Zoe logs in to the central computer at 9 am. The same day, Alice also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied for this particular task.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nClaire's parents bought her an old computer. Claire uses it for schoolwork, but her brother Daniel sometimes logs on to play games. Claire has told Daniel, \"Please don't log on to my computer. If we are both logged on at the same time, it will crash\". One day, Claire and Daniel logged on to the computer at the same time. The computer crashed. Later that day, Claire's mother is talking with the computer repairman. The repairman says, \"I see that Daniel was logged on, but this computer will only crash if two people are logged on at the same time. So, I still don't see quite why the computer crashed.\" Did Daniel cause the computer crash?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 5,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Based on the provided `question`, carefully analyze the scenario and identify the causative relationships involved. Use logical reasoning to determine if the specified action led to the outcome presented in the question. Then, articulate your reasoning in a clear and detailed step-by-step manner before concluding with an answer of either \"Yes\" or \"No\".",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If three people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol turns on her lamp, and Bob also turns on his lamp. Since three people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If two people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol also turns on her lamp. Since two people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. One day, Alice logs in to the central computer at 9 am. The same day, Zoe also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "No"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nClaire's parents bought her an old computer. Claire uses it for schoolwork, but her brother Daniel sometimes logs on to play games. Claire has told Daniel, \"Please don't log on to my computer. If we are both logged on at the same time, it will crash\". One day, Claire and Daniel logged on to the computer at the same time. The computer crashed. Later that day, Claire's mother is talking with the computer repairman. The repairman says, \"I see that Daniel was logged on, but this computer will only crash if two people are logged on at the same time. So, I still don't see quite why the computer crashed.\" Did Daniel cause the computer crash?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 6,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the question scenario that involves evaluating causation, analyze the events step by step and provide a reasoning process to arrive at a clear \"Yes\" or \"No\" answer regarding whether the specified action caused the described effect.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nClaire's parents bought her an old computer. Claire uses it for schoolwork, but her brother Daniel sometimes logs on to play games. Claire has told Daniel, \"Please don't log on to my computer. If we are both logged on at the same time, it will crash\". One day, Claire and Daniel logged on to the computer at the same time. The computer crashed. Later that day, Claire's mother is talking with the computer repairman. The repairman says, \"I see that Daniel was logged on, but this computer will only crash if two people are logged on at the same time. So, I still don't see quite why the computer crashed.\" Did Daniel cause the computer crash?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If three people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol turns on her lamp, and Bob also turns on his lamp. Since three people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied for this task.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If two people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol also turns on her lamp. Since two people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. In order to make sure that one person is always available to answer incoming phone calls, the company issued the following official policy: Alice is the only one permitted to log in to the central computer in the mornings, whereas Zoe is the only one permitted to log in to the central computer in the afternoons. One day, violating the official policy, Zoe logs in to the central computer at 9 am. The same day, Alice also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 7,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided question regarding causation, and systematically detail the reasoning behind your conclusion. Finally, determine whether the specified event caused another event to occur, selecting either \"Yes\" or \"No\" based on your logical evaluation.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If two people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol also turns on her lamp. Since two people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If three people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol turns on her lamp, and Bob also turns on his lamp. Since three people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. In order to make sure that one person is always available to answer incoming phone calls, the company issued the following official policy: Alice is the only one permitted to log in to the central computer in the mornings, whereas Zoe is the only one permitted to log in to the central computer in the afternoons. One day, violating the official policy, Zoe logs in to the central computer at 9 am. The same day, Alice also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied for this particular task.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nClaire's parents bought her an old computer. Claire uses it for schoolwork, but her brother Daniel sometimes logs on to play games. Claire has told Daniel, \"Please don't log on to my computer. If we are both logged on at the same time, it will crash\". One day, Claire and Daniel logged on to the computer at the same time. The computer crashed. Later that day, Claire's mother is talking with the computer repairman. The repairman says, \"I see that Daniel was logged on, but this computer will only crash if two people are logged on at the same time. So, I still don't see quite why the computer crashed.\" Did Daniel cause the computer crash?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 8,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided question regarding causation, reason through the details step by step, and indicate whether the specified event caused the outcome by producing a simple \"Yes\" or \"No\" answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. One day, Alice logs in to the central computer at 9 am. The same day, Zoe also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "No"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If three people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol turns on her lamp, and Bob also turns on his lamp. Since three people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nClaire's parents bought her an old computer. Claire uses it for schoolwork, but her brother Daniel sometimes logs on to play games. Claire has told Daniel, \"Please don't log on to my computer. If we are both logged on at the same time, it will crash\". One day, Claire and Daniel logged on to the computer at the same time. The computer crashed. Later that day, Claire's mother is talking with the computer repairman. The repairman says, \"I see that Daniel was logged on, but this computer will only crash if two people are logged on at the same time. So, I still don't see quite why the computer crashed.\" Did Daniel cause the computer crash?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If two people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol also turns on her lamp. Since two people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 9,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the question scenario that involves evaluating causation, analyze the events step by step and provide a reasoning process to arrive at a clear \"Yes\" or \"No\" answer regarding whether the specified action caused the described effect.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. In order to make sure that one person is always available to answer incoming phone calls, the company issued the following official policy: Alice is the only one permitted to log in to the central computer in the mornings, whereas Zoe is the only one permitted to log in to the central computer in the afternoons. One day, violating the official policy, Zoe logs in to the central computer at 9 am. The same day, Alice also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If two people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol also turns on her lamp. Since two people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. One day, Alice logs in to the central computer at 9 am. The same day, Zoe also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "No"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If three people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol turns on her lamp, and Bob also turns on his lamp. Since three people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 10,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the question scenario that involves evaluating causation, analyze the events step by step and provide a reasoning process to arrive at a clear \"Yes\" or \"No\" answer regarding whether the specified action caused the described effect.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. In order to make sure that one person is always available to answer incoming phone calls, the company issued the following official policy: Alice is the only one permitted to log in to the central computer in the mornings, whereas Zoe is the only one permitted to log in to the central computer in the afternoons. One day, violating the official policy, Zoe logs in to the central computer at 9 am. The same day, Alice also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nClaire's parents bought her an old computer. Claire uses it for schoolwork, but her brother Daniel sometimes logs on to play games. Claire has told Daniel, \"Please don't log on to my computer. If we are both logged on at the same time, it will crash\". One day, Claire and Daniel logged on to the computer at the same time. The computer crashed. Later that day, Claire's mother is talking with the computer repairman. The repairman says, \"I see that Daniel was logged on, but this computer will only crash if two people are logged on at the same time. So, I still don't see quite why the computer crashed.\" Did Daniel cause the computer crash?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. One day, Alice logs in to the central computer at 9 am. The same day, Zoe also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "No"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If two people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol also turns on her lamp. Since two people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 11,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Based on the provided `question`, carefully analyze the scenario and identify the causative relationships involved. Use logical reasoning to determine if the specified action led to the outcome presented in the question. Then, articulate your reasoning in a clear and detailed step-by-step manner before concluding with an answer of either \"Yes\" or \"No\".",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. In order to make sure that one person is always available to answer incoming phone calls, the company issued the following official policy: Alice is the only one permitted to log in to the central computer in the mornings, whereas Zoe is the only one permitted to log in to the central computer in the afternoons. One day, violating the official policy, Zoe logs in to the central computer at 9 am. The same day, Alice also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nClaire's parents bought her an old computer. Claire uses it for schoolwork, but her brother Daniel sometimes logs on to play games. Claire has told Daniel, \"Please don't log on to my computer. If we are both logged on at the same time, it will crash\". One day, Claire and Daniel logged on to the computer at the same time. The computer crashed. Later that day, Claire's mother is talking with the computer repairman. The repairman says, \"I see that Daniel was logged on, but this computer will only crash if two people are logged on at the same time. So, I still don't see quite why the computer crashed.\" Did Daniel cause the computer crash?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If three people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol turns on her lamp, and Bob also turns on his lamp. Since three people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. One day, Alice logs in to the central computer at 9 am. The same day, Zoe also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "No"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 12,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Based on the provided `question`, carefully analyze the scenario and identify the causative relationships involved. Use logical reasoning to determine if the specified action led to the outcome presented in the question. Then, articulate your reasoning in a clear and detailed step-by-step manner before concluding with an answer of either \"Yes\" or \"No\".",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If three people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol turns on her lamp, and Bob also turns on his lamp. Since three people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If two people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol also turns on her lamp. Since two people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nClaire's parents bought her an old computer. Claire uses it for schoolwork, but her brother Daniel sometimes logs on to play games. Claire has told Daniel, \"Please don't log on to my computer. If we are both logged on at the same time, it will crash\". One day, Claire and Daniel logged on to the computer at the same time. The computer crashed. Later that day, Claire's mother is talking with the computer repairman. The repairman says, \"I see that Daniel was logged on, but this computer will only crash if two people are logged on at the same time. So, I still don't see quite why the computer crashed.\" Did Daniel cause the computer crash?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. One day, Alice logs in to the central computer at 9 am. The same day, Zoe also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "No"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 13,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Based on the provided `question`, carefully analyze the scenario and identify the causative relationships involved. Use logical reasoning to determine if the specified action led to the outcome presented in the question. Then, articulate your reasoning in a clear and detailed step-by-step manner before concluding with an answer of either \"Yes\" or \"No\".",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If three people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol turns on her lamp, and Bob also turns on his lamp. Since three people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If two people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol also turns on her lamp. Since two people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. One day, Alice logs in to the central computer at 9 am. The same day, Zoe also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "No"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nClaire's parents bought her an old computer. Claire uses it for schoolwork, but her brother Daniel sometimes logs on to play games. Claire has told Daniel, \"Please don't log on to my computer. If we are both logged on at the same time, it will crash\". One day, Claire and Daniel logged on to the computer at the same time. The computer crashed. Later that day, Claire's mother is talking with the computer repairman. The repairman says, \"I see that Daniel was logged on, but this computer will only crash if two people are logged on at the same time. So, I still don't see quite why the computer crashed.\" Did Daniel cause the computer crash?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 14,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Based on the provided `question`, carefully analyze the scenario and identify the causative relationships involved. Use logical reasoning to determine if the specified action led to the outcome presented in the question. Then, articulate your reasoning in a clear and detailed step-by-step manner before concluding with an answer of either \"Yes\" or \"No\".",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If three people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol turns on her lamp, and Bob also turns on his lamp. Since three people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If two people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol also turns on her lamp. Since two people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nClaire's parents bought her an old computer. Claire uses it for schoolwork, but her brother Daniel sometimes logs on to play games. Claire has told Daniel, \"Please don't log on to my computer. If we are both logged on at the same time, it will crash\". One day, Claire and Daniel logged on to the computer at the same time. The computer crashed. Later that day, Claire's mother is talking with the computer repairman. The repairman says, \"I see that Daniel was logged on, but this computer will only crash if two people are logged on at the same time. So, I still don't see quite why the computer crashed.\" Did Daniel cause the computer crash?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. One day, Alice logs in to the central computer at 9 am. The same day, Zoe also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "No"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 15,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Based on the provided `question`, carefully analyze the scenario and identify the causative relationships involved. Use logical reasoning to determine if the specified action led to the outcome presented in the question. Then, articulate your reasoning in a clear and detailed step-by-step manner before concluding with an answer of either \"Yes\" or \"No\".",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If three people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol turns on her lamp, and Bob also turns on his lamp. Since three people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If two people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol also turns on her lamp. Since two people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nClaire's parents bought her an old computer. Claire uses it for schoolwork, but her brother Daniel sometimes logs on to play games. Claire has told Daniel, \"Please don't log on to my computer. If we are both logged on at the same time, it will crash\". One day, Claire and Daniel logged on to the computer at the same time. The computer crashed. Later that day, Claire's mother is talking with the computer repairman. The repairman says, \"I see that Daniel was logged on, but this computer will only crash if two people are logged on at the same time. So, I still don't see quite why the computer crashed.\" Did Daniel cause the computer crash?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. One day, Alice logs in to the central computer at 9 am. The same day, Zoe also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "No"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 16,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the following high-stakes scenario that involves multiple parties and specific conditions regarding causation. For the given question, use logical reasoning to determine if a specified action caused a certain outcome. Provide a detailed reasoning process and conclude with a clear answer of \"Yes\" or \"No\". \n\nHere is your scenario: \n\n\"In a small town, there are strict rules about watering gardens due to a water shortage. Residents are allowed to water their gardens only on Wednesdays and Saturdays. One day, Joe decides to water his garden on a Wednesday afternoon, while his neighbor, Lisa, also waters her garden at the same time. They both have been warned that if both gardens are watered simultaneously, it could cause the water supply reservoir to overflow, leading to a severe shortage for the entire town. That day, it was reported that the water supply reservoir overflowed. Did Joe's decision to water his garden cause the water supply reservoir to overflow?\"\n\nOptions: \n- Yes\n- No\n\nQuestion: Did Joe's action cause the overflow? \n\nReasoning: Let's think step by step in order to ... \nAnswer:",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If three people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol turns on her lamp, and Bob also turns on his lamp. Since three people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If two people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol also turns on her lamp. Since two people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nClaire's parents bought her an old computer. Claire uses it for schoolwork, but her brother Daniel sometimes logs on to play games. Claire has told Daniel, \"Please don't log on to my computer. If we are both logged on at the same time, it will crash\". One day, Claire and Daniel logged on to the computer at the same time. The computer crashed. Later that day, Claire's mother is talking with the computer repairman. The repairman says, \"I see that Daniel was logged on, but this computer will only crash if two people are logged on at the same time. So, I still don't see quite why the computer crashed.\" Did Daniel cause the computer crash?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. One day, Alice logs in to the central computer at 9 am. The same day, Zoe also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "No"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 17,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided question regarding causation, reason through the details step by step, and indicate whether the specified event caused the outcome by producing a simple \"Yes\" or \"No\" answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If three people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol turns on her lamp, and Bob also turns on his lamp. Since three people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If two people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol also turns on her lamp. Since two people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nClaire's parents bought her an old computer. Claire uses it for schoolwork, but her brother Daniel sometimes logs on to play games. Claire has told Daniel, \"Please don't log on to my computer. If we are both logged on at the same time, it will crash\". One day, Claire and Daniel logged on to the computer at the same time. The computer crashed. Later that day, Claire's mother is talking with the computer repairman. The repairman says, \"I see that Daniel was logged on, but this computer will only crash if two people are logged on at the same time. So, I still don't see quite why the computer crashed.\" Did Daniel cause the computer crash?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. One day, Alice logs in to the central computer at 9 am. The same day, Zoe also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "No"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 18,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Based on the provided `question`, carefully analyze the scenario and identify the causative relationships involved. Use logical reasoning to determine if the specified action led to the outcome presented in the question. Then, articulate your reasoning in a clear and detailed step-by-step manner before concluding with an answer of either \"Yes\" or \"No\".",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If two people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol also turns on her lamp. Since two people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied for this task.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If three people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol turns on her lamp, and Bob also turns on his lamp. Since three people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied for this task.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nClaire's parents bought her an old computer. Claire uses it for schoolwork, but her brother Daniel sometimes logs on to play games. Claire has told Daniel, \"Please don't log on to my computer. If we are both logged on at the same time, it will crash\". One day, Claire and Daniel logged on to the computer at the same time. The computer crashed. Later that day, Claire's mother is talking with the computer repairman. The repairman says, \"I see that Daniel was logged on, but this computer will only crash if two people are logged on at the same time. So, I still don't see quite why the computer crashed.\" Did Daniel cause the computer crash?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied for this task.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. In order to make sure that one person is always available to answer incoming phone calls, the company issued the following official policy: Alice is the only one permitted to log in to the central computer in the mornings, whereas Zoe is the only one permitted to log in to the central computer in the afternoons. One day, violating the official policy, Zoe logs in to the central computer at 9 am. The same day, Alice also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No",
+                "reasoning": "Not supplied for this task.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 19,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Based on the provided `question`, carefully analyze the scenario and identify the causative relationships involved. Use logical reasoning to determine if the specified action led to the outcome presented in the question. Then, articulate your reasoning in a clear and detailed step-by-step manner before concluding with an answer of either \"Yes\" or \"No\".",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If three people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol turns on her lamp, and Bob also turns on his lamp. Since three people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+                "reasoning": "A typical person would say Jim\u2019s action was part of the combination of three simultaneous lamp uses that triggered the breaker, and he wasn\u2019t supposed to be using the lamp, so they\u2019d count it as a cause.",
+                "answer": "Yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nClaire's parents bought her an old computer. Claire uses it for schoolwork, but her brother Daniel sometimes logs on to play games. Claire has told Daniel, \"Please don't log on to my computer. If we are both logged on at the same time, it will crash\". One day, Claire and Daniel logged on to the computer at the same time. The computer crashed. Later that day, Claire's mother is talking with the computer repairman. The repairman says, \"I see that Daniel was logged on, but this computer will only crash if two people are logged on at the same time. So, I still don't see quite why the computer crashed.\" Did Daniel cause the computer crash?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. One day, Alice logs in to the central computer at 9 am. The same day, Zoe also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "No"
+              }
+            },
+            {
+              "inputs": {
+                "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If two people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol also turns on her lamp. Since two people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No"
+              },
+              "outputs": {
+                "answer": "Yes"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "final_prompts": [
+    {
+      "predictor_index": 0,
+      "predictor_name": "Predict",
+      "instruction": "Based on the provided `question`, carefully analyze the scenario and identify the causative relationships involved. Use logical reasoning to determine if the specified action led to the outcome presented in the question. Then, articulate your reasoning in a clear and detailed step-by-step manner before concluding with an answer of either \"Yes\" or \"No\".",
+      "num_demos": 4,
+      "demos": [
+        {
+          "inputs": {
+            "augmented": true,
+            "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If three people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol turns on her lamp, and Bob also turns on his lamp. Since three people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No",
+            "reasoning": "Not supplied.",
+            "answer": "Yes"
+          },
+          "outputs": {}
+        },
+        {
+          "inputs": {
+            "question": "How would a typical person answer each of the following questions about causation?\nJim, Carol, Bob, and Nancy are researchers in a remote area, and they have a limited supply of electricity. Because of their limited supply, the electricity only comes on in the evenings from 8-9 PM, and they have to restrict who can use power on certain days. If two people turn on their lamps at the same time, the breaker will fail. The breaker will not fail if fewer people turn on their lamps at the same time. Jim is not supposed to use his lamp on Thursdays. Carol, Bob, and Nancy may all use their lamps on Thursdays. This Thursday Jim turns on his lamp at 8 PM. Just then, Carol also turns on her lamp. Since two people turned on their lamps at the same time, the circuit breaker failed. Did Jim turning on his lamp at 8 PM cause the circuit breaker to fail?\nOptions:\n- Yes\n- No"
+          },
+          "outputs": {
+            "answer": "Yes"
+          }
+        },
+        {
+          "inputs": {
+            "question": "How would a typical person answer each of the following questions about causation?\nClaire's parents bought her an old computer. Claire uses it for schoolwork, but her brother Daniel sometimes logs on to play games. Claire has told Daniel, \"Please don't log on to my computer. If we are both logged on at the same time, it will crash\". One day, Claire and Daniel logged on to the computer at the same time. The computer crashed. Later that day, Claire's mother is talking with the computer repairman. The repairman says, \"I see that Daniel was logged on, but this computer will only crash if two people are logged on at the same time. So, I still don't see quite why the computer crashed.\" Did Daniel cause the computer crash?\nOptions:\n- Yes\n- No"
+          },
+          "outputs": {
+            "answer": "Yes"
+          }
+        },
+        {
+          "inputs": {
+            "question": "How would a typical person answer each of the following questions about causation?\nAlice and Zoe work for the same company. They work in different rooms, and both of them sometimes need to access the central computer of the company. Unbeknownst to everybody, if two people are logged in to the central computer at the same time, an empty email is immediately sent from the central computer to a non-existent email address. One day, Alice logs in to the central computer at 9 am. The same day, Zoe also logs in at 9 am. Immediately, an empty email is sent from the central computer to a non-existent email address. Did Zoe cause an empty email to be sent from the central computer to a non-existent email address?\nOptions:\n- Yes\n- No"
+          },
+          "outputs": {
+            "answer": "No"
+          }
+        }
+      ]
+    }
+  ]
+}

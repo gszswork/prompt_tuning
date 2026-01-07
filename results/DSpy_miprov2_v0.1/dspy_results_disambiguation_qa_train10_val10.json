@@ -1,0 +1,665 @@
+{
+  "dataset": "disambiguation_qa",
+  "train_size": 10,
+  "val_size": 10,
+  "max_bootstrapped_demos": 4,
+  "max_labeled_demos": 4,
+  "num_threads": 5,
+  "optimizer": "MIPROv2",
+  "auto_setting": "medium",
+  "trial_scores": [
+    {
+      "trial_number": 1,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 2,
+      "score": 62.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 3,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 4,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 5,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 6,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 7,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 8,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 9,
+      "score": 62.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 10,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 11,
+      "score": 62.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 12,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 13,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 14,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 15,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 16,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 17,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 18,
+      "score": 62.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 19,
+      "score": 62.5,
+      "eval_type": "full"
+    }
+  ],
+  "final_test_score": 0.5,
+  "best_trial": {
+    "trial_number": 19,
+    "score": 62.5,
+    "eval_type": "full"
+  },
+  "trial_prompts": [
+    {
+      "trial_number": 1,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided sentence containing pronouns and explain the antecedent for each pronoun. If the antecedent is unclear, indicate that the reference is ambiguous. Your response should include a step-by-step reasoning process that outlines how you came to your conclusion before providing the final answer.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d since both are compatible with \u201che\u201d and there\u2019s no additional context to disambiguate.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either \u201cthe developer\u201d or \u201cthe writer,\u201d and the sentence alone doesn\u2019t disambiguate which one used big words.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided sentence within the `question` to determine the antecedent of the pronoun. Provide a clear `reasoning` that details your thought process step by step. Finally, give the `answer` by identifying the specific antecedent or stating that it is ambiguous if the pronoun's reference cannot be determined.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d since both are compatible with \u201che\u201d and there\u2019s no additional context to disambiguate.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either \u201cthe developer\u201d or \u201cthe writer,\u201d and the sentence alone doesn\u2019t disambiguate which one used big words.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d since both are compatible with \u201che\u201d and there\u2019s no additional context to disambiguate.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either \u201cthe developer\u201d or \u201cthe writer,\u201d and the sentence alone doesn\u2019t disambiguate which one used big words.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 5,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a sentence that includes a pronoun, analyze the context to identify the antecedent of that pronoun. Determine which noun or entity the pronoun refers to from the provided options or state if the reference is ambiguous. Include a detailed reasoning process that explains your thought process step by step for why the pronoun could refer to a particular noun or why it may be deemed ambiguous. The output should consist of the reasoning for your conclusion and the selected answer from the options provided.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d since both are compatible with \u201che\u201d and there\u2019s no additional context to disambiguate.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 6,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the following `question`, which includes a sentence containing a pronoun, please explain the antecedent of the pronoun (the entity it refers to) or state if it is ambiguous. Provide a coherent `reasoning` that demonstrates the thought process to determine the antecedent and select the appropriate `answer` from the given options.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d since both are compatible with \u201che\u201d and there\u2019s no additional context to disambiguate.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either \u201cthe developer\u201d or \u201cthe writer,\u201d and the sentence alone doesn\u2019t disambiguate which one used big words.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 7,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided sentence within the `question` to determine the antecedent of the pronoun. Provide a clear `reasoning` that details your thought process step by step. Finally, give the `answer` by identifying the specific antecedent or stating that it is ambiguous if the pronoun's reference cannot be determined.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d since both are compatible with \u201che\u201d and there\u2019s no additional context to disambiguate.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either \u201cthe developer\u201d or \u201cthe writer,\u201d and the sentence alone doesn\u2019t disambiguate which one used big words.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 8,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the provided `question`, which includes sentences with ambiguous pronouns, analyze the context to identify the antecedent or state if it is ambiguous. Produce detailed reasoning that explains your thought process and generates the corresponding `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 9,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the following `question`, which includes a sentence containing a pronoun, please explain the antecedent of the pronoun (the entity it refers to) or state if it is ambiguous. Provide a coherent `reasoning` that demonstrates the thought process to determine the antecedent and select the appropriate `answer` from the given options.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d since both are compatible with \u201che\u201d and there\u2019s no additional context to disambiguate.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 10,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the following `question`, which includes a sentence containing a pronoun, please explain the antecedent of the pronoun (the entity it refers to) or state if it is ambiguous. Provide a coherent `reasoning` that demonstrates the thought process to determine the antecedent and select the appropriate `answer` from the given options.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either \u201cthe developer\u201d or \u201cthe writer,\u201d and the sentence alone doesn\u2019t disambiguate which one used big words.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d since both are compatible with \u201che\u201d and there\u2019s no additional context to disambiguate.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 11,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a sentence that includes a pronoun, analyze the context to identify the antecedent of that pronoun. Determine which noun or entity the pronoun refers to from the provided options or state if the reference is ambiguous. Include a detailed reasoning process that explains your thought process step by step for why the pronoun could refer to a particular noun or why it may be deemed ambiguous. The output should consist of the reasoning for your conclusion and the selected answer from the options provided.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either \u201cthe developer\u201d or \u201cthe writer,\u201d and the sentence alone doesn\u2019t disambiguate which one used big words.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 12,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 13,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d since both are compatible with \u201che\u201d and there\u2019s no additional context to disambiguate.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 14,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a sentence that includes a pronoun, analyze the context to identify the antecedent of that pronoun. Determine which noun or entity the pronoun refers to from the provided options or state if the reference is ambiguous. Include a detailed reasoning process that explains your thought process step by step for why the pronoun could refer to a particular noun or why it may be deemed ambiguous. The output should consist of the reasoning for your conclusion and the selected answer from the options provided.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 15,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a sentence that includes a pronoun, analyze the context to identify the antecedent of that pronoun. Determine which noun or entity the pronoun refers to from the provided options or state if the reference is ambiguous. Include a detailed reasoning process that explains your thought process step by step for why the pronoun could refer to a particular noun or why it may be deemed ambiguous. The output should consist of the reasoning for your conclusion and the selected answer from the options provided.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d since both are compatible with \u201che\u201d and there\u2019s no additional context to disambiguate.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 16,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a sentence that includes a pronoun, analyze the context to identify the antecedent of that pronoun. Determine which noun or entity the pronoun refers to from the provided options or state if the reference is ambiguous. Include a detailed reasoning process that explains your thought process step by step for why the pronoun could refer to a particular noun or why it may be deemed ambiguous. The output should consist of the reasoning for your conclusion and the selected answer from the options provided.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d since both are compatible with \u201che\u201d and there\u2019s no additional context to disambiguate.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 17,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the provided `question`, which includes sentences with ambiguous pronouns, analyze the context to identify the antecedent or state if it is ambiguous. Produce detailed reasoning that explains your thought process and generates the corresponding `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d since both are compatible with \u201che\u201d and there\u2019s no additional context to disambiguate.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 18,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a sentence that includes a pronoun, analyze the context to identify the antecedent of that pronoun. Determine which noun or entity the pronoun refers to from the provided options or state if the reference is ambiguous. Include a detailed reasoning process that explains your thought process step by step for why the pronoun could refer to a particular noun or why it may be deemed ambiguous. The output should consist of the reasoning for your conclusion and the selected answer from the options provided.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either \u201cthe developer\u201d or \u201cthe writer,\u201d and the sentence alone doesn\u2019t disambiguate which one used big words.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d since both are compatible with \u201che\u201d and there\u2019s no additional context to disambiguate.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 19,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a sentence that includes a pronoun, analyze the context to identify the antecedent of that pronoun. Determine which noun or entity the pronoun refers to from the provided options or state if the reference is ambiguous. Include a detailed reasoning process that explains your thought process step by step for why the pronoun could refer to a particular noun or why it may be deemed ambiguous. The output should consist of the reasoning for your conclusion and the selected answer from the options provided.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either \u201cthe developer\u201d or \u201cthe writer,\u201d and the sentence alone doesn\u2019t disambiguate which one used big words.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d since both are compatible with \u201che\u201d and there\u2019s no additional context to disambiguate.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "final_prompts": [
+    {
+      "predictor_index": 0,
+      "predictor_name": "Predict",
+      "instruction": "Given a sentence that includes a pronoun, analyze the context to identify the antecedent of that pronoun. Determine which noun or entity the pronoun refers to from the provided options or state if the reference is ambiguous. Include a detailed reasoning process that explains your thought process step by step for why the pronoun could refer to a particular noun or why it may be deemed ambiguous. The output should consist of the reasoning for your conclusion and the selected answer from the options provided.",
+      "num_demos": 2,
+      "demos": [
+        {
+          "inputs": {
+            "augmented": true,
+            "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous",
+            "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d since both are compatible with \u201che\u201d and there\u2019s no additional context to disambiguate.",
+            "answer": "(C)"
+          },
+          "outputs": {}
+        },
+        {
+          "inputs": {
+            "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous"
+          },
+          "outputs": {
+            "answer": "(C)"
+          }
+        }
+      ]
+    }
+  ]
+}

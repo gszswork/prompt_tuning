@@ -1,0 +1,707 @@
+{
+  "dataset": "GSM8K",
+  "train_size": 10,
+  "val_size": 10,
+  "max_bootstrapped_demos": 4,
+  "max_labeled_demos": 4,
+  "num_threads": 5,
+  "optimizer": "MIPROv2",
+  "auto_setting": "medium",
+  "trial_scores": [
+    {
+      "trial_number": 1,
+      "score": 62.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 2,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 3,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 4,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 5,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 6,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 7,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 8,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 9,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 10,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 11,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 12,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 13,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 14,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 15,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 16,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 17,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 18,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 19,
+      "score": 87.5,
+      "eval_type": "full"
+    }
+  ],
+  "final_test_score": 0.8414164742109315,
+  "best_trial": {
+    "trial_number": 19,
+    "score": 87.5,
+    "eval_type": "full"
+  },
+  "trial_prompts": [
+    {
+      "trial_number": 1,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a real-world scenario question, break down the problem into logical steps. Calculate the total needed quantities and explain your reasoning clearly in the fields `reasoning` and `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "3"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, mealworms and vegetables to help keep them healthy.  She gives the chickens their feed in three separate meals. In the morning, she gives her flock of chickens 15 cups of feed.  In the afternoon, she gives her chickens another 25 cups of feed.  How many cups of feed does she need to give her chickens in the final meal of the day if the size of Wendi's flock is 20 chickens?",
+                "reasoning": "Each chicken gets 3 cups per day, so 20 chickens need 20 \u00d7 3 = 60 cups total. She already gave 15 + 25 = 40 cups. The final meal must be 60 \u2212 40 = 20 cups.",
+                "answer": "20"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "For the provided `question`, generate a structured response that includes detailed `reasoning` and the final `answer` based on the arithmetic involved in solving the word problem.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "3"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, mealworms and vegetables to help keep them healthy.  She gives the chickens their feed in three separate meals. In the morning, she gives her flock of chickens 15 cups of feed.  In the afternoon, she gives her chickens another 25 cups of feed.  How many cups of feed does she need to give her chickens in the final meal of the day if the size of Wendi's flock is 20 chickens?",
+                "reasoning": "Each chicken gets 3 cups per day, so 20 chickens need 20 \u00d7 3 = 60 cups total. She already gave 15 + 25 = 40 cups. The final meal must be 60 \u2212 40 = 20 cups.",
+                "answer": "20"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "3"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, mealworms and vegetables to help keep them healthy.  She gives the chickens their feed in three separate meals. In the morning, she gives her flock of chickens 15 cups of feed.  In the afternoon, she gives her chickens another 25 cups of feed.  How many cups of feed does she need to give her chickens in the final meal of the day if the size of Wendi's flock is 20 chickens?",
+                "reasoning": "Each chicken gets 3 cups per day, so 20 chickens need 20 \u00d7 3 = 60 cups total. She already gave 15 + 25 = 40 cups. The final meal must be 60 \u2212 40 = 20 cups.",
+                "answer": "20"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 5,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "When provided with a `question` that presents a practical problem requiring arithmetic reasoning, generate a detailed `reasoning` that breaks down the solution step by step. Then, produce the final `answer` based on the calculations made. Ensure that both the reasoning and answer fields are comprehensive to enhance understanding of the problem-solving process.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "3"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, mealworms and vegetables to help keep them healthy.  She gives the chickens their feed in three separate meals. In the morning, she gives her flock of chickens 15 cups of feed.  In the afternoon, she gives her chickens another 25 cups of feed.  How many cups of feed does she need to give her chickens in the final meal of the day if the size of Wendi's flock is 20 chickens?"
+              },
+              "outputs": {
+                "answer": "20"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 6,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the mathematical scenario described in the `question`, analyze the information provided and perform the necessary calculations to derive the total amount needed. Provide your reasoning step by step, followed by the final answer.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "3"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, mealworms and vegetables to help keep them healthy.  She gives the chickens their feed in three separate meals. In the morning, she gives her flock of chickens 15 cups of feed.  In the afternoon, she gives her chickens another 25 cups of feed.  How many cups of feed does she need to give her chickens in the final meal of the day if the size of Wendi's flock is 20 chickens?",
+                "reasoning": "Each chicken gets 3 cups per day, so 20 chickens need 20 \u00d7 3 = 60 cups total. She already gave 15 + 25 = 40 cups. The final meal must be 60 \u2212 40 = 20 cups.",
+                "answer": "20"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 7,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "For the provided `question`, generate a structured response that includes detailed `reasoning` and the final `answer` based on the arithmetic involved in solving the word problem.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "3"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, mealworms and vegetables to help keep them healthy.  She gives the chickens their feed in three separate meals. In the morning, she gives her flock of chickens 15 cups of feed.  In the afternoon, she gives her chickens another 25 cups of feed.  How many cups of feed does she need to give her chickens in the final meal of the day if the size of Wendi's flock is 20 chickens?",
+                "reasoning": "Each chicken gets 3 cups per day, so 20 chickens need 20 \u00d7 3 = 60 cups total. She already gave 15 + 25 = 40 cups. The final meal must be 60 \u2212 40 = 20 cups.",
+                "answer": "20"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 8,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the problem described in the `question`, break it down logically into manageable steps to clearly explain your reasoning and compute the correct `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, mealworms and vegetables to help keep them healthy.  She gives the chickens their feed in three separate meals. In the morning, she gives her flock of chickens 15 cups of feed.  In the afternoon, she gives her chickens another 25 cups of feed.  How many cups of feed does she need to give her chickens in the final meal of the day if the size of Wendi's flock is 20 chickens?"
+              },
+              "outputs": {
+                "answer": "20"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?"
+              },
+              "outputs": {
+                "answer": "3"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 9,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the mathematical scenario described in the `question`, analyze the information provided and perform the necessary calculations to derive the total amount needed. Provide your reasoning step by step, followed by the final answer.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "3"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, mealworms and vegetables to help keep them healthy.  She gives the chickens their feed in three separate meals. In the morning, she gives her flock of chickens 15 cups of feed.  In the afternoon, she gives her chickens another 25 cups of feed.  How many cups of feed does she need to give her chickens in the final meal of the day if the size of Wendi's flock is 20 chickens?"
+              },
+              "outputs": {
+                "answer": "20"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 10,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the mathematical scenario described in the `question`, analyze the information provided and perform the necessary calculations to derive the total amount needed. Provide your reasoning step by step, followed by the final answer.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, mealworms and vegetables to help keep them healthy.  She gives the chickens their feed in three separate meals. In the morning, she gives her flock of chickens 15 cups of feed.  In the afternoon, she gives her chickens another 25 cups of feed.  How many cups of feed does she need to give her chickens in the final meal of the day if the size of Wendi's flock is 20 chickens?",
+                "reasoning": "Each chicken gets 3 cups per day, so 20 chickens need 20 \u00d7 3 = 60 cups total. She already gave 15 + 25 = 40 cups. The final meal must be 60 \u2212 40 = 20 cups.",
+                "answer": "20"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "3"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 11,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "For the provided `question`, generate a structured response that includes detailed `reasoning` and the final `answer` based on the arithmetic involved in solving the word problem.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "3"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, mealworms and vegetables to help keep them healthy.  She gives the chickens their feed in three separate meals. In the morning, she gives her flock of chickens 15 cups of feed.  In the afternoon, she gives her chickens another 25 cups of feed.  How many cups of feed does she need to give her chickens in the final meal of the day if the size of Wendi's flock is 20 chickens?",
+                "reasoning": "Each chicken gets 3 cups per day, so 20 chickens need 20 \u00d7 3 = 60 cups total. She already gave 15 + 25 = 40 cups. The final meal must be 60 \u2212 40 = 20 cups.",
+                "answer": "20"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 12,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "3"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, mealworms and vegetables to help keep them healthy.  She gives the chickens their feed in three separate meals. In the morning, she gives her flock of chickens 15 cups of feed.  In the afternoon, she gives her chickens another 25 cups of feed.  How many cups of feed does she need to give her chickens in the final meal of the day if the size of Wendi's flock is 20 chickens?",
+                "reasoning": "Each chicken gets 3 cups per day, so 20 chickens need 20 \u00d7 3 = 60 cups total. She already gave 15 + 25 = 40 cups. The final meal must be 60 \u2212 40 = 20 cups.",
+                "answer": "20"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 13,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, mealworms and vegetables to help keep them healthy.  She gives the chickens their feed in three separate meals. In the morning, she gives her flock of chickens 15 cups of feed.  In the afternoon, she gives her chickens another 25 cups of feed.  How many cups of feed does she need to give her chickens in the final meal of the day if the size of Wendi's flock is 20 chickens?",
+                "reasoning": "Each chicken gets 3 cups per day, so 20 chickens need 20 \u00d7 3 = 60 cups total. She already gave 15 + 25 = 40 cups. The final meal must be 60 \u2212 40 = 20 cups.",
+                "answer": "20"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?"
+              },
+              "outputs": {
+                "answer": "3"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 14,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the problem described in the `question`, break it down logically into manageable steps to clearly explain your reasoning and compute the correct `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "3"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, mealworms and vegetables to help keep them healthy.  She gives the chickens their feed in three separate meals. In the morning, she gives her flock of chickens 15 cups of feed.  In the afternoon, she gives her chickens another 25 cups of feed.  How many cups of feed does she need to give her chickens in the final meal of the day if the size of Wendi's flock is 20 chickens?",
+                "reasoning": "Each chicken gets 3 cups per day, so 20 chickens need 20 \u00d7 3 = 60 cups total. She already gave 15 + 25 = 40 cups. The final meal must be 60 \u2212 40 = 20 cups.",
+                "answer": "20"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 15,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "For the provided `question`, generate a structured response that includes detailed `reasoning` and the final `answer` based on the arithmetic involved in solving the word problem.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, mealworms and vegetables to help keep them healthy.  She gives the chickens their feed in three separate meals. In the morning, she gives her flock of chickens 15 cups of feed.  In the afternoon, she gives her chickens another 25 cups of feed.  How many cups of feed does she need to give her chickens in the final meal of the day if the size of Wendi's flock is 20 chickens?",
+                "reasoning": "Each chicken gets 3 cups per day, so 20 chickens need 20 \u00d7 3 = 60 cups total. She already gave 15 + 25 = 40 cups. The final meal must be 60 \u2212 40 = 20 cups.",
+                "answer": "20"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "3"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 16,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "For the provided `question`, generate a structured response that includes detailed `reasoning` and the final `answer` based on the arithmetic involved in solving the word problem.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, mealworms and vegetables to help keep them healthy.  She gives the chickens their feed in three separate meals. In the morning, she gives her flock of chickens 15 cups of feed.  In the afternoon, she gives her chickens another 25 cups of feed.  How many cups of feed does she need to give her chickens in the final meal of the day if the size of Wendi's flock is 20 chickens?",
+                "reasoning": "Each chicken gets 3 cups per day, so 20 chickens need 20 \u00d7 3 = 60 cups total. She already gave 15 + 25 = 40 cups. The final meal must be 60 \u2212 40 = 20 cups.",
+                "answer": "20"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "3"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 17,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "When provided with a `question` that presents a practical problem requiring arithmetic reasoning, generate a detailed `reasoning` that breaks down the solution step by step. Then, produce the final `answer` based on the calculations made. Ensure that both the reasoning and answer fields are comprehensive to enhance understanding of the problem-solving process.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, mealworms and vegetables to help keep them healthy.  She gives the chickens their feed in three separate meals. In the morning, she gives her flock of chickens 15 cups of feed.  In the afternoon, she gives her chickens another 25 cups of feed.  How many cups of feed does she need to give her chickens in the final meal of the day if the size of Wendi's flock is 20 chickens?",
+                "reasoning": "Each chicken gets 3 cups per day, so 20 chickens need 20 \u00d7 3 = 60 cups total. She already gave 15 + 25 = 40 cups. The final meal must be 60 \u2212 40 = 20 cups.",
+                "answer": "20"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "3"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 18,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "3"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, mealworms and vegetables to help keep them healthy.  She gives the chickens their feed in three separate meals. In the morning, she gives her flock of chickens 15 cups of feed.  In the afternoon, she gives her chickens another 25 cups of feed.  How many cups of feed does she need to give her chickens in the final meal of the day if the size of Wendi's flock is 20 chickens?",
+                "reasoning": "Each chicken gets 3 cups per day, so 20 chickens need 20 \u00d7 3 = 60 cups total. She already gave 15 + 25 = 40 cups. The final meal must be 60 \u2212 40 = 20 cups.",
+                "answer": "20"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 19,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "3"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, mealworms and vegetables to help keep them healthy.  She gives the chickens their feed in three separate meals. In the morning, she gives her flock of chickens 15 cups of feed.  In the afternoon, she gives her chickens another 25 cups of feed.  How many cups of feed does she need to give her chickens in the final meal of the day if the size of Wendi's flock is 20 chickens?"
+              },
+              "outputs": {
+                "answer": "20"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "final_prompts": [
+    {
+      "predictor_index": 0,
+      "predictor_name": "Predict",
+      "instruction": "For the provided `question`, generate a structured response that includes detailed `reasoning` and the final `answer` based on the arithmetic involved in solving the word problem.",
+      "num_demos": 2,
+      "demos": [
+        {
+          "inputs": {
+            "augmented": true,
+            "question": "A robe takes 2 bolts of blue fiber and half that much white fiber.  How many bolts in total does it take?",
+            "reasoning": "Not supplied for this particular example.",
+            "answer": "3"
+          },
+          "outputs": {}
+        },
+        {
+          "inputs": {
+            "augmented": true,
+            "question": "Every day, Wendi feeds each of her chickens three cups of mixed chicken feed, containing seeds, mealworms and vegetables to help keep them healthy.  She gives the chickens their feed in three separate meals. In the morning, she gives her flock of chickens 15 cups of feed.  In the afternoon, she gives her chickens another 25 cups of feed.  How many cups of feed does she need to give her chickens in the final meal of the day if the size of Wendi's flock is 20 chickens?",
+            "reasoning": "Each chicken gets 3 cups per day, so 20 chickens need 20 \u00d7 3 = 60 cups total. She already gave 15 + 25 = 40 cups. The final meal must be 60 \u2212 40 = 20 cups.",
+            "answer": "20"
+          },
+          "outputs": {}
+        }
+      ]
+    }
+  ]
+}

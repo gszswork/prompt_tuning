@@ -1,0 +1,706 @@
+{
+  "dataset": "coin_flip",
+  "train_size": 10,
+  "val_size": 10,
+  "max_bootstrapped_demos": 4,
+  "max_labeled_demos": 4,
+  "num_threads": 5,
+  "optimizer": "MIPROv2",
+  "auto_setting": "medium",
+  "trial_scores": [
+    {
+      "trial_number": 1,
+      "score": 37.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 2,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 3,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 4,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 5,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 6,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 7,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 8,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 9,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 10,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 11,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 12,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 13,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 14,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 15,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 16,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 17,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 18,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 19,
+      "score": 100.0,
+      "eval_type": "full"
+    }
+  ],
+  "final_test_score": 0.99375,
+  "best_trial": {
+    "trial_number": 19,
+    "score": 100.0,
+    "eval_type": "full"
+  },
+  "trial_prompts": [
+    {
+      "trial_number": 1,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided `question` regarding the sequence of coin flips. Determine the final state of the coin based on the total number of flips (even or odd). Provide a detailed reasoning process that supports your conclusion, followed by a definitive answer indicating whether the coin is still heads up or not.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. It is flipped three times (by Caleb, Chase, and Eleazar); Chanel does not flip it. An odd number of flips reverses heads to tails, so it is not still heads up.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Jae and Dennis do not flip it, so it stays heads. Cris flips it to tails. Bernadette flips it back to heads.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the given `question` about the coin flipping scenario, provide a detailed reasoning process step by step, and conclude with the final `answer` indicating whether the coin is still heads up or not.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. It is flipped three times (by Caleb, Chase, and Eleazar); Chanel does not flip it. An odd number of flips reverses heads to tails, so it is not still heads up.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Jae and Dennis do not flip it, so it stays heads. Cris flips it to tails. Bernadette flips it back to heads.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. It is flipped three times (by Caleb, Chase, and Eleazar); Chanel does not flip it. An odd number of flips reverses heads to tails, so it is not still heads up.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Jae and Dennis do not flip it, so it stays heads. Cris flips it to tails. Bernadette flips it back to heads.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 5,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question` about a coin's initial state and the sequence of flips made by various individuals, generate a detailed `reasoning` process that explains how each coin flip affects its state. Conclude with a final `answer` that indicates whether the coin remains in its initial state or has changed as a result of the flips.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. It is flipped three times (by Caleb, Chase, and Eleazar); Chanel does not flip it. An odd number of flips reverses heads to tails, so it is not still heads up.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "yes"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 6,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the situation described in the `question`, analyze the sequence of coin flips, reasoning through each step to determine whether the final state of the coin remains the same as its initial state. Provide a detailed `reasoning` process to support your conclusion and produce the final `answer` regarding the state of the coin after all flips.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. It is flipped three times (by Caleb, Chase, and Eleazar); Chanel does not flip it. An odd number of flips reverses heads to tails, so it is not still heads up.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Jae and Dennis do not flip it, so it stays heads. Cris flips it to tails. Bernadette flips it back to heads.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 7,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the given `question` about the coin flipping scenario, provide a detailed reasoning process step by step, and conclude with the final `answer` indicating whether the coin is still heads up or not.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. It is flipped three times (by Caleb, Chase, and Eleazar); Chanel does not flip it. An odd number of flips reverses heads to tails, so it is not still heads up.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Jae and Dennis do not flip it, so it stays heads. Cris flips it to tails. Bernadette flips it back to heads.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 8,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question`, explain the process of how the flips affect the initial state of the coin. Clearly present your reasoning step by step, and then conclude with a definitive answer indicating whether the coin is still heads up or not.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 9,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the situation described in the `question`, analyze the sequence of coin flips, reasoning through each step to determine whether the final state of the coin remains the same as its initial state. Provide a detailed `reasoning` process to support your conclusion and produce the final `answer` regarding the state of the coin after all flips.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. It is flipped three times (by Caleb, Chase, and Eleazar); Chanel does not flip it. An odd number of flips reverses heads to tails, so it is not still heads up.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "yes"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 10,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the situation described in the `question`, analyze the sequence of coin flips, reasoning through each step to determine whether the final state of the coin remains the same as its initial state. Provide a detailed `reasoning` process to support your conclusion and produce the final `answer` regarding the state of the coin after all flips.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Jae and Dennis do not flip it, so it stays heads. Cris flips it to tails. Bernadette flips it back to heads.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. It is flipped three times (by Caleb, Chase, and Eleazar); Chanel does not flip it. An odd number of flips reverses heads to tails, so it is not still heads up.",
+                "answer": "no"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 11,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided `question` regarding the sequence of coin flips. Determine the final state of the coin based on the total number of flips (even or odd). Provide a detailed reasoning process that supports your conclusion, followed by a definitive answer indicating whether the coin is still heads up or not.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Jae and Dennis do not flip it, so it stays heads. Cris flips it to tails. Bernadette flips it back to heads.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. It is flipped three times (by Caleb, Chase, and Eleazar); Chanel does not flip it. An odd number of flips reverses heads to tails, so it is not still heads up.",
+                "answer": "no"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 12,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the given `question` about the coin flipping scenario, provide a detailed reasoning process step by step, and conclude with the final `answer` indicating whether the coin is still heads up or not.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. It is flipped three times (by Caleb, Chase, and Eleazar); Chanel does not flip it. An odd number of flips reverses heads to tails, so it is not still heads up.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Jae and Dennis do not flip it, so it stays heads. Cris flips it to tails. Bernadette flips it back to heads.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 13,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided `question` regarding the sequence of coin flips. Determine the final state of the coin based on the total number of flips (even or odd). Provide a detailed reasoning process that supports your conclusion, followed by a definitive answer indicating whether the coin is still heads up or not.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. It is flipped three times (by Caleb, Chase, and Eleazar); Chanel does not flip it. An odd number of flips reverses heads to tails, so it is not still heads up.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Jae and Dennis do not flip it, so it stays heads. Cris flips it to tails. Bernadette flips it back to heads.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 14,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided `question` regarding the sequence of coin flips. Determine the final state of the coin based on the total number of flips (even or odd). Provide a detailed reasoning process that supports your conclusion, followed by a definitive answer indicating whether the coin is still heads up or not.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Jae and Dennis do not flip it, so it stays heads. Cris flips it to tails. Bernadette flips it back to heads.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. It is flipped three times (by Caleb, Chase, and Eleazar); Chanel does not flip it. An odd number of flips reverses heads to tails, so it is not still heads up.",
+                "answer": "no"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 15,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the given `question` about the coin flipping scenario, provide a detailed reasoning process step by step, and conclude with the final `answer` indicating whether the coin is still heads up or not.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Jae and Dennis do not flip it, so it stays heads. Cris flips it to tails. Bernadette flips it back to heads.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 16,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided `question` regarding the sequence of coin flips. Determine the final state of the coin based on the total number of flips (even or odd). Provide a detailed reasoning process that supports your conclusion, followed by a definitive answer indicating whether the coin is still heads up or not.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. It is flipped three times (by Caleb, Chase, and Eleazar); Chanel does not flip it. An odd number of flips reverses heads to tails, so it is not still heads up.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Jae and Dennis do not flip it, so it stays heads. Cris flips it to tails. Bernadette flips it back to heads.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 17,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the given `question` about the coin flipping scenario, provide a detailed reasoning process step by step, and conclude with the final `answer` indicating whether the coin is still heads up or not.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 18,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question` about a coin's initial state and the sequence of flips made by various individuals, generate a detailed `reasoning` process that explains how each coin flip affects its state. Conclude with a final `answer` that indicates whether the coin remains in its initial state or has changed as a result of the flips.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. It is flipped three times (by Caleb, Chase, and Eleazar); Chanel does not flip it. An odd number of flips reverses heads to tails, so it is not still heads up.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Jae and Dennis do not flip it, so it stays heads. Cris flips it to tails. Bernadette flips it back to heads.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 19,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question`, explain the process of how the flips affect the initial state of the coin. Clearly present your reasoning step by step, and then conclude with a definitive answer indicating whether the coin is still heads up or not.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Jae and Dennis do not flip it, so it stays heads. Cris flips it to tails. Bernadette flips it back to heads.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. It is flipped three times (by Caleb, Chase, and Eleazar); Chanel does not flip it. An odd number of flips reverses heads to tails, so it is not still heads up.",
+                "answer": "no"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "final_prompts": [
+    {
+      "predictor_index": 0,
+      "predictor_name": "Predict",
+      "instruction": "Analyze the provided `question` regarding the sequence of coin flips. Determine the final state of the coin based on the total number of flips (even or odd). Provide a detailed reasoning process that supports your conclusion, followed by a definitive answer indicating whether the coin is still heads up or not.",
+      "num_demos": 2,
+      "demos": [
+        {
+          "inputs": {
+            "augmented": true,
+            "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+            "reasoning": "The coin starts heads up. It is flipped three times (by Caleb, Chase, and Eleazar); Chanel does not flip it. An odd number of flips reverses heads to tails, so it is not still heads up.",
+            "answer": "no"
+          },
+          "outputs": {}
+        },
+        {
+          "inputs": {
+            "augmented": true,
+            "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+            "reasoning": "The coin starts heads up. Jae and Dennis do not flip it, so it stays heads. Cris flips it to tails. Bernadette flips it back to heads.",
+            "answer": "yes"
+          },
+          "outputs": {}
+        }
+      ]
+    }
+  ]
+}

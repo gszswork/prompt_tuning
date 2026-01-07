@@ -1,0 +1,1018 @@
+{
+  "dataset": "disambiguation_qa",
+  "train_size": 25,
+  "val_size": 25,
+  "max_bootstrapped_demos": 4,
+  "max_labeled_demos": 4,
+  "num_threads": 5,
+  "optimizer": "MIPROv2",
+  "auto_setting": "medium",
+  "trial_scores": [
+    {
+      "trial_number": 1,
+      "score": 40.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 2,
+      "score": 50.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 3,
+      "score": 45.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 4,
+      "score": 50.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 5,
+      "score": 40.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 6,
+      "score": 45.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 7,
+      "score": 50.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 8,
+      "score": 45.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 9,
+      "score": 40.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 10,
+      "score": 50.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 11,
+      "score": 50.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 12,
+      "score": 50.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 13,
+      "score": 50.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 14,
+      "score": 50.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 15,
+      "score": 50.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 16,
+      "score": 55.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 17,
+      "score": 55.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 18,
+      "score": 55.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 19,
+      "score": 45.0,
+      "eval_type": "full"
+    }
+  ],
+  "final_test_score": 0.54,
+  "best_trial": {
+    "trial_number": 19,
+    "score": 45.0,
+    "eval_type": "full"
+  },
+  "trial_prompts": [
+    {
+      "trial_number": 1,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "In a critical linguistic analysis, you are an expert tasked with resolving pronoun ambiguities that can alter the meaning of scientific research publications. Carefully examine the provided `question`, which includes a sentence featuring a pronoun, and use your reasoning skills to identify the antecedent of the pronoun or determine if it is ambiguous. Your response should clearly state the reasoned thought process behind your conclusion, followed by selecting one of the answer options: (A) for the first entity, (B) for the second entity, or (C) for \"Ambiguous\".",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: Bailey planned to meet the director at their office\nOptions:\n(A) The office was the director's office\n(B) The office was Bailey's office\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201ctheir\u201d could refer either to Bailey or to the director, and nothing in the sentence clarifies whose office it is.",
+                "answer": "(C) Ambiguous"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either the developer or the writer; the sentence doesn\u2019t provide enough information to uniquely identify which one used big words.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The investigator wanted to interview the witness in person, but she was too late.\nOptions:\n(A) The investigator was too late\n(B) The witness was too late\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either \u201cthe investigator\u201d or \u201cthe witness,\u201d and nothing in the sentence disambiguates which one was too late.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question`, which includes a sentence with an ambiguous pronoun and a list of potential antecedent options, analyze the context and reasoning to determine the most appropriate answer. Clearly articulate your reasoning process, explaining why the antecedent is ambiguous or identifying the specific referent of the pronoun. Indicate your conclusion by selecting the correct answer from the options given.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d (both are possible antecedents given only this sentence), so it is not uniquely determined.",
+                "answer": "(C) Ambiguous"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either \u201cthe developer\u201d or \u201cthe writer,\u201d since both are plausible antecedents and nothing in the sentence disambiguates which one used big words.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist will collaborate with the artist, and he will share a story.\nOptions:\n(A) The scientist will share a story\n(B) The artist will share a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d since both are possible male antecedents and the sentence gives no disambiguating detail.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: Bailey planned to meet the director at their office\nOptions:\n(A) The office was the director's office\n(B) The office was Bailey's office\n(C) Ambiguous",
+                "reasoning": "\u201cTheir\u201d could refer to either Bailey\u2019s office or the director\u2019s office, and the sentence provides no extra context to disambiguate.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: Bailey planned to meet the director at their office\nOptions:\n(A) The office was the director's office\n(B) The office was Bailey's office\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201ctheir\u201d could refer either to Bailey or to the director, and nothing in the sentence clarifies whose office it is.",
+                "answer": "(C) Ambiguous"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either the developer or the writer; the sentence doesn\u2019t provide enough information to uniquely identify which one used big words.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The investigator wanted to interview the witness in person, but she was too late.\nOptions:\n(A) The investigator was too late\n(B) The witness was too late\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either \u201cthe investigator\u201d or \u201cthe witness,\u201d and nothing in the sentence disambiguates which one was too late.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 5,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided question that contains a sentence with a pronoun. Identify the potential antecedent by clearly explaining the relationships within the sentence. State your conclusion by either specifying the antecedent or noting that the reference is ambiguous. Present both your reasoning process and the final answer in the specified format.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: Bailey planned to meet the director at their office\nOptions:\n(A) The office was the director's office\n(B) The office was Bailey's office\n(C) Ambiguous",
+                "reasoning": "\u201ctheir office\u201d could refer to Bailey\u2019s office or the director\u2019s office, and there isn\u2019t enough context to disambiguate.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The investigator wanted to interview the witness in person, but she was too late.\nOptions:\n(A) The investigator was too late\n(B) The witness was too late\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 6,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the sentence in the `question`, analyze the pronoun used and provide a detailed step-by-step `reasoning` about its antecedent. State explicitly whether the antecedent is clear or ambiguous, and choose the correct option from the given choices in the `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: Bailey planned to meet the director at their office\nOptions:\n(A) The office was the director's office\n(B) The office was Bailey's office\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201ctheir\u201d could refer either to Bailey or to the director (both are plausible owners of an office), and there\u2019s no additional context to disambiguate.",
+                "answer": "(C) Ambiguous"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist,\u201d since both are plausible male antecedents and the sentence doesn\u2019t provide disambiguating context.",
+                "answer": "(C) Ambiguous"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The investigator wanted to interview the witness in person, but she was too late.\nOptions:\n(A) The investigator was too late\n(B) The witness was too late\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either the investigator or the witness; the sentence doesn\u2019t provide enough information to uniquely determine which one was too late.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either \u201cthe developer\u201d or \u201cthe writer\u201d; the sentence doesn\u2019t provide enough information to uniquely determine which one used big words.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 7,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question`, which includes a sentence with an ambiguous pronoun and a list of potential antecedent options, analyze the context and reasoning to determine the most appropriate answer. Clearly articulate your reasoning process, explaining why the antecedent is ambiguous or identifying the specific referent of the pronoun. Indicate your conclusion by selecting the correct answer from the options given.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: Bailey planned to meet the director at their office\nOptions:\n(A) The office was the director's office\n(B) The office was Bailey's office\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201ctheir\u201d could refer either to Bailey or to the director, and nothing in the sentence clarifies whose office it is.",
+                "answer": "(C) Ambiguous"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either the developer or the writer; the sentence doesn\u2019t provide enough information to uniquely identify which one used big words.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The investigator wanted to interview the witness in person, but she was too late.\nOptions:\n(A) The investigator was too late\n(B) The witness was too late\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either \u201cthe investigator\u201d or \u201cthe witness,\u201d and nothing in the sentence disambiguates which one was too late.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 8,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a sentence containing a pronoun, identify its possible antecedent(s) and provide reasoning for your choice. If the antecedent is ambiguous, clearly indicate that as well.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: Bailey planned to meet the director at their office\nOptions:\n(A) The office was the director's office\n(B) The office was Bailey's office\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The investigator wanted to interview the witness in person, but she was too late.\nOptions:\n(A) The investigator was too late\n(B) The witness was too late\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 9,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the sentence in the `question`, analyze the pronoun used and provide a detailed step-by-step `reasoning` about its antecedent. State explicitly whether the antecedent is clear or ambiguous, and choose the correct option from the given choices in the `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: Bailey planned to meet the director at their office\nOptions:\n(A) The office was the director's office\n(B) The office was Bailey's office\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201ctheir\u201d could refer either to Bailey or to the director, and there isn\u2019t enough context to resolve whose office it is.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist will collaborate with the artist, and he will share a story.\nOptions:\n(A) The scientist will share a story\n(B) The artist will share a story\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The investigator wanted to interview the witness in person, but she was too late.\nOptions:\n(A) The investigator was too late\n(B) The witness was too late\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 10,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the sentence in the `question`, analyze the pronoun used and provide a detailed step-by-step `reasoning` about its antecedent. State explicitly whether the antecedent is clear or ambiguous, and choose the correct option from the given choices in the `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist will collaborate with the artist, and he will share a story.\nOptions:\n(A) The scientist will share a story\n(B) The artist will share a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist,\u201d and the sentence provides no additional cue to disambiguate.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: Bailey planned to meet the director at their office\nOptions:\n(A) The office was the director's office\n(B) The office was Bailey's office\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 11,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "In a critical linguistic analysis, you are an expert tasked with resolving pronoun ambiguities that can alter the meaning of scientific research publications. Carefully examine the provided `question`, which includes a sentence featuring a pronoun, and use your reasoning skills to identify the antecedent of the pronoun or determine if it is ambiguous. Your response should clearly state the reasoned thought process behind your conclusion, followed by selecting one of the answer options: (A) for the first entity, (B) for the second entity, or (C) for \"Ambiguous\".",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either \u201cthe developer\u201d or \u201cthe writer,\u201d since both are plausible antecedents and nothing in the sentence disambiguates who used big words.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The investigator wanted to interview the witness in person, but she was too late.\nOptions:\n(A) The investigator was too late\n(B) The witness was too late\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either the investigator or the witness; the sentence doesn\u2019t provide enough information to determine which one was too late.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: Bailey planned to meet the director at their office\nOptions:\n(A) The office was the director's office\n(B) The office was Bailey's office\n(C) Ambiguous",
+                "reasoning": "\u201ctheir office\u201d could refer to Bailey\u2019s office (singular they) or the director\u2019s office; the sentence doesn\u2019t specify whose office it is.",
+                "answer": "(C) Ambiguous"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist,\u201d since both are singular people and nothing in the sentence disambiguates which one shared a story.",
+                "answer": "(C) Ambiguous"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 12,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: Bailey planned to meet the director at their office\nOptions:\n(A) The office was the director's office\n(B) The office was Bailey's office\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201ctheir\u201d could refer either to Bailey or to the director, and nothing in the sentence clarifies whose office it is.",
+                "answer": "(C) Ambiguous"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either the developer or the writer; the sentence doesn\u2019t provide enough information to uniquely identify which one used big words.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The investigator wanted to interview the witness in person, but she was too late.\nOptions:\n(A) The investigator was too late\n(B) The witness was too late\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either \u201cthe investigator\u201d or \u201cthe witness,\u201d and nothing in the sentence disambiguates which one was too late.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 13,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "In a critical linguistic analysis, you are an expert tasked with resolving pronoun ambiguities that can alter the meaning of scientific research publications. Carefully examine the provided `question`, which includes a sentence featuring a pronoun, and use your reasoning skills to identify the antecedent of the pronoun or determine if it is ambiguous. Your response should clearly state the reasoned thought process behind your conclusion, followed by selecting one of the answer options: (A) for the first entity, (B) for the second entity, or (C) for \"Ambiguous\".",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: Bailey planned to meet the director at their office\nOptions:\n(A) The office was the director's office\n(B) The office was Bailey's office\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201ctheir\u201d could refer either to Bailey or to the director, and nothing in the sentence clarifies whose office it is.",
+                "answer": "(C) Ambiguous"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either the developer or the writer; the sentence doesn\u2019t provide enough information to uniquely identify which one used big words.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The investigator wanted to interview the witness in person, but she was too late.\nOptions:\n(A) The investigator was too late\n(B) The witness was too late\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either \u201cthe investigator\u201d or \u201cthe witness,\u201d and nothing in the sentence disambiguates which one was too late.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 14,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "In a critical linguistic analysis, you are an expert tasked with resolving pronoun ambiguities that can alter the meaning of scientific research publications. Carefully examine the provided `question`, which includes a sentence featuring a pronoun, and use your reasoning skills to identify the antecedent of the pronoun or determine if it is ambiguous. Your response should clearly state the reasoned thought process behind your conclusion, followed by selecting one of the answer options: (A) for the first entity, (B) for the second entity, or (C) for \"Ambiguous\".",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The investigator wanted to interview the witness in person, but she was too late.\nOptions:\n(A) The investigator was too late\n(B) The witness was too late\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either the investigator or the witness; the sentence doesn\u2019t provide enough information to determine which one was too late.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: Bailey planned to meet the director at their office\nOptions:\n(A) The office was the director's office\n(B) The office was Bailey's office\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 15,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided question that contains a sentence with a pronoun. Identify the potential antecedent by clearly explaining the relationships within the sentence. State your conclusion by either specifying the antecedent or noting that the reference is ambiguous. Present both your reasoning process and the final answer in the specified format.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: Bailey planned to meet the director at their office\nOptions:\n(A) The office was the director's office\n(B) The office was Bailey's office\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201ctheir\u201d could refer either to Bailey or to the director, and nothing in the sentence clarifies whose office it is.",
+                "answer": "(C) Ambiguous"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either the developer or the writer; the sentence doesn\u2019t provide enough information to uniquely identify which one used big words.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The investigator wanted to interview the witness in person, but she was too late.\nOptions:\n(A) The investigator was too late\n(B) The witness was too late\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201cshe\u201d could refer to either \u201cthe investigator\u201d or \u201cthe witness,\u201d and nothing in the sentence disambiguates which one was too late.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 16,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a sentence containing a pronoun, identify its possible antecedent(s) and provide reasoning for your choice. If the antecedent is ambiguous, clearly indicate that as well.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist will collaborate with the artist, and he will share a story.\nOptions:\n(A) The scientist will share a story\n(B) The artist will share a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d with no disambiguating cue in the sentence.",
+                "answer": "(C) Ambiguous"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The investigator wanted to interview the witness in person, but she was too late.\nOptions:\n(A) The investigator was too late\n(B) The witness was too late\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: Bailey planned to meet the director at their office\nOptions:\n(A) The office was the director's office\n(B) The office was Bailey's office\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 17,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a sentence containing a pronoun, identify its possible antecedent(s) and provide reasoning for your choice. If the antecedent is ambiguous, clearly indicate that as well.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist will collaborate with the artist, and he will share a story.\nOptions:\n(A) The scientist will share a story\n(B) The artist will share a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d with no disambiguating cue in the sentence.",
+                "answer": "(C) Ambiguous"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The investigator wanted to interview the witness in person, but she was too late.\nOptions:\n(A) The investigator was too late\n(B) The witness was too late\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: Bailey planned to meet the director at their office\nOptions:\n(A) The office was the director's office\n(B) The office was Bailey's office\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 18,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a sentence containing a pronoun, identify its possible antecedent(s) and provide reasoning for your choice. If the antecedent is ambiguous, clearly indicate that as well.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist will collaborate with the artist, and he will share a story.\nOptions:\n(A) The scientist will share a story\n(B) The artist will share a story\n(C) Ambiguous",
+                "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d with no disambiguating cue in the sentence.",
+                "answer": "(C) Ambiguous"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The investigator wanted to interview the witness in person, but she was too late.\nOptions:\n(A) The investigator was too late\n(B) The witness was too late\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: Bailey planned to meet the director at their office\nOptions:\n(A) The office was the director's office\n(B) The office was Bailey's office\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 19,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a sentence containing a pronoun, identify its possible antecedent(s) and provide reasoning for your choice. If the antecedent is ambiguous, clearly indicate that as well.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: Bailey planned to meet the director at their office\nOptions:\n(A) The office was the director's office\n(B) The office was Bailey's office\n(C) Ambiguous",
+                "reasoning": "The possessive pronoun \u201ctheir\u201d could refer to either Bailey or the director, since both are plausible owners of an office and there\u2019s no additional context to disambiguate.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The investigator wanted to interview the witness in person, but she was too late.\nOptions:\n(A) The investigator was too late\n(B) The witness was too late\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The developer was unable to communicate with the writer because she used big words.\nOptions:\n(A) The developer uses big words\n(B) The writer uses big words\n(C) Ambiguous"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "final_prompts": [
+    {
+      "predictor_index": 0,
+      "predictor_name": "Predict",
+      "instruction": "Given a sentence containing a pronoun, identify its possible antecedent(s) and provide reasoning for your choice. If the antecedent is ambiguous, clearly indicate that as well.",
+      "num_demos": 4,
+      "demos": [
+        {
+          "inputs": {
+            "augmented": true,
+            "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist will collaborate with the artist, and he will share a story.\nOptions:\n(A) The scientist will share a story\n(B) The artist will share a story\n(C) Ambiguous",
+            "reasoning": "The pronoun \u201che\u201d could refer to either \u201cthe scientist\u201d or \u201cthe artist\u201d with no disambiguating cue in the sentence.",
+            "answer": "(C) Ambiguous"
+          },
+          "outputs": {}
+        },
+        {
+          "inputs": {
+            "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The scientist collaborated with the artist, and he shared a story.\nOptions:\n(A) The scientist shared a story\n(B) The artist shared a story\n(C) Ambiguous"
+          },
+          "outputs": {
+            "answer": "(C)"
+          }
+        },
+        {
+          "inputs": {
+            "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: The investigator wanted to interview the witness in person, but she was too late.\nOptions:\n(A) The investigator was too late\n(B) The witness was too late\n(C) Ambiguous"
+          },
+          "outputs": {
+            "answer": "(C)"
+          }
+        },
+        {
+          "inputs": {
+            "question": "In the following sentences, explain the antecedent of the pronoun (which thing the pronoun refers to), or state that it is ambiguous.\nSentence: Bailey planned to meet the director at their office\nOptions:\n(A) The office was the director's office\n(B) The office was Bailey's office\n(C) Ambiguous"
+          },
+          "outputs": {
+            "answer": "(C)"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1023 @@
+{
+  "dataset": "coin_flip",
+  "train_size": 25,
+  "val_size": 25,
+  "max_bootstrapped_demos": 4,
+  "max_labeled_demos": 4,
+  "num_threads": 5,
+  "optimizer": "MIPROv2",
+  "auto_setting": "medium",
+  "trial_scores": [
+    {
+      "trial_number": 1,
+      "score": 40.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 2,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 3,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 4,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 5,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 6,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 7,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 8,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 9,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 10,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 11,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 12,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 13,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 14,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 15,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 16,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 17,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 18,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 19,
+      "score": 100.0,
+      "eval_type": "full"
+    }
+  ],
+  "final_test_score": 0.9977777777777778,
+  "best_trial": {
+    "trial_number": 19,
+    "score": 100.0,
+    "eval_type": "full"
+  },
+  "trial_prompts": [
+    {
+      "trial_number": 1,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Imagine a high-stakes situation in a game where the outcome depends on a sequential series of coin flips. Each player can choose to flip the coin or not, and the stakes are high: the winner will be determined by whether the coin ends up heads up or tails up. Given the detailed question about who flips the coin and the initial state of the coin, deduce the final state of the coin. Provide your reasoning step-by-step, even if not explicitly needed, to strengthen your answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Domingo does not flip the coin. Briana flips the coin. Michael flips the coin. Joan does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Domingo and Joan do nothing. Briana flips it to tails, then Michael flips it back to heads. With two flips total, it ends heads up.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Morgan flips the coin. Perla does not flip the coin. Joao does not flip the coin. Marta does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Only Morgan flips it (one flip total), and an odd number of flips changes heads to tails. The others do not flip it, so nothing else changes.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question`, analyze the series of coin flips to determine the final state of the coin. Step through each individual's action carefully, detail the changes in the state of the coin, and conclude whether the coin is heads up or not. Present a clear reasoning breakdown along with the final answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Melody does not flip the coin. Ramiro does not flip the coin. Humberto does not flip the coin. Jacob does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Domingo does not flip the coin. Briana flips the coin. Michael flips the coin. Joan does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Domingo does not flip the coin. Briana flips the coin. Michael flips the coin. Joan does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Domingo and Joan do nothing. Briana flips it to tails, then Michael flips it back to heads. With two flips total, it ends heads up.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Morgan flips the coin. Perla does not flip the coin. Joao does not flip the coin. Marta does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Only Morgan flips it (one flip total), and an odd number of flips changes heads to tails. The others do not flip it, so nothing else changes.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 5,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided question about a series of coin flips, analyze the situation to determine the final state of the coin. Start by examining the number of flips: if it\u2019s odd, the coin lands tails up; if even, it remains heads up. Expand on your reasoning step by step, detailing the actions taken by each individual to arrive at your conclusion. Provide a clear answer indicating the final state of the coin.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Domingo does not flip the coin. Briana flips the coin. Michael flips the coin. Joan does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Domingo does not flip (no change). Briana flips (heads \u2192 tails). Michael flips (tails \u2192 heads). Joan does not flip (no change).",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Morgan flips the coin. Perla does not flip the coin. Joao does not flip the coin. Marta does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 6,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a scenario where a coin is flipped several times by different individuals, analyze the sequence of flips from the provided `question` to generate a detailed `reasoning` of the process. This should lead to a clear `answer` on whether the final state of the coin is heads up or tails up. Ensure the explanation is structured and walks through each action step by step for clarity.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Domingo does not flip the coin. Briana flips the coin. Michael flips the coin. Joan does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Domingo and Joan do nothing. Briana flips it to tails, then Michael flips it back to heads. Two flips total, so it ends heads up.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Morgan flips the coin. Perla does not flip the coin. Joao does not flip the coin. Marta does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 7,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question`, analyze the series of coin flips to determine the final state of the coin. Step through each individual's action carefully, detail the changes in the state of the coin, and conclude whether the coin is heads up or not. Present a clear reasoning breakdown along with the final answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Domingo does not flip the coin. Briana flips the coin. Michael flips the coin. Joan does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Domingo and Joan do nothing. Briana flips it to tails, then Michael flips it back to heads. With two flips total, it ends heads up.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Morgan flips the coin. Perla does not flip the coin. Joao does not flip the coin. Marta does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Only Morgan flips it (one flip total), and an odd number of flips changes heads to tails. The others do not flip it, so nothing else changes.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 8,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Based on the `question`, analyze the flips described, track the parity of the actions, and systematically outline your reasoning to conclude whether the coin remains heads up or not, before producing the final `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "question": "A coin is heads up. Domingo does not flip the coin. Briana flips the coin. Michael flips the coin. Joan does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Morgan flips the coin. Perla does not flip the coin. Joao does not flip the coin. Marta does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "yes"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 9,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a scenario where a coin is flipped several times by different individuals, analyze the sequence of flips from the provided `question` to generate a detailed `reasoning` of the process. This should lead to a clear `answer` on whether the final state of the coin is heads up or tails up. Ensure the explanation is structured and walks through each action step by step for clarity.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Domingo does not flip the coin. Briana flips the coin. Michael flips the coin. Joan does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Briana flips it to tails, then Michael flips it back to heads. Domingo and Joan do not flip it, so it remains heads.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Melody does not flip the coin. Ramiro does not flip the coin. Humberto does not flip the coin. Jacob does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Morgan flips the coin. Perla does not flip the coin. Joao does not flip the coin. Marta does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 10,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a scenario where a coin is flipped several times by different individuals, analyze the sequence of flips from the provided `question` to generate a detailed `reasoning` of the process. This should lead to a clear `answer` on whether the final state of the coin is heads up or tails up. Ensure the explanation is structured and walks through each action step by step for clarity.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Melody does not flip the coin. Ramiro does not flip the coin. Humberto does not flip the coin. Jacob does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "No one flips (reverses) the coin, so it remains in its initial state.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Domingo does not flip the coin. Briana flips the coin. Michael flips the coin. Joan does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "yes"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 11,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Imagine a high-stakes situation in a game where the outcome depends on a sequential series of coin flips. Each player can choose to flip the coin or not, and the stakes are high: the winner will be determined by whether the coin ends up heads up or tails up. Given the detailed question about who flips the coin and the initial state of the coin, deduce the final state of the coin. Provide your reasoning step-by-step, even if not explicitly needed, to strengthen your answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Morgan flips the coin. Perla does not flip the coin. Joao does not flip the coin. Marta does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Only Morgan flips it (one flip total), which reverses heads to tails. The others do not flip it, so it remains tails.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Domingo does not flip the coin. Briana flips the coin. Michael flips the coin. Joan does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Caleb flips it (tails), Chase flips it (heads), Eleazar flips it (tails). Chanel does not flip it, so it remains tails.",
+                "answer": "no"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 12,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question`, analyze the series of coin flips to determine the final state of the coin. Step through each individual's action carefully, detail the changes in the state of the coin, and conclude whether the coin is heads up or not. Present a clear reasoning breakdown along with the final answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Melody does not flip the coin. Ramiro does not flip the coin. Humberto does not flip the coin. Jacob does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Domingo does not flip the coin. Briana flips the coin. Michael flips the coin. Joan does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 13,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Imagine a high-stakes situation in a game where the outcome depends on a sequential series of coin flips. Each player can choose to flip the coin or not, and the stakes are high: the winner will be determined by whether the coin ends up heads up or tails up. Given the detailed question about who flips the coin and the initial state of the coin, deduce the final state of the coin. Provide your reasoning step-by-step, even if not explicitly needed, to strengthen your answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Domingo does not flip the coin. Briana flips the coin. Michael flips the coin. Joan does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Domingo and Joan do nothing. Briana flips it to tails, then Michael flips it back to heads. With two flips total, it ends heads up.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Morgan flips the coin. Perla does not flip the coin. Joao does not flip the coin. Marta does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Only Morgan flips it (one flip total), and an odd number of flips changes heads to tails. The others do not flip it, so nothing else changes.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 14,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Imagine a high-stakes situation in a game where the outcome depends on a sequential series of coin flips. Each player can choose to flip the coin or not, and the stakes are high: the winner will be determined by whether the coin ends up heads up or tails up. Given the detailed question about who flips the coin and the initial state of the coin, deduce the final state of the coin. Provide your reasoning step-by-step, even if not explicitly needed, to strengthen your answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Morgan flips the coin. Perla does not flip the coin. Joao does not flip the coin. Marta does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Domingo does not flip the coin. Briana flips the coin. Michael flips the coin. Joan does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "yes"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 15,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question`, analyze the series of coin flips to determine the final state of the coin. Step through each individual's action carefully, detail the changes in the state of the coin, and conclude whether the coin is heads up or not. Present a clear reasoning breakdown along with the final answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Melody does not flip the coin. Ramiro does not flip the coin. Humberto does not flip the coin. Jacob does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "No one flips the coin, so it remains in its initial state (heads up).",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Morgan flips the coin. Perla does not flip the coin. Joao does not flip the coin. Marta does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Domingo does not flip the coin. Briana flips the coin. Michael flips the coin. Joan does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "yes"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 16,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Imagine a high-stakes situation in a game where the outcome depends on a sequential series of coin flips. Each player can choose to flip the coin or not, and the stakes are high: the winner will be determined by whether the coin ends up heads up or tails up. Given the detailed question about who flips the coin and the initial state of the coin, deduce the final state of the coin. Provide your reasoning step-by-step, even if not explicitly needed, to strengthen your answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Melody does not flip the coin. Ramiro does not flip the coin. Humberto does not flip the coin. Jacob does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Domingo does not flip the coin. Briana flips the coin. Michael flips the coin. Joan does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 17,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question`, analyze the series of coin flips to determine the final state of the coin. Step through each individual's action carefully, detail the changes in the state of the coin, and conclude whether the coin is heads up or not. Present a clear reasoning breakdown along with the final answer.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "question": "A coin is heads up. Domingo does not flip the coin. Briana flips the coin. Michael flips the coin. Joan does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "yes"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Morgan flips the coin. Perla does not flip the coin. Joao does not flip the coin. Marta does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "yes"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 18,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided question about a series of coin flips, analyze the situation to determine the final state of the coin. Start by examining the number of flips: if it\u2019s odd, the coin lands tails up; if even, it remains heads up. Expand on your reasoning step by step, detailing the actions taken by each individual to arrive at your conclusion. Provide a clear answer indicating the final state of the coin.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Domingo does not flip the coin. Briana flips the coin. Michael flips the coin. Joan does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Domingo and Joan do nothing. Briana flips it to tails, then Michael flips it back to heads. With two flips total, it ends heads up.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Morgan flips the coin. Perla does not flip the coin. Joao does not flip the coin. Marta does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads up. Only Morgan flips it (one flip total), and an odd number of flips changes heads to tails. The others do not flip it, so nothing else changes.",
+                "answer": "no"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 19,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Based on the `question`, analyze the flips described, track the parity of the actions, and systematically outline your reasoning to conclude whether the coin remains heads up or not, before producing the final `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "A coin is heads up. Domingo does not flip the coin. Briana flips the coin. Michael flips the coin. Joan does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+                "reasoning": "The coin starts heads. Domingo and Joan do nothing. Briana flips it to tails, then Michael flips it back to heads. Two flips total means it ends heads up.",
+                "answer": "yes"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Morgan flips the coin. Perla does not flip the coin. Joao does not flip the coin. Marta does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "no"
+              }
+            },
+            {
+              "inputs": {
+                "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+              },
+              "outputs": {
+                "answer": "yes"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "final_prompts": [
+    {
+      "predictor_index": 0,
+      "predictor_name": "Predict",
+      "instruction": "Imagine a high-stakes situation in a game where the outcome depends on a sequential series of coin flips. Each player can choose to flip the coin or not, and the stakes are high: the winner will be determined by whether the coin ends up heads up or tails up. Given the detailed question about who flips the coin and the initial state of the coin, deduce the final state of the coin. Provide your reasoning step-by-step, even if not explicitly needed, to strengthen your answer.",
+      "num_demos": 4,
+      "demos": [
+        {
+          "inputs": {
+            "augmented": true,
+            "question": "A coin is heads up. Domingo does not flip the coin. Briana flips the coin. Michael flips the coin. Joan does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+            "reasoning": "The coin starts heads up. Domingo and Joan do nothing. Briana flips it to tails, then Michael flips it back to heads. With two flips total, it ends heads up.",
+            "answer": "yes"
+          },
+          "outputs": {}
+        },
+        {
+          "inputs": {
+            "augmented": true,
+            "question": "A coin is heads up. Jae does not flip the coin. Dennis does not flip the coin. Cris flips the coin. Bernadette flips the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+            "reasoning": "Not supplied for this particular example.",
+            "answer": "yes"
+          },
+          "outputs": {}
+        },
+        {
+          "inputs": {
+            "augmented": true,
+            "question": "A coin is heads up. Morgan flips the coin. Perla does not flip the coin. Joao does not flip the coin. Marta does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\".",
+            "reasoning": "The coin starts heads up. Only Morgan flips it (one flip total), and an odd number of flips changes heads to tails. The others do not flip it, so nothing else changes.",
+            "answer": "no"
+          },
+          "outputs": {}
+        },
+        {
+          "inputs": {
+            "question": "A coin is heads up. Caleb flips the coin. Chase flips the coin. Eleazar flips the coin. Chanel does not flip the coin. Is the coin still heads up? Note that \"flip\" here means \"reverse\"."
+          },
+          "outputs": {
+            "answer": "no"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -57,11 +57,19 @@ def calculate_ate(df: pd.DataFrame, col_indices: list[int], ignore_cols: list[st
 if __name__ == "__main__":
     import glob
     
+<<<<<<< Updated upstream
     # Find all CSV files in results/TextGrad
     csv_files = glob.glob("results/TextGrad/*.csv")
     
     if not csv_files:
         print("No CSV files found in results/TextGrad/")
+=======
+    # Find all CSV files in results/TextGrad_v0.2
+    csv_files = glob.glob("results/TextGrad_v0.2/*.csv")
+
+    if not csv_files:
+        print("No CSV files found in results/TextGrad_v0.2/")
+>>>>>>> Stashed changes
         exit(1)
     
     print(f"Found {len(csv_files)} CSV files to process")
@@ -131,7 +139,11 @@ if __name__ == "__main__":
             }
     
     # Save results to JSON file
+<<<<<<< Updated upstream
     output_file = Path('./Text_Grad.json')
+=======
+    output_file = Path('./Text_Grad_v0.2.json')
+>>>>>>> Stashed changes
     output_file.parent.mkdir(exist_ok=True, parents=True)
     
     with open(output_file, 'w', encoding='utf-8') as f:

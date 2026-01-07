@@ -111,7 +111,7 @@ ax.set_title("DSpy MIPROv2 ATE Heatmap (centered at 0)")
 fig.tight_layout()
 
 # Save output files
-output_dir = Path(__file__).parent
+output_dir = Path(__file__).parent + "/figures/"
 fig.savefig(output_dir / "dspy_ate_heatmap.pdf", bbox_inches="tight")
 fig.savefig(output_dir / "dspy_ate_heatmap.png", dpi=300, bbox_inches="tight")
 

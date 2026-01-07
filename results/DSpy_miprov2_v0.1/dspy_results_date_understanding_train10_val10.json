@@ -1,0 +1,706 @@
+{
+  "dataset": "date_understanding",
+  "train_size": 10,
+  "val_size": 10,
+  "max_bootstrapped_demos": 4,
+  "max_labeled_demos": 4,
+  "num_threads": 5,
+  "optimizer": "MIPROv2",
+  "auto_setting": "medium",
+  "trial_scores": [
+    {
+      "trial_number": 1,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 2,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 3,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 4,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 5,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 6,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 7,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 8,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 9,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 10,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 11,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 12,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 13,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 14,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 15,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 16,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 17,
+      "score": 87.5,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 18,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 19,
+      "score": 100.0,
+      "eval_type": "full"
+    }
+  ],
+  "final_test_score": 0.8956521739130435,
+  "best_trial": {
+    "trial_number": 19,
+    "score": 100.0,
+    "eval_type": "full"
+  },
+  "trial_prompts": [
+    {
+      "trial_number": 1,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question` about date reasoning, analyze the question thoroughly by breaking down key date-related information. Then, apply logical deductions step-by-step to calculate the necessary date. Finally, identify the most accurate answer from the provided options and clearly articulate both the reasoning process and the final answer.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "\u201cTomorrow\u201d is 10/16/1924, so today is 10/15/1924. One week from 10/15/1924 is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "The first day of 2019 is Tuesday, so 01/01/2019 is a Tuesday. The first Monday of 2019 is therefore 01/07/2019. One year ago from 01/07/2019 is 01/07/2018. This matches option (B).",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a date-related question, break down the reasoning in a step-by-step manner and identify the correct date based on the context provided. Then, select the appropriate answer from the given options.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "\u201cTomorrow\u201d is 10/16/1924, so today is 10/15/1924. One week from 10/15/1924 is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "The first day of 2019 is Tuesday, so 01/01/2019 is a Tuesday. The first Monday of 2019 is therefore 01/07/2019. One year ago from 01/07/2019 is 01/07/2018. This matches option (B).",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "\u201cTomorrow\u201d is 10/16/1924, so today is 10/15/1924. One week from 10/15/1924 is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "The first day of 2019 is Tuesday, so 01/01/2019 is a Tuesday. The first Monday of 2019 is therefore 01/07/2019. One year ago from 01/07/2019 is 01/07/2018. This matches option (B).",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 5,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided `question` that involves date calculations and logical reasoning. Break down the question step-by-step to identify the timeframe specified. Use this analysis to compute the date-related outcome by applying your reasoning. Finally, return both your logical reasoning and the correct answer. Ensure clarity and comprehensiveness in your response.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "\u201cTomorrow\u201d is 10/16/1924, so today is 10/15/1924. One week from 10/15/1924 is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 6,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "For the input question regarding date calculations, please analyze the provided scenario by stating the date and context, and logically reason through the steps to calculate the target date. Finally, produce the correct answer based on your reasoning.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "\u201cTomorrow\u201d is 10/16/1924, so today is 10/15/1924. One week from 10/15/1924 is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "The first day of 2019 is Tuesday, so 01/01/2019 is a Tuesday. The first Monday of 2019 is therefore 01/07/2019. One year ago from 01/07/2019 is 01/07/2018. This matches option (B).",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 7,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a date-related question, break down the reasoning in a step-by-step manner and identify the correct date based on the context provided. Then, select the appropriate answer from the given options.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "\u201cTomorrow\u201d is 10/16/1924, so today is 10/15/1924. One week from 10/15/1924 is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "The first day of 2019 is Tuesday, so 01/01/2019 is a Tuesday. The first Monday of 2019 is therefore 01/07/2019. One year ago from 01/07/2019 is 01/07/2018. This matches option (B).",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 8,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the question provided about date calculations, derive both the reasoning and the final answer step by step to identify the correct date. Your response should follow the structure of clearly outlining the reasoning process and clearly specifying the answer chosen from the provided options.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 9,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "For the input question regarding date calculations, please analyze the provided scenario by stating the date and context, and logically reason through the steps to calculate the target date. Finally, produce the correct answer based on your reasoning.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "\u201cTomorrow\u201d is 10/16/1924, so today is 10/15/1924. One week from 10/15/1924 is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 10,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "For the input question regarding date calculations, please analyze the provided scenario by stating the date and context, and logically reason through the steps to calculate the target date. Finally, produce the correct answer based on your reasoning.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "The first day of 2019 is Tuesday, so 01/01/2019 is a Tuesday. The first Monday of 2019 is therefore 01/07/2019. One year ago from 01/07/2019 is 01/07/2018. This matches option (B).",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "\u201cTomorrow\u201d is 10/16/1924, so today is 10/15/1924. One week from 10/15/1924 is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 11,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question` about date reasoning, analyze the question thoroughly by breaking down key date-related information. Then, apply logical deductions step-by-step to calculate the necessary date. Finally, identify the most accurate answer from the provided options and clearly articulate both the reasoning process and the final answer.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "The first day of 2019 is Tuesday, so 01/01/2019 is a Tuesday. The first Monday of 2019 is therefore 01/07/2019. One year ago from 01/07/2019 is 01/07/2018. This matches option (B).",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "\u201cTomorrow\u201d is 10/16/1924, so today is 10/15/1924. One week from 10/15/1924 is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 12,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a date-related question, break down the reasoning in a step-by-step manner and identify the correct date based on the context provided. Then, select the appropriate answer from the given options.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "\u201cTomorrow\u201d is 10/16/1924, so today is 10/15/1924. One week from 10/15/1924 is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "The first day of 2019 is Tuesday, so 01/01/2019 is a Tuesday. The first Monday of 2019 is therefore 01/07/2019. One year ago from 01/07/2019 is 01/07/2018. This matches option (B).",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 13,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question` about date reasoning, analyze the question thoroughly by breaking down key date-related information. Then, apply logical deductions step-by-step to calculate the necessary date. Finally, identify the most accurate answer from the provided options and clearly articulate both the reasoning process and the final answer.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "\u201cTomorrow\u201d is 10/16/1924, so today is 10/15/1924. One week from 10/15/1924 is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "The first day of 2019 is Tuesday, so 01/01/2019 is a Tuesday. The first Monday of 2019 is therefore 01/07/2019. One year ago from 01/07/2019 is 01/07/2018. This matches option (B).",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 14,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question` about date reasoning, analyze the question thoroughly by breaking down key date-related information. Then, apply logical deductions step-by-step to calculate the necessary date. Finally, identify the most accurate answer from the provided options and clearly articulate both the reasoning process and the final answer.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "The first day of 2019 is Tuesday, so 01/01/2019 is a Tuesday. The first Monday of 2019 is therefore 01/07/2019. One year ago from 01/07/2019 is 01/07/2018. This matches option (B).",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "\u201cTomorrow\u201d is 10/16/1924, so today is 10/15/1924. One week from 10/15/1924 is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 15,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a date-related question, break down the reasoning in a step-by-step manner and identify the correct date based on the context provided. Then, select the appropriate answer from the given options.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "The first day of 2019 is Tuesday, so 01/01/2019 is a Tuesday. The first Monday of 2019 is therefore 01/07/2019. One year ago from 01/07/2019 is 01/07/2018. This matches option (B).",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 16,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question` about date reasoning, analyze the question thoroughly by breaking down key date-related information. Then, apply logical deductions step-by-step to calculate the necessary date. Finally, identify the most accurate answer from the provided options and clearly articulate both the reasoning process and the final answer.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "\u201cTomorrow\u201d is 10/16/1924, so today is 10/15/1924. One week from 10/15/1924 is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "The first day of 2019 is Tuesday, so 01/01/2019 is a Tuesday. The first Monday of 2019 is therefore 01/07/2019. One year ago from 01/07/2019 is 01/07/2018. This matches option (B).",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 17,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given a date-related question, break down the reasoning in a step-by-step manner and identify the correct date based on the context provided. Then, select the appropriate answer from the given options.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 18,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided `question` that involves date calculations and logical reasoning. Break down the question step-by-step to identify the timeframe specified. Use this analysis to compute the date-related outcome by applying your reasoning. Finally, return both your logical reasoning and the correct answer. Ensure clarity and comprehensiveness in your response.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "\u201cTomorrow\u201d is 10/16/1924, so today is 10/15/1924. One week from 10/15/1924 is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "The first day of 2019 is Tuesday, so 01/01/2019 is a Tuesday. The first Monday of 2019 is therefore 01/07/2019. One year ago from 01/07/2019 is 01/07/2018. This matches option (B).",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 19,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the question provided about date calculations, derive both the reasoning and the final answer step by step to identify the correct date. Your response should follow the structure of clearly outlining the reasoning process and clearly specifying the answer chosen from the provided options.",
+          "num_demos": 2,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "The first day of 2019 is Tuesday, so 01/01/2019 is a Tuesday. The first Monday of 2019 is therefore 01/07/2019. One year ago from 01/07/2019 is 01/07/2018. This matches option (B).",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "\u201cTomorrow\u201d is 10/16/1924, so today is 10/15/1924. One week from 10/15/1924 is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "final_prompts": [
+    {
+      "predictor_index": 0,
+      "predictor_name": "Predict",
+      "instruction": "Using the provided `question` about date reasoning, analyze the question thoroughly by breaking down key date-related information. Then, apply logical deductions step-by-step to calculate the necessary date. Finally, identify the most accurate answer from the provided options and clearly articulate both the reasoning process and the final answer.",
+      "num_demos": 2,
+      "demos": [
+        {
+          "inputs": {
+            "augmented": true,
+            "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+            "reasoning": "\u201cTomorrow\u201d is 10/16/1924, so today is 10/15/1924. One week from 10/15/1924 is 10/22/1924.",
+            "answer": "(B)"
+          },
+          "outputs": {}
+        },
+        {
+          "inputs": {
+            "augmented": true,
+            "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+            "reasoning": "The first day of 2019 is Tuesday, so 01/01/2019 is a Tuesday. The first Monday of 2019 is therefore 01/07/2019. One year ago from 01/07/2019 is 01/07/2018. This matches option (B).",
+            "answer": "(B)"
+          },
+          "outputs": {}
+        }
+      ]
+    }
+  ]
+}

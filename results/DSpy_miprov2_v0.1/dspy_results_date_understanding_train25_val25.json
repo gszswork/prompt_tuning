@@ -1,0 +1,1030 @@
+{
+  "dataset": "date_understanding",
+  "train_size": 25,
+  "val_size": 25,
+  "max_bootstrapped_demos": 4,
+  "max_labeled_demos": 4,
+  "num_threads": 5,
+  "optimizer": "MIPROv2",
+  "auto_setting": "medium",
+  "trial_scores": [
+    {
+      "trial_number": 1,
+      "score": 65.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 2,
+      "score": 95.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 3,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 4,
+      "score": 95.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 5,
+      "score": 70.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 6,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 7,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 8,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 9,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 10,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 11,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 12,
+      "score": 95.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 13,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 14,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 15,
+      "score": 95.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 16,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 17,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 18,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 19,
+      "score": 100.0,
+      "eval_type": "full"
+    }
+  ],
+  "final_test_score": 0.88,
+  "best_trial": {
+    "trial_number": 19,
+    "score": 100.0,
+    "eval_type": "full"
+  },
+  "trial_prompts": [
+    {
+      "trial_number": 1,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Imagine you're a crucial member of a high-stakes planning committee that requires precise date calculations to ensure a major event does not conflict with other activities. You receive various date-related questions where you need to determine specific dates based on the provided context. Your task is to carefully read the question, apply logical reasoning, and produce both the reasoning and the correct answer in the MM/DD/YYYY format. For each question, include a clear thought process that explains how you arrived at your conclusion.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today is Sep 9, 1909. What is the date 10 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1909\n(B) 08/30/1967\n(C) 08/30/1909\n(D) 08/30/1977\n(E) 08/02/1909\n(F) 08/16/1909",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The current local time is 3:02 pm of 5/4/2004. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 06/14/2003\n(B) 05/03/2003\n(C) 12/04/2002\n(D) 06/02/2003\n(E) 05/04/2003",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "(E)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question` about date calculations, outline a detailed reasoning process that leads to the correct answer. Ensure that you explain your thought process step-by-step and conclude with the appropriate answer in MM/DD/YYYY format.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "Tomorrow is 10/16/1924, so today is 10/15/1924. One week from today is 7 days after 10/15/1924, which is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "The first day of 2019 is Tuesday, so 01/01/2019 is Tuesday. The first Monday of 2019 is therefore 01/07/2019. One year ago from 01/07/2019 is 01/07/2018.",
+                "answer": "(B) 01/07/2018"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Tomorrow is 11/12/2019. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 08/21/2019\n(B) 11/18/2019\n(C) 11/18/2025\n(D) 11/18/2011\n(E) 02/18/2020\n(F) 11/04/2019",
+                "reasoning": "If tomorrow is 11/12/2019, then today is 11/11/2019. One week from today is 7 days later: 11/18/2019, which matches option (B).",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today is Sep 9, 1909. What is the date 10 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1909\n(B) 08/30/1967\n(C) 08/30/1909\n(D) 08/30/1977\n(E) 08/02/1909\n(F) 08/16/1909",
+                "reasoning": "10 days before Sep 9, 1909 is Aug 30, 1909 (since subtracting 9 days reaches Aug 31, then one more day to Aug 30).",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today is Sep 9, 1909. What is the date 10 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1909\n(B) 08/30/1967\n(C) 08/30/1909\n(D) 08/30/1977\n(E) 08/02/1909\n(F) 08/16/1909",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The current local time is 3:02 pm of 5/4/2004. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 06/14/2003\n(B) 05/03/2003\n(C) 12/04/2002\n(D) 06/02/2003\n(E) 05/04/2003",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "(E)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 5,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the following date-related question step by step. Clearly explain your reasoning process and then provide the final answer in MM/DD/YYYY format while selecting from the given options. Remember to walk through the logic to reach the correct date calculation.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today is Sep 9, 1909. What is the date 10 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1909\n(B) 08/30/1967\n(C) 08/30/1909\n(D) 08/30/1977\n(E) 08/02/1909\n(F) 08/16/1909",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "The current local time is 3:02 pm of 5/4/2004. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 06/14/2003\n(B) 05/03/2003\n(C) 12/04/2002\n(D) 06/02/2003\n(E) 05/04/2003"
+              },
+              "outputs": {
+                "answer": "(E)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 6,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "For the following date-related question, apply critical thinking to perform date arithmetic. Carefully analyze the provided options and derive the correct answer using the reasoning steps laid out. Here is the question: {question}.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today is Sep 9, 1909. What is the date 10 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1909\n(B) 08/30/1967\n(C) 08/30/1909\n(D) 08/30/1977\n(E) 08/02/1909\n(F) 08/16/1909",
+                "reasoning": "Not supplied.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "If tomorrow is 10/16/1924, then today is 10/15/1924. One week (7 days) from 10/15/1924 is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The current local time is 3:02 pm of 5/4/2004. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 06/14/2003\n(B) 05/03/2003\n(C) 12/04/2002\n(D) 06/02/2003\n(E) 05/04/2003",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "(E)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "Jan 1, 2019 is Tuesday, so the first Monday of 2019 is Jan 7, 2019. One year ago from 01/07/2019 is 01/07/2018.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 7,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question` about date calculations, outline a detailed reasoning process that leads to the correct answer. Ensure that you explain your thought process step-by-step and conclude with the appropriate answer in MM/DD/YYYY format.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today is Sep 9, 1909. What is the date 10 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1909\n(B) 08/30/1967\n(C) 08/30/1909\n(D) 08/30/1977\n(E) 08/02/1909\n(F) 08/16/1909",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The current local time is 3:02 pm of 5/4/2004. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 06/14/2003\n(B) 05/03/2003\n(C) 12/04/2002\n(D) 06/02/2003\n(E) 05/04/2003",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "(E)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 8,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided `question` about a date-related arithmetic problem, perform the necessary calculations to derive the correct answer, and explain your reasoning step-by-step. Present the final answer in MM/DD/YYYY format along with the logical reasoning that led to it.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "question": "Today is Sep 9, 1909. What is the date 10 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1909\n(B) 08/30/1967\n(C) 08/30/1909\n(D) 08/30/1977\n(E) 08/02/1909\n(F) 08/16/1909"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "The current local time is 3:02 pm of 5/4/2004. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 06/14/2003\n(B) 05/03/2003\n(C) 12/04/2002\n(D) 06/02/2003\n(E) 05/04/2003"
+              },
+              "outputs": {
+                "answer": "(E)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 9,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "For the following date-related question, apply critical thinking to perform date arithmetic. Carefully analyze the provided options and derive the correct answer using the reasoning steps laid out. Here is the question: {question}.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today is Sep 9, 1909. What is the date 10 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1909\n(B) 08/30/1967\n(C) 08/30/1909\n(D) 08/30/1977\n(E) 08/02/1909\n(F) 08/16/1909",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Tomorrow is 11/12/2019. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 08/21/2019\n(B) 11/18/2019\n(C) 11/18/2025\n(D) 11/18/2011\n(E) 02/18/2020\n(F) 11/04/2019"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "The current local time is 3:02 pm of 5/4/2004. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 06/14/2003\n(B) 05/03/2003\n(C) 12/04/2002\n(D) 06/02/2003\n(E) 05/04/2003"
+              },
+              "outputs": {
+                "answer": "(E)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 10,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "For the following date-related question, apply critical thinking to perform date arithmetic. Carefully analyze the provided options and derive the correct answer using the reasoning steps laid out. Here is the question: {question}.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Tomorrow is 11/12/2019. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 08/21/2019\n(B) 11/18/2019\n(C) 11/18/2025\n(D) 11/18/2011\n(E) 02/18/2020\n(F) 11/04/2019",
+                "reasoning": "If tomorrow is 11/12/2019, then today is 11/11/2019. One week from today is 7 days later: 11/18/2019.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Today is Sep 9, 1909. What is the date 10 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1909\n(B) 08/30/1967\n(C) 08/30/1909\n(D) 08/30/1977\n(E) 08/02/1909\n(F) 08/16/1909"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 11,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question` about date calculations, outline a detailed reasoning process that leads to the correct answer. Ensure that you explain your thought process step-by-step and conclude with the appropriate answer in MM/DD/YYYY format.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "Tomorrow is 10/16/1924, so today is 10/15/1924. One week from today is 7 days after 10/15/1924, which is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "The first day of 2019 is Tuesday, so 01/01/2019 is Tuesday. The first Monday of 2019 is therefore 01/07/2019. One year ago from 01/07/2019 is 01/07/2018.",
+                "answer": "(B) 01/07/2018"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Tomorrow is 11/12/2019. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 08/21/2019\n(B) 11/18/2019\n(C) 11/18/2025\n(D) 11/18/2011\n(E) 02/18/2020\n(F) 11/04/2019",
+                "reasoning": "If tomorrow is 11/12/2019, then today is 11/11/2019. One week from today is 7 days later: 11/18/2019, which matches option (B).",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today is Sep 9, 1909. What is the date 10 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1909\n(B) 08/30/1967\n(C) 08/30/1909\n(D) 08/30/1977\n(E) 08/02/1909\n(F) 08/16/1909",
+                "reasoning": "10 days before Sep 9, 1909 is Aug 30, 1909 (since subtracting 9 days reaches Aug 31, then one more day to Aug 30).",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 12,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question` about date calculations, outline a detailed reasoning process that leads to the correct answer. Ensure that you explain your thought process step-by-step and conclude with the appropriate answer in MM/DD/YYYY format.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today is Sep 9, 1909. What is the date 10 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1909\n(B) 08/30/1967\n(C) 08/30/1909\n(D) 08/30/1977\n(E) 08/02/1909\n(F) 08/16/1909",
+                "reasoning": "Not supplied.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "If tomorrow is 10/16/1924, then today is 10/15/1924. One week (7 days) from 10/15/1924 is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The current local time is 3:02 pm of 5/4/2004. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 06/14/2003\n(B) 05/03/2003\n(C) 12/04/2002\n(D) 06/02/2003\n(E) 05/04/2003",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "(E)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "Jan 1, 2019 is Tuesday, so the first Monday of 2019 is Jan 7, 2019. One year ago from 01/07/2019 is 01/07/2018.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 13,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "For the following date-related question, apply critical thinking to perform date arithmetic. Carefully analyze the provided options and derive the correct answer using the reasoning steps laid out. Here is the question: {question}.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today is Sep 9, 1909. What is the date 10 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1909\n(B) 08/30/1967\n(C) 08/30/1909\n(D) 08/30/1977\n(E) 08/02/1909\n(F) 08/16/1909",
+                "reasoning": "Not supplied.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "If tomorrow is 10/16/1924, then today is 10/15/1924. One week (7 days) from 10/15/1924 is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The current local time is 3:02 pm of 5/4/2004. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 06/14/2003\n(B) 05/03/2003\n(C) 12/04/2002\n(D) 06/02/2003\n(E) 05/04/2003",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "(E)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "Jan 1, 2019 is Tuesday, so the first Monday of 2019 is Jan 7, 2019. One year ago from 01/07/2019 is 01/07/2018.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 14,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the provided `question` about a date-related arithmetic problem, perform the necessary calculations to derive the correct answer, and explain your reasoning step-by-step. Present the final answer in MM/DD/YYYY format along with the logical reasoning that led to it.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "Tomorrow is 10/16/1924, so today is 10/15/1924. One week from today is 7 days after 10/15/1924, which is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "The first day of 2019 is Tuesday, so 01/01/2019 is Tuesday. The first Monday of 2019 is therefore 01/07/2019. One year ago from 01/07/2019 is 01/07/2018.",
+                "answer": "(B) 01/07/2018"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Tomorrow is 11/12/2019. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 08/21/2019\n(B) 11/18/2019\n(C) 11/18/2025\n(D) 11/18/2011\n(E) 02/18/2020\n(F) 11/04/2019",
+                "reasoning": "If tomorrow is 11/12/2019, then today is 11/11/2019. One week from today is 7 days later: 11/18/2019, which matches option (B).",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today is Sep 9, 1909. What is the date 10 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1909\n(B) 08/30/1967\n(C) 08/30/1909\n(D) 08/30/1977\n(E) 08/02/1909\n(F) 08/16/1909",
+                "reasoning": "10 days before Sep 9, 1909 is Aug 30, 1909 (since subtracting 9 days reaches Aug 31, then one more day to Aug 30).",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 15,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the following date-related question step by step. Clearly explain your reasoning process and then provide the final answer in MM/DD/YYYY format while selecting from the given options. Remember to walk through the logic to reach the correct date calculation.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The current local time is 3:02 pm of 5/4/2004. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 06/14/2003\n(B) 05/03/2003\n(C) 12/04/2002\n(D) 06/02/2003\n(E) 05/04/2003",
+                "reasoning": "One year ago from 05/04/2004 is 05/04/2003 (same month/day, previous year).",
+                "answer": "(E)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Today is Sep 9, 1909. What is the date 10 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1909\n(B) 08/30/1967\n(C) 08/30/1909\n(D) 08/30/1977\n(E) 08/02/1909\n(F) 08/16/1909"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 16,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question` about date calculations, outline a detailed reasoning process that leads to the correct answer. Ensure that you explain your thought process step-by-step and conclude with the appropriate answer in MM/DD/YYYY format.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today is Sep 9, 1909. What is the date 10 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1909\n(B) 08/30/1967\n(C) 08/30/1909\n(D) 08/30/1977\n(E) 08/02/1909\n(F) 08/16/1909",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "The current local time is 3:02 pm of 5/4/2004. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 06/14/2003\n(B) 05/03/2003\n(C) 12/04/2002\n(D) 06/02/2003\n(E) 05/04/2003"
+              },
+              "outputs": {
+                "answer": "(E)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 17,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "For the following date-related question, apply critical thinking to perform date arithmetic. Carefully analyze the provided options and derive the correct answer using the reasoning steps laid out. Here is the question: {question}.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "Tomorrow is 10/16/1924, so today is 10/15/1924. One week from today is 7 days after 10/15/1924, which is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "The first day of 2019 is Tuesday, so 01/01/2019 is Tuesday. The first Monday of 2019 is therefore 01/07/2019. One year ago from 01/07/2019 is 01/07/2018.",
+                "answer": "(B) 01/07/2018"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Tomorrow is 11/12/2019. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 08/21/2019\n(B) 11/18/2019\n(C) 11/18/2025\n(D) 11/18/2011\n(E) 02/18/2020\n(F) 11/04/2019",
+                "reasoning": "If tomorrow is 11/12/2019, then today is 11/11/2019. One week from today is 7 days later: 11/18/2019, which matches option (B).",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today is Sep 9, 1909. What is the date 10 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1909\n(B) 08/30/1967\n(C) 08/30/1909\n(D) 08/30/1977\n(E) 08/02/1909\n(F) 08/16/1909",
+                "reasoning": "10 days before Sep 9, 1909 is Aug 30, 1909 (since subtracting 9 days reaches Aug 31, then one more day to Aug 30).",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 18,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question` about date calculations, outline a detailed reasoning process that leads to the correct answer. Ensure that you explain your thought process step-by-step and conclude with the appropriate answer in MM/DD/YYYY format.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Tomorrow is 11/12/2019. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 08/21/2019\n(B) 11/18/2019\n(C) 11/18/2025\n(D) 11/18/2011\n(E) 02/18/2020\n(F) 11/04/2019",
+                "reasoning": "If tomorrow is 11/12/2019, then today is 11/11/2019. One week (7 days) from 11/11/2019 is 11/18/2019.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924"
+              },
+              "outputs": {
+                "answer": "(B)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "The current local time is 3:02 pm of 5/4/2004. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 06/14/2003\n(B) 05/03/2003\n(C) 12/04/2002\n(D) 06/02/2003\n(E) 05/04/2003"
+              },
+              "outputs": {
+                "answer": "(E)"
+              }
+            },
+            {
+              "inputs": {
+                "question": "Today is Sep 9, 1909. What is the date 10 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1909\n(B) 08/30/1967\n(C) 08/30/1909\n(D) 08/30/1977\n(E) 08/02/1909\n(F) 08/16/1909"
+              },
+              "outputs": {
+                "answer": "(C)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 19,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+                "reasoning": "The first day of 2019 is Tuesday 01/01/2019. The first Monday of 2019 is 01/07/2019, so today is 01/07/2019. One year ago from that date is 01/07/2018.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "The current local time is 3:02 pm of 5/4/2004. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 06/14/2003\n(B) 05/03/2003\n(C) 12/04/2002\n(D) 06/02/2003\n(E) 05/04/2003",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "(E)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today is Sep 9, 1909. What is the date 10 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1909\n(B) 08/30/1967\n(C) 08/30/1909\n(D) 08/30/1977\n(E) 08/02/1909\n(F) 08/16/1909",
+                "reasoning": "10 days before Sep 9, 1909 is Aug 30, 1909 (since September 9 minus 9 days is August 31, minus 1 more day is August 30). This matches option (C).",
+                "answer": "(C)"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+                "reasoning": "If tomorrow is 10/16/1924, then today is 10/15/1924. One week from today is 7 days after 10/15/1924, which is 10/22/1924.",
+                "answer": "(B)"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "final_prompts": [
+    {
+      "predictor_index": 0,
+      "predictor_name": "Predict",
+      "instruction": "Using the provided `question` about date calculations, outline a detailed reasoning process that leads to the correct answer. Ensure that you explain your thought process step-by-step and conclude with the appropriate answer in MM/DD/YYYY format.",
+      "num_demos": 4,
+      "demos": [
+        {
+          "inputs": {
+            "augmented": true,
+            "question": "Today's meeting is rescheduled to 11 am tomorrow, 10/16/1924. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 10/22/1944\n(B) 10/22/1924\n(C) 10/07/1924\n(D) 10/21/1924\n(E) 08/22/1925\n(F) 11/21/1924",
+            "reasoning": "Tomorrow is 10/16/1924, so today is 10/15/1924. One week from today is 7 days after 10/15/1924, which is 10/22/1924.",
+            "answer": "(B)"
+          },
+          "outputs": {}
+        },
+        {
+          "inputs": {
+            "augmented": true,
+            "question": "The first day of 2019 is a Tuesday, and today is the first Monday of 2019. What is the date one year ago from today in MM/DD/YYYY?\nOptions:\n(A) 01/08/2018\n(B) 01/07/2018\n(C) 01/02/2018\n(D) 01/12/2018\n(E) 05/07/2017\n(F) 10/29/2017",
+            "reasoning": "The first day of 2019 is Tuesday, so 01/01/2019 is Tuesday. The first Monday of 2019 is therefore 01/07/2019. One year ago from 01/07/2019 is 01/07/2018.",
+            "answer": "(B) 01/07/2018"
+          },
+          "outputs": {}
+        },
+        {
+          "inputs": {
+            "augmented": true,
+            "question": "Tomorrow is 11/12/2019. What is the date one week from today in MM/DD/YYYY?\nOptions:\n(A) 08/21/2019\n(B) 11/18/2019\n(C) 11/18/2025\n(D) 11/18/2011\n(E) 02/18/2020\n(F) 11/04/2019",
+            "reasoning": "If tomorrow is 11/12/2019, then today is 11/11/2019. One week from today is 7 days later: 11/18/2019, which matches option (B).",
+            "answer": "(B)"
+          },
+          "outputs": {}
+        },
+        {
+          "inputs": {
+            "augmented": true,
+            "question": "Today is Sep 9, 1909. What is the date 10 days ago in MM/DD/YYYY?\nOptions:\n(A) 08/29/1909\n(B) 08/30/1967\n(C) 08/30/1909\n(D) 08/30/1977\n(E) 08/02/1909\n(F) 08/16/1909",
+            "reasoning": "10 days before Sep 9, 1909 is Aug 30, 1909 (since subtracting 9 days reaches Aug 31, then one more day to Aug 30).",
+            "answer": "(C)"
+          },
+          "outputs": {}
+        }
+      ]
+    }
+  ]
+}

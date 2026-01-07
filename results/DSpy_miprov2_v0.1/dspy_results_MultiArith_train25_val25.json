@@ -1,0 +1,1022 @@
+{
+  "dataset": "MultiArith",
+  "train_size": 25,
+  "val_size": 25,
+  "max_bootstrapped_demos": 4,
+  "max_labeled_demos": 4,
+  "num_threads": 10,
+  "optimizer": "MIPROv2",
+  "auto_setting": "medium",
+  "trial_scores": [
+    {
+      "trial_number": 1,
+      "score": 25.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 2,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 3,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 4,
+      "score": 95.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 5,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 6,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 7,
+      "score": 65.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 8,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 9,
+      "score": 80.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 10,
+      "score": 75.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 11,
+      "score": 90.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 12,
+      "score": 95.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 13,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 14,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 15,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 16,
+      "score": 95.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 17,
+      "score": 100.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 18,
+      "score": 65.0,
+      "eval_type": "full"
+    },
+    {
+      "trial_number": 19,
+      "score": 70.0,
+      "eval_type": "full"
+    }
+  ],
+  "final_test_score": 0.9327272727272727,
+  "best_trial": {
+    "trial_number": 19,
+    "score": 70.0,
+    "eval_type": "full"
+  },
+  "trial_prompts": [
+    {
+      "trial_number": 1,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 0,
+          "demos": []
+        }
+      ]
+    },
+    {
+      "trial_number": 2,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Imagine you are a detective trying to solve a mystery involving arithmetic word problems. Your task is to decode the clues provided in the `question`, step by step, to determine the final answer. Produce detailed reasoning to explain how you arrive at that answer after analyzing the situation. Your response should include the reasoning and the final numerical answer based on the information presented in the question.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " At the arcade, Tom won 32 tickets playing 'whack a mole' and 25 tickets playing 'skee ball'. If he spent 7 of his tickets on a hat, how many tickets does Tom have left? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[50.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " Roger had 16 dollars. For his birthday he got 28 more dollars but spent 25 on a new game. How much money does he have now? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[19.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " John was trying to expand his game collection. He bought 21 games from a friend and bought 8 more at a garage sale. If 23 of the games didn't work, how many good games did he end up with? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[6.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": " Luke was trying to expand his game collection. He bought 2 games from a friend and bought 2 more at a garage sale. If 2 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[2.0]"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 3,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the given `question` that involves real-world arithmetic problems, and systematically derive a `reasoning` process that leads to the correct `answer`. Ensure to illustrate each step clearly to promote understanding of the problem-solving method.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " Luke was trying to expand his game collection. He bought 2 games from a friend and bought 2 more at a garage sale. If 2 of the games didn't work, how many good games did he end up with? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[2.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " Roger had 16 dollars. For his birthday he got 28 more dollars but spent 25 on a new game. How much money does he have now? ",
+                "reasoning": "Not supplied.",
+                "answer": "[19.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " Ned was trying to expand his game collection. He bought 11 games from a friend and bought 22 more at a garage sale. If 19 of the games didn't work, how many good games did he end up with? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[14.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " At the arcade, Tom won 32 tickets playing 'whack a mole' and 25 tickets playing 'skee ball'. If he spent 7 of his tickets on a hat, how many tickets does Tom have left? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[50.0]"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 4,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " At the arcade, Tom won 32 tickets playing 'whack a mole' and 25 tickets playing 'skee ball'. If he spent 7 of his tickets on a hat, how many tickets does Tom have left? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[50.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " Roger had 16 dollars. For his birthday he got 28 more dollars but spent 25 on a new game. How much money does he have now? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[19.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " John was trying to expand his game collection. He bought 21 games from a friend and bought 8 more at a garage sale. If 23 of the games didn't work, how many good games did he end up with? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[6.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": " Luke was trying to expand his game collection. He bought 2 games from a friend and bought 2 more at a garage sale. If 2 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[2.0]"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 5,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question`, derive the `answer` and include detailed reasoning that walks through the problem-solving process step by step. Ensure that both outputs clearly explain how the final solution was reached based on the arithmetic operations involved.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " At the arcade, Tom won 32 tickets playing 'whack a mole' and 25 tickets playing 'skee ball'. If he spent 7 of his tickets on a hat, how many tickets does Tom have left? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[50.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": " Roger had 16 dollars. For his birthday he got 28 more dollars but spent 25 on a new game. How much money does he have now? "
+              },
+              "outputs": {
+                "answer": "[19.0]"
+              }
+            },
+            {
+              "inputs": {
+                "question": " John was trying to expand his game collection. He bought 21 games from a friend and bought 8 more at a garage sale. If 23 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[6.0]"
+              }
+            },
+            {
+              "inputs": {
+                "question": " Luke was trying to expand his game collection. He bought 2 games from a friend and bought 2 more at a garage sale. If 2 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[2.0]"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 6,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question`, generate a detailed step-by-step `reasoning` process to analytically approach the problem, and then calculate and present the `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " At the arcade, Tom won 32 tickets playing 'whack a mole' and 25 tickets playing 'skee ball'. If he spent 7 of his tickets on a hat, how many tickets does Tom have left? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[50.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " Luke was trying to expand his game collection. He bought 2 games from a friend and bought 2 more at a garage sale. If 2 of the games didn't work, how many good games did he end up with? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[2.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " John was trying to expand his game collection. He bought 21 games from a friend and bought 8 more at a garage sale. If 23 of the games didn't work, how many good games did he end up with? ",
+                "reasoning": "Not supplied for this particular task.",
+                "answer": "[6.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " Roger had 16 dollars. For his birthday he got 28 more dollars but spent 25 on a new game. How much money does he have now? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[19.0]"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 7,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Analyze the given `question` that involves real-world arithmetic problems, and systematically derive a `reasoning` process that leads to the correct `answer`. Ensure to illustrate each step clearly to promote understanding of the problem-solving method.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " At the arcade, Tom won 32 tickets playing 'whack a mole' and 25 tickets playing 'skee ball'. If he spent 7 of his tickets on a hat, how many tickets does Tom have left? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[50.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " Roger had 16 dollars. For his birthday he got 28 more dollars but spent 25 on a new game. How much money does he have now? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[19.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " John was trying to expand his game collection. He bought 21 games from a friend and bought 8 more at a garage sale. If 23 of the games didn't work, how many good games did he end up with? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[6.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": " Luke was trying to expand his game collection. He bought 2 games from a friend and bought 2 more at a garage sale. If 2 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[2.0]"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 8,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the mathematical word problem in the `question` field, analyze the situation and apply logical reasoning step by step to produce an `answer`. Make sure to articulate the reasoning process clearly, even if it doesn't require detailed breakdowns, and format the final solution in the specified format.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "question": " At the arcade, Tom won 32 tickets playing 'whack a mole' and 25 tickets playing 'skee ball'. If he spent 7 of his tickets on a hat, how many tickets does Tom have left? "
+              },
+              "outputs": {
+                "answer": "[50.0]"
+              }
+            },
+            {
+              "inputs": {
+                "question": " John was trying to expand his game collection. He bought 21 games from a friend and bought 8 more at a garage sale. If 23 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[6.0]"
+              }
+            },
+            {
+              "inputs": {
+                "question": " Luke was trying to expand his game collection. He bought 2 games from a friend and bought 2 more at a garage sale. If 2 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[2.0]"
+              }
+            },
+            {
+              "inputs": {
+                "question": " Roger had 16 dollars. For his birthday he got 28 more dollars but spent 25 on a new game. How much money does he have now? "
+              },
+              "outputs": {
+                "answer": "[19.0]"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 9,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question`, generate a detailed step-by-step `reasoning` process to analytically approach the problem, and then calculate and present the `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " At the arcade, Tom won 32 tickets playing 'whack a mole' and 25 tickets playing 'skee ball'. If he spent 7 of his tickets on a hat, how many tickets does Tom have left? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[50.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": " Roger had 16 dollars. For his birthday he got 28 more dollars but spent 25 on a new game. How much money does he have now? "
+              },
+              "outputs": {
+                "answer": "[19.0]"
+              }
+            },
+            {
+              "inputs": {
+                "question": " Ned was trying to expand his game collection. He bought 11 games from a friend and bought 22 more at a garage sale. If 19 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[14.0]"
+              }
+            },
+            {
+              "inputs": {
+                "question": " John was trying to expand his game collection. He bought 21 games from a friend and bought 8 more at a garage sale. If 23 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[6.0]"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 10,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question`, generate a detailed step-by-step `reasoning` process to analytically approach the problem, and then calculate and present the `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " Ned was trying to expand his game collection. He bought 11 games from a friend and bought 22 more at a garage sale. If 19 of the games didn't work, how many good games did he end up with? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[14.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": " Luke was trying to expand his game collection. He bought 2 games from a friend and bought 2 more at a garage sale. If 2 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[2.0]"
+              }
+            },
+            {
+              "inputs": {
+                "question": " At the arcade, Tom won 32 tickets playing 'whack a mole' and 25 tickets playing 'skee ball'. If he spent 7 of his tickets on a hat, how many tickets does Tom have left? "
+              },
+              "outputs": {
+                "answer": "[50.0]"
+              }
+            },
+            {
+              "inputs": {
+                "question": " Roger had 16 dollars. For his birthday he got 28 more dollars but spent 25 on a new game. How much money does he have now? "
+              },
+              "outputs": {
+                "answer": "[19.0]"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 11,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Imagine you are a detective trying to solve a mystery involving arithmetic word problems. Your task is to decode the clues provided in the `question`, step by step, to determine the final answer. Produce detailed reasoning to explain how you arrive at that answer after analyzing the situation. Your response should include the reasoning and the final numerical answer based on the information presented in the question.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " Roger had 16 dollars. For his birthday he got 28 more dollars but spent 25 on a new game. How much money does he have now? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[19.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " John was trying to expand his game collection. He bought 21 games from a friend and bought 8 more at a garage sale. If 23 of the games didn't work, how many good games did he end up with? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[6.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " At the arcade, Tom won 32 tickets playing 'whack a mole' and 25 tickets playing 'skee ball'. If he spent 7 of his tickets on a hat, how many tickets does Tom have left? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[50.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " Luke was trying to expand his game collection. He bought 2 games from a friend and bought 2 more at a garage sale. If 2 of the games didn't work, how many good games did he end up with? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[2.0]"
+              },
+              "outputs": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 12,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the fields `question`, produce the fields `answer`.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " At the arcade, Tom won 32 tickets playing 'whack a mole' and 25 tickets playing 'skee ball'. If he spent 7 of his tickets on a hat, how many tickets does Tom have left? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[50.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " Roger had 16 dollars. For his birthday he got 28 more dollars but spent 25 on a new game. How much money does he have now? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[19.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " John was trying to expand his game collection. He bought 21 games from a friend and bought 8 more at a garage sale. If 23 of the games didn't work, how many good games did he end up with? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[6.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": " Luke was trying to expand his game collection. He bought 2 games from a friend and bought 2 more at a garage sale. If 2 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[2.0]"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 13,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Imagine you are a detective trying to solve a mystery involving arithmetic word problems. Your task is to decode the clues provided in the `question`, step by step, to determine the final answer. Produce detailed reasoning to explain how you arrive at that answer after analyzing the situation. Your response should include the reasoning and the final numerical answer based on the information presented in the question.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " At the arcade, Tom won 32 tickets playing 'whack a mole' and 25 tickets playing 'skee ball'. If he spent 7 of his tickets on a hat, how many tickets does Tom have left? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[50.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " Roger had 16 dollars. For his birthday he got 28 more dollars but spent 25 on a new game. How much money does he have now? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[19.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " John was trying to expand his game collection. He bought 21 games from a friend and bought 8 more at a garage sale. If 23 of the games didn't work, how many good games did he end up with? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[6.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": " Luke was trying to expand his game collection. He bought 2 games from a friend and bought 2 more at a garage sale. If 2 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[2.0]"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 14,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Imagine you are a detective trying to solve a mystery involving arithmetic word problems. Your task is to decode the clues provided in the `question`, step by step, to determine the final answer. Produce detailed reasoning to explain how you arrive at that answer after analyzing the situation. Your response should include the reasoning and the final numerical answer based on the information presented in the question.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " John was trying to expand his game collection. He bought 21 games from a friend and bought 8 more at a garage sale. If 23 of the games didn't work, how many good games did he end up with? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[6.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": " Roger had 16 dollars. For his birthday he got 28 more dollars but spent 25 on a new game. How much money does he have now? "
+              },
+              "outputs": {
+                "answer": "[19.0]"
+              }
+            },
+            {
+              "inputs": {
+                "question": " Luke was trying to expand his game collection. He bought 2 games from a friend and bought 2 more at a garage sale. If 2 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[2.0]"
+              }
+            },
+            {
+              "inputs": {
+                "question": " At the arcade, Tom won 32 tickets playing 'whack a mole' and 25 tickets playing 'skee ball'. If he spent 7 of his tickets on a hat, how many tickets does Tom have left? "
+              },
+              "outputs": {
+                "answer": "[50.0]"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 15,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Imagine you are a detective trying to solve a mystery involving arithmetic word problems. Your task is to decode the clues provided in the `question`, step by step, to determine the final answer. Produce detailed reasoning to explain how you arrive at that answer after analyzing the situation. Your response should include the reasoning and the final numerical answer based on the information presented in the question.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " At the arcade, Tom won 32 tickets playing 'whack a mole' and 25 tickets playing 'skee ball'. If he spent 7 of his tickets on a hat, how many tickets does Tom have left? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[50.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " Roger had 16 dollars. For his birthday he got 28 more dollars but spent 25 on a new game. How much money does he have now? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[19.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " John was trying to expand his game collection. He bought 21 games from a friend and bought 8 more at a garage sale. If 23 of the games didn't work, how many good games did he end up with? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[6.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": " Luke was trying to expand his game collection. He bought 2 games from a friend and bought 2 more at a garage sale. If 2 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[2.0]"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 16,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Imagine you are a detective trying to solve a mystery involving arithmetic word problems. Your task is to decode the clues provided in the `question`, step by step, to determine the final answer. Produce detailed reasoning to explain how you arrive at that answer after analyzing the situation. Your response should include the reasoning and the final numerical answer based on the information presented in the question.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " At the arcade, Tom won 32 tickets playing 'whack a mole' and 25 tickets playing 'skee ball'. If he spent 7 of his tickets on a hat, how many tickets does Tom have left? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[50.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": " Roger had 16 dollars. For his birthday he got 28 more dollars but spent 25 on a new game. How much money does he have now? "
+              },
+              "outputs": {
+                "answer": "[19.0]"
+              }
+            },
+            {
+              "inputs": {
+                "question": " John was trying to expand his game collection. He bought 21 games from a friend and bought 8 more at a garage sale. If 23 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[6.0]"
+              }
+            },
+            {
+              "inputs": {
+                "question": " Luke was trying to expand his game collection. He bought 2 games from a friend and bought 2 more at a garage sale. If 2 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[2.0]"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 17,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Imagine you are a detective trying to solve a mystery involving arithmetic word problems. Your task is to decode the clues provided in the `question`, step by step, to determine the final answer. Produce detailed reasoning to explain how you arrive at that answer after analyzing the situation. Your response should include the reasoning and the final numerical answer based on the information presented in the question.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " Ned was trying to expand his game collection. He bought 11 games from a friend and bought 22 more at a garage sale. If 19 of the games didn't work, how many good games did he end up with? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[14.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": " Luke was trying to expand his game collection. He bought 2 games from a friend and bought 2 more at a garage sale. If 2 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[2.0]"
+              }
+            },
+            {
+              "inputs": {
+                "question": " John was trying to expand his game collection. He bought 21 games from a friend and bought 8 more at a garage sale. If 23 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[6.0]"
+              }
+            },
+            {
+              "inputs": {
+                "question": " At the arcade, Tom won 32 tickets playing 'whack a mole' and 25 tickets playing 'skee ball'. If he spent 7 of his tickets on a hat, how many tickets does Tom have left? "
+              },
+              "outputs": {
+                "answer": "[50.0]"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 18,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Using the provided `question`, derive the `answer` and include detailed reasoning that walks through the problem-solving process step by step. Ensure that both outputs clearly explain how the final solution was reached based on the arithmetic operations involved.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " At the arcade, Tom won 32 tickets playing 'whack a mole' and 25 tickets playing 'skee ball'. If he spent 7 of his tickets on a hat, how many tickets does Tom have left? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[50.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " Roger had 16 dollars. For his birthday he got 28 more dollars but spent 25 on a new game. How much money does he have now? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[19.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " John was trying to expand his game collection. He bought 21 games from a friend and bought 8 more at a garage sale. If 23 of the games didn't work, how many good games did he end up with? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[6.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": " Luke was trying to expand his game collection. He bought 2 games from a friend and bought 2 more at a garage sale. If 2 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[2.0]"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial_number": 19,
+      "prompts": [
+        {
+          "predictor_index": 0,
+          "predictor_name": "Predict",
+          "instruction": "Given the mathematical word problem in the `question` field, analyze the situation and apply logical reasoning step by step to produce an `answer`. Make sure to articulate the reasoning process clearly, even if it doesn't require detailed breakdowns, and format the final solution in the specified format.",
+          "num_demos": 4,
+          "demos": [
+            {
+              "inputs": {
+                "augmented": true,
+                "question": " At the arcade, Tom won 32 tickets playing 'whack a mole' and 25 tickets playing 'skee ball'. If he spent 7 of his tickets on a hat, how many tickets does Tom have left? ",
+                "reasoning": "Not supplied for this particular example.",
+                "answer": "[50.0]"
+              },
+              "outputs": {}
+            },
+            {
+              "inputs": {
+                "question": " Luke was trying to expand his game collection. He bought 2 games from a friend and bought 2 more at a garage sale. If 2 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[2.0]"
+              }
+            },
+            {
+              "inputs": {
+                "question": " John was trying to expand his game collection. He bought 21 games from a friend and bought 8 more at a garage sale. If 23 of the games didn't work, how many good games did he end up with? "
+              },
+              "outputs": {
+                "answer": "[6.0]"
+              }
+            },
+            {
+              "inputs": {
+                "question": " Roger had 16 dollars. For his birthday he got 28 more dollars but spent 25 on a new game. How much money does he have now? "
+              },
+              "outputs": {
+                "answer": "[19.0]"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "final_prompts": [
+    {
+      "predictor_index": 0,
+      "predictor_name": "Predict",
+      "instruction": "Imagine you are a detective trying to solve a mystery involving arithmetic word problems. Your task is to decode the clues provided in the `question`, step by step, to determine the final answer. Produce detailed reasoning to explain how you arrive at that answer after analyzing the situation. Your response should include the reasoning and the final numerical answer based on the information presented in the question.",
+      "num_demos": 4,
+      "demos": [
+        {
+          "inputs": {
+            "augmented": true,
+            "question": " At the arcade, Tom won 32 tickets playing 'whack a mole' and 25 tickets playing 'skee ball'. If he spent 7 of his tickets on a hat, how many tickets does Tom have left? ",
+            "reasoning": "Not supplied for this particular example.",
+            "answer": "[50.0]"
+          },
+          "outputs": {}
+        },
+        {
+          "inputs": {
+            "augmented": true,
+            "question": " Roger had 16 dollars. For his birthday he got 28 more dollars but spent 25 on a new game. How much money does he have now? ",
+            "reasoning": "Not supplied for this particular example.",
+            "answer": "[19.0]"
+          },
+          "outputs": {}
+        },
+        {
+          "inputs": {
+            "augmented": true,
+            "question": " John was trying to expand his game collection. He bought 21 games from a friend and bought 8 more at a garage sale. If 23 of the games didn't work, how many good games did he end up with? ",
+            "reasoning": "Not supplied for this particular example.",
+            "answer": "[6.0]"
+          },
+          "outputs": {}
+        },
+        {
+          "inputs": {
+            "question": " Luke was trying to expand his game collection. He bought 2 games from a friend and bought 2 more at a garage sale. If 2 of the games didn't work, how many good games did he end up with? "
+          },
+          "outputs": {
+            "answer": "[2.0]"
+          }
+        }
+      ]
+    }
+  ]
+}
